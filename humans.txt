@@ -1,15 +1,17 @@
 # humanstxt.org/
-# The humans responsible & technology colophon
+# The humans responsible
 
 # TEAM
+    Chef : Parkours
+    Site : http://parkours.fr/
+    From : Paris, France
 
-    <name> -- <role> -- <twitter>
+    Creator, designer, developer : Nicolas RUCHE
+    Site : https://mistergix.github.io/
+    From : Paris, France
 
-# THANKS
-
-    <name>
-
-# TECHNOLOGY COLOPHON
-
-    CSS3, HTML5
-    Apache Server Configs, jQuery, Modernizr, Normalize.css
+# SITE                    
+    Last update:  11/07/2018
+    Standards: HTML5, CSS3
+    Components: jQuery, Normalize.css, Bootstrap.css, HTML Boilerplate
+    Software: Visual Studio Code

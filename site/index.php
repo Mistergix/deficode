@@ -5,11 +5,12 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Accueil Déficode</title>
-    <meta name="description" content="">
+    <meta name="description" content="Accueil du site déficode, explications du projet et de Python">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
+    <link type="text/plain" rel="author" href="../humans.txt"/>
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="../css/normalize.css">
@@ -107,7 +108,16 @@
             </div>
         </article>
         <footer>
-
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4 offset-lg-2">
+                        <a href="../humans.txt">Un peu d'infos sur le site</a>
+                    </div>
+                    <div class="col-lg-4">
+                            <a href="contacts.php">Contacts</a>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
 </body>
