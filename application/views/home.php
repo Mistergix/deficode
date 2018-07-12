@@ -1,4 +1,4 @@
-<div class="content">
+
   <article class="article content-main">
     <div class="container-fluid">
       <section class="row">
@@ -51,19 +51,4 @@
       <!-- END ROW -->
     </div>
   </article>
-  <footer>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-4 offset-lg-2">
-          <a href="<?php echo base_url("humans.txt");?>">Un peu d'infos sur le site</a>
-        </div>
-        <div class="col-lg-4">
-          <a href="<?php echo site_url("contact");?>">Contacts</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-</div>
-</body>
-
-</html>
+  

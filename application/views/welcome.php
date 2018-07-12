@@ -8,7 +8,3 @@
           <a class="btn btn-primary btn-xl" href="<?php echo site_url('home');?>">Commencer à coder</a>
         </div>
   </header>
-
-</body>
-
-</html>

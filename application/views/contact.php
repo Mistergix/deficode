@@ -1,4 +1,4 @@
-<div class="content">
+
         <article class="article content-main">
             <div class="container-fluid">
                 <div class="row">
@@ -6,7 +6,7 @@
                         <p>
                             Les champs suivis d'une astérisque sont obligatoires.
                         </p>
-                        <form action="php_scripts/sendmail.php" method="post">
+                        <form action="<?php echo site_url("formsubmit");?>" method="post">
                             Nom*:
                             <br>
                             <input type="text" name="name" id="name" required>
@@ -25,7 +25,4 @@
                 </div>
             </div>
         </article>
-    </div>
-</body>
-
-</html>
+    

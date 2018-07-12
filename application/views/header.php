@@ -29,4 +29,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!--[if lte IE 9]>
     <p class="browserupgrade">Vous utilisez  un navigateur <strong>obsolète</strong>. Veuillez <a href="https://browsehappy.com/">mettre votre navigateur à jour</a> pour améliorer votre expérience et votre sécurité.</p>
     <![endif]-->
+    <!-- PAGE BEGINNING -->
+    <div class="content">
 <?php echo PHP_EOL;?>
