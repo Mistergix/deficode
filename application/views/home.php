@@ -4,7 +4,7 @@
       <section class="row">
         <div class="col-lg-4 offset-lg-2 column">
           <figure>
-            <img class="img-fluid" src="<?php echo base_url("assets/img/python_logo.svg");?>" alt="Logo de Python">
+            <img class="img-fluid" src="<?php echo img_url('python_logo.svg');?>" alt="Logo de Python">
           </figure>
           <h1 class="title">Le langage Python</h1>
           <p>
@@ -26,7 +26,7 @@
         </div>
         <div class="col-lg-4 column">
           <figure>
-            <img class="img-fluid" src="<?php echo base_url("assets/img/parkours_logo.svg");?>" alt="Logo de Parkours">
+            <img class="img-fluid" src="<?php echo img_url('parkours_logo.svg');?>" alt="Logo de Parkours">
           </figure>
           <h1 class="title">Parkours et Déficode</h1>
           <p>

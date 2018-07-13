@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand img-link" href="http://parkours.fr/">
-                <img class="img-fluid" src="<?php echo base_url("assets/img/coloredParkoursLogo.svg");?>" alt="Logo Parkours coloré">
+                <img class="img-fluid" src="<?php echo img_url('coloredParkoursLogo.svg');?>" alt="Logo Parkours coloré">
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-main">
                 <span class="navbar-toggler-icon">
