@@ -15,7 +15,7 @@
                     <a class="nav-link" href="<?php echo site_url("home");?>">ACCUEIL</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#concept">LES SEANCES</a>
+                    <a class="nav-link" href="<?php echo site_url("seances");?>">LES SEANCES</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#method">LES PROJETS</a>
