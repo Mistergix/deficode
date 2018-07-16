@@ -3,12 +3,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Seances extends CI_Controller
 {
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Seances_model', 'seances');
+	}
+
 	public function index()
 	{
 		$data = array();
 		$data['title'] = "Les séances";
 		$data['filename'] = 'style';
 		$data['desc'] = "Liste des séances de Python";
+
+		$data['seances_titles'] = $this->seances->get_seances_titles();
 
 		$this->load->view('header', $data);
 		$this->load->view('menu');
@@ -17,21 +25,24 @@ class Seances extends CI_Controller
 		$this->load->view('end');
     }
     
-    public function list($page)
+    public function list($id)
     {
-        if ( ! file_exists(APPPATH.'views/seances/list/'. $page . '.php'))
-        {
-            // Whoops, we don't have a page for that!
-            show_404();
-        }
-        $data = array();
-		$data['title'] = "Séance";
+		$seance = $this->seances->get_seance_data($id);
+
+		if(! isset($seance))
+		{
+			show_404();
+		}
+
+		$data = array();
+		$data["seance"] = $seance;
+		$data['title'] = $seance->title;
 		$data['filename'] = 'style';
-		$data['desc'] = "Séance de Python";
+		$data['desc'] = $seance->description;
 
 		$this->load->view('header', $data);
 		$this->load->view('menu');
-		$this->load->view('seances/list/' . $page);
+		$this->load->view('seances/seance_template', $data);
 		$this->load->view('footer');
 		$this->load->view('end');
     }

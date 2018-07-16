@@ -4,17 +4,19 @@
                     <div class="col-6 offset-3 column">
                         <ul>
                         <?php
-                            $dir = new DirectoryIterator(dirname(__FILE__).'/list');
-                            foreach ($dir as $fileinfo) 
+                            if (ENVIRONMENT == "development")
                             {
-                                if (!$fileinfo->isDot()) 
-                                {
-                                    $name = $fileinfo->getFilename();
-                                    $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $name);
-                                    $url = site_url("seances/list/$withoutExt");
-                                    $a = "<a href=\"$url\">$withoutExt</a>";
-                                    echo "<li>$a</li>" . PHP_EOL;
-                                }
+                                var_dump($seances_titles);
+                            }
+
+                            $i = 1;
+                            foreach($seances_titles as $title)
+                            {
+                                echo "<li>";
+                                $url = site_url("seances/list/$i");
+                                $a = "<a href=\"$url\">$title</a>";
+                                echo $a;
+                                echo "</li>" . PHP_EOL;
                             }
                         ?>
                         </ul>
