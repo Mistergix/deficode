@@ -29,14 +29,18 @@ class Admin extends CI_Controller
 		$this->load->view('end');
 	}
 
-	public function dashboard()
+	private function RedirectIfNotConnected()
 	{
 		$username = $this->session->userdata('username');
 		if(! $this->model->IsAdmin($username))
 		{
 			redirect(site_url('admin/login'));
 		}
+	}
 
+	public function dashboard()
+	{
+		$this->RedirectIfNotConnected();
 		$data = array();
         $data['title'] = "Tableau de bord";
         $data['filename'] = 'style';
@@ -45,6 +49,21 @@ class Admin extends CI_Controller
         $this->load->view('header', $data);
         $this->load->view('menu');
         $this->load->view('admin/dashboard', $data);
+        $this->load->view('footer');
+		$this->load->view('end');
+	}
+
+	public function seances()
+	{
+		$this->RedirectIfNotConnected();
+		$data = array();
+        $data['title'] = "Gestion des séances";
+        $data['filename'] = 'style';
+        $data['desc'] = "Page de création, édition et suppression des séances";
+
+        $this->load->view('header', $data);
+        $this->load->view('menu');
+        $this->load->view('admin/seances', $data);
         $this->load->view('footer');
 		$this->load->view('end');
 	}
