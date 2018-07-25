@@ -21,8 +21,7 @@
                             <button type="submit" value="Envoyer">Envoyer</button>
                         </form>
                     </div>
-
-                </div>
+                </div> <!-- end row -->
             </div>
         </article>
     
