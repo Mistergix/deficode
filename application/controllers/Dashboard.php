@@ -87,4 +87,27 @@ class Dashboard extends CI_Controller
         $this->load->view('footer');
 		$this->load->view('end');
 	}
+
+	public function add()
+	{
+		$this->form_validation->set_rules('title','"Titre"','required');
+		$this->form_validation->set_rules('description','"Description"','required');
+		$this->form_validation->set_rules('content','"Contenu"','required');
+		$this->form_validation->set_rules('priority','"Priorité"','required');
+
+		if ($this->form_validation->run()) 
+		{
+			$title = $this->input->post('title');
+			$description = $this->input->post('description');
+			$content = $this->input->post('content');
+			$priority = $this->input->post('priority');
+
+			$this->seances->add_seance($title, $description, $content, $priority);
+			redirect(site_url('dashboard/seances'));
+		} 
+		else 
+		{
+            $this->add_page();
+        }
+	}
 }
