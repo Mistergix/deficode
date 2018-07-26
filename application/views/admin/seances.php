@@ -34,11 +34,16 @@
                         ?>
                     </div>
                     <div class="col-lg-3 column">
-                        ACTIONS
+                        <a href="<?php echo site_url("dashboard/edit/$id");?>">Editer</a> <a href="<?php echo site_url("dashboard/export/$id");?>">Télécharger html</a> <a href="<?php echo site_url("dashboard/delete/$id");?>" onclick="return confirm('Are you sure?')">Supprimer</a>
                     </div>
                 </div> <!-- END ROW -->
                 <?php
                     }
                 ?>
+                <div class="row">
+                    <div class="col-lg-4 column offset-lg-4">
+                        <a href="<?php echo site_url("dashboard/add");?>">Rajouter une séance</a>
+                    </div>
+                </div>
             </div>
 </article>

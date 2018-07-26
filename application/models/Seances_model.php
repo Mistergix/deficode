@@ -23,6 +23,18 @@ class Seances_model extends CI_Model
         return $data[0];
     }
 
+    /**
+     *  delete a seance
+     *  
+     *  @param integer $id  seance id
+     *  @return bool request result
+     */
+    public function delete($id)
+    {
+        return $this->db->where('id', (int) $id)
+			->delete($this->table);
+    }
+
     public function get_all_seances()
     {
         $data = $this->db->select("*")

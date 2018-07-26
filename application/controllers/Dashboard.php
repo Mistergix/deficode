@@ -9,6 +9,7 @@ class Dashboard extends CI_Controller
 		$this->load->model('Admin_model', 'model');
 		$this->RedirectIfNotConnected();
 		$this->load->library('form_validation');
+		$this->load->model('Seances_model', 'seances');
 	}
 
 	private function RedirectIfNotConnected()
@@ -16,7 +17,7 @@ class Dashboard extends CI_Controller
 		$username = $this->session->userdata('username');
 		if(! $this->model->IsAdmin($username))
 		{
-			redirect(site_url('admin/login'));
+			redirect(site_url('logger/login'));
 		}
 	}
 
@@ -41,7 +42,7 @@ class Dashboard extends CI_Controller
 
 	public function seances()
 	{
-		$this->load->model('Seances_model', 'seances');
+		
 		$data = array();
         $data['title'] = "Gestion des séances";
         $data['filename'] = 'style';
@@ -55,18 +56,27 @@ class Dashboard extends CI_Controller
 		$this->load->view('end');
 	}
 
-	public function edit($id)
+	public function edit($id=NULL)
 	{
 
 	}
 
 	public function delete($id)
 	{
-
+		$result = $this->seances->delete($id);
+		if($result)
+		{
+			redirect(site_url('dashboard/seances'));
+		}
 	}
 
 	public function export($id)
 	{
 		
+	}
+
+	public function add()
+	{
+		$this->edit();
 	}
 }
