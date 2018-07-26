@@ -16,7 +16,7 @@ class Seances extends CI_Controller
 		$data['filename'] = 'style';
 		$data['desc'] = "Liste des séances de Python";
 
-		$data['seances_titles'] = $this->seances->get_seances_titles();
+		$data['seances'] = $this->seances->get_all_seances();
 
 		$this->load->view('header', $data);
 		$this->load->view('menu');

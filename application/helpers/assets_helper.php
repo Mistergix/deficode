@@ -15,3 +15,8 @@ function js_url($nom)
 {
     return base_url("assets/js/$nom.js");
 }
+
+function seance_url($id)
+{
+    return site_url("seances/list/$id");
+}

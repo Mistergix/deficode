@@ -56,16 +56,33 @@ class Admin extends CI_Controller
 	public function seances()
 	{
 		$this->RedirectIfNotConnected();
+		$this->load->model('Seances_model', 'seances');
 		$data = array();
         $data['title'] = "Gestion des séances";
         $data['filename'] = 'style';
-        $data['desc'] = "Page de création, édition et suppression des séances";
+		$data['desc'] = "Page de création, édition et suppression des séances";
+		$data['seances'] = $this->seances->get_all_seances();
 
         $this->load->view('header', $data);
         $this->load->view('menu');
         $this->load->view('admin/seances', $data);
         $this->load->view('footer');
 		$this->load->view('end');
+	}
+
+	public function edit($id)
+	{
+
+	}
+
+	public function delete($id)
+	{
+
+	}
+
+	public function export($id)
+	{
+		
 	}
 
 	public function logout()

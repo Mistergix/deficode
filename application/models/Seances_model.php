@@ -23,11 +23,21 @@ class Seances_model extends CI_Model
         return $data[0];
     }
 
+    public function get_all_seances()
+    {
+        $data = $this->db->select("*")
+            ->from($this->table)
+            ->order_by('priority', 'asc')
+            ->get()->result();
+
+        return $data;
+    }
+
     public function get_seances_titles()
     {
         $data = $this->db->select('title')
             ->from($this->table)
-            ->order_by('id', 'asc')
+            ->order_by('priority', 'asc')
             ->get()
             ->result();
 
