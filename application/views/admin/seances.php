@@ -42,7 +42,7 @@
                 ?>
                 <div class="row">
                     <div class="col-lg-4 column offset-lg-4">
-                        <a href="<?php echo site_url("dashboard/add");?>">Rajouter une séance</a>
+                        <a href="<?php echo site_url("dashboard/add_page");?>">Rajouter une séance</a>
                     </div>
                 </div>
             </div>

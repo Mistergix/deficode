@@ -42,7 +42,6 @@ class Dashboard extends CI_Controller
 
 	public function seances()
 	{
-		
 		$data = array();
         $data['title'] = "Gestion des séances";
         $data['filename'] = 'style';
@@ -75,8 +74,17 @@ class Dashboard extends CI_Controller
 		
 	}
 
-	public function add()
+	public function add_page()
 	{
-		$this->edit();
+		$data = array();
+        $data['title'] = "Création d'une séance";
+        $data['filename'] = 'style';
+		$data['desc'] = "Page de création de séances";
+
+        $this->load->view('header', $data);
+        $this->load->view('menu');
+        $this->load->view('admin/edit', $data);
+        $this->load->view('footer');
+		$this->load->view('end');
 	}
 }

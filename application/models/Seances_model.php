@@ -35,6 +35,9 @@ class Seances_model extends CI_Model
 			->delete($this->table);
     }
 
+    /**
+     * Gets the data from all seances
+     */
     public function get_all_seances()
     {
         $data = $this->db->select("*")
@@ -45,6 +48,9 @@ class Seances_model extends CI_Model
         return $data;
     }
 
+    /**
+     * Gets the title from all seances
+     */
     public function get_seances_titles()
     {
         $data = $this->db->select('title')
@@ -56,5 +62,28 @@ class Seances_model extends CI_Model
         $titles = $data[0];
 
         return $titles;
+    }
+    /**
+	 *	Add a seance
+	 *
+	 *	@param string $title 	Title of the seance
+	 *	@param string $description 	short description of the seance
+     *	@param string $content 	seance content in HTML
+     *  @param int $priority display priority, less == upper, must be > 0
+	 *	@return bool		Le résultat de la requête
+	 */
+    public function add_seance($title, $description, $content, $priority)
+    {
+        if(!is_numeric($priority) or $priority <= 0)
+        {
+            return false;
+        }
+
+        $this->db->set('description',  $description);
+        $this->db->set('title',   $title);
+        $this->db->set('content', $content);
+        $this->db->set('priority', $priority);
+
+        return $this->db->insert($this->table);
     }
 }
