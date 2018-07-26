@@ -4,23 +4,18 @@
                     <div class="col-6 offset-3 column">
                         <ul>
                         <?php
-                            if (ENVIRONMENT == "development")
-                            {
-                                var_dump($seances_titles);
-                            }
-
-                            $i = 1;
-                            foreach($seances_titles as $title)
+                            foreach($seances as $seance)
                             {
                                 echo "<li>";
-                                $url = site_url("seances/list/$i");
-                                $a = "<a href=\"$url\">$title</a>";
+                                $id = $seance->id;
+                                $url = seance_url($id);
+                                $a = "<a href=\"$url\">$seance->title</a>";
                                 echo $a;
                                 echo "</li>" . PHP_EOL;
                             }
                         ?>
                         </ul>
                     </div>
-                </div>
+                </div> <!-- END ROW -->
             </div>
 </article>

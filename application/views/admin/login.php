@@ -5,7 +5,7 @@
                 <p>
                     Les champs suivis d'une astérisque sont obligatoires.
                 </p>
-                <form method="post" action="<?php echo site_url("admin/login_validation");?>">
+                <form method="post" action="<?php echo site_url("logger/login_validation");?>">
                     <label for="mdp">Mot de passe* :</label>
 
                     <input type="password" name="mdp" value=""/>
