@@ -34,7 +34,7 @@
                         ?>
                     </div>
                     <div class="col-lg-3 column">
-                        <a href="<?php echo site_url("dashboard/edit/$id");?>">Editer</a> <a href="<?php echo site_url("dashboard/export/$id");?>">Télécharger html</a> <a href="<?php echo site_url("dashboard/delete/$id");?>" onclick="return confirm('Are you sure?')">Supprimer</a>
+                        <a href="<?php echo site_url("dashboard/edit_page/$id");?>">Editer</a> <a href="<?php echo site_url("dashboard/export/$id");?>">Télécharger html</a> <a href="<?php echo site_url("dashboard/delete/$id");?>" onclick="return confirm('Are you sure?')">Supprimer</a>
                     </div>
                 </div> <!-- END ROW -->
                 <?php

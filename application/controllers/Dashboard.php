@@ -55,11 +55,6 @@ class Dashboard extends CI_Controller
 		$this->load->view('end');
 	}
 
-	public function edit($id=NULL)
-	{
-
-	}
-
 	public function delete($id)
 	{
 		$result = $this->seances->delete($id);
@@ -86,6 +81,51 @@ class Dashboard extends CI_Controller
         $this->load->view('admin/edit', $data);
         $this->load->view('footer');
 		$this->load->view('end');
+	}
+
+	public function edit_page($id)
+	{
+		$seance = $this->seances->get_seance_data($id);
+		if(! isset($seance))
+		{
+			show_404();
+		}
+
+		$title = $seance->title;
+		$data = array();
+		$data["seance"] = $seance;
+		$data['title'] = "Edition : $title";
+		$data['filename'] = 'style';
+		$data['desc'] = "Page d'édition d'une séance";
+
+		$this->load->view('header', $data);
+		$this->load->view('menu');
+		$this->load->view('admin/edit', $data);
+		$this->load->view('footer');
+		$this->load->view('end');
+	}
+
+	public function edit($id)
+	{
+		$this->form_validation->set_rules('title','"Titre"','required');
+		$this->form_validation->set_rules('description','"Description"','required');
+		$this->form_validation->set_rules('content','"Contenu"','required');
+		$this->form_validation->set_rules('priority','"Priorité"','required');
+
+		if ($this->form_validation->run()) 
+		{
+			$title = $this->input->post('title');
+			$description = $this->input->post('description');
+			$content = $this->input->post('content');
+			$priority = $this->input->post('priority');
+
+			$this->seances->edit_seance($id, $title, $description, $content, $priority);
+			redirect(site_url('dashboard/seances'));
+		} 
+		else 
+		{
+            $this->edit_page($id);
+        }
 	}
 
 	public function add()

@@ -86,4 +86,31 @@ class Seances_model extends CI_Model
 
         return $this->db->insert($this->table);
     }
+
+    /**
+	 *	Edit a seance
+	 *
+     * 	@param int $id	id of the seance
+	 *	@param string $title 	Title of the seance
+	 *	@param string $description 	short description of the seance
+     *	@param string $content 	seance content in HTML
+     *  @param int $priority display priority, less == upper, must be > 0
+	 *	@return bool		Le résultat de la requête
+	 */
+    public function edit_seance($id, $title, $description, $content, $priority)
+    {
+        if(!is_numeric($priority) or $priority <= 0)
+        {
+            return false;
+        }
+
+        $this->db->set('description',  $description);
+        $this->db->set('title',   $title);
+        $this->db->set('content', $content);
+        $this->db->set('priority', $priority);
+
+        $this->db->where('id', (int) $id);
+
+        return $this->db->update($this->table);
+    }
 }
