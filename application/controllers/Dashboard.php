@@ -64,11 +64,6 @@ class Dashboard extends CI_Controller
 		}
 	}
 
-	public function export($id)
-	{
-		
-	}
-
 	public function add_page()
 	{
 		$data = array();
