@@ -12,6 +12,12 @@ class Logger extends CI_Controller
 
     public function index()
     {
+		$username = $this->session->userdata('username');
+		if($this->model->IsAdmin($username))
+		{
+			redirect(site_url('dashboard'));
+		}
+
 		$this->login();
 	}
 
