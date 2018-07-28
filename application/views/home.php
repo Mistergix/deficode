@@ -37,7 +37,7 @@
           <ul>
             <li>Le langage Python</li>
             <li>Des outils professionnels comme Git et Github</li>
-            <li>Jeux vidéo avec Pygame, Tiled, Bosca CEOIL et TexturePacker</li>
+            <li>Jeux vidéo avec Pygame</li>
             <li>Un projet personnalisé</li>
           </ul>
           <h2 class="title">Le site</h2>
