@@ -20,12 +20,6 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data = array();
-		$data['title'] = "L'informatique avec Parkours";
-		$data['filename'] = 'main';
-
-		$this->load->view('header', $data);
-		$this->load->view('welcome');
-		$this->load->view('end');
+		$this->load->view('welcome_message');
 	}
 }
