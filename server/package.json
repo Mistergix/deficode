@@ -1,0 +1,14 @@
+{
+  "name": "deficode",
+  "version": "0.0.1",
+  "description": "Deficode",
+  "main": "index.js",
+  "scripts": {
+    "sass" : "node-sass -w scss/ -o ../dist/assets/css/ --recursive"
+  },
+  "author": "Nicolas Ruche",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.10.0"
+  }
+}
