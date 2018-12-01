@@ -26,7 +26,7 @@ class Welcome extends Basecontroller
 		}
 		else
 		{
-			$this->load_page("register_child", ["title" => "Inscrire mon enfant", "css_filename" => $css_filename]);
+			redirect('/registerchild');
 		}
 		
 	}
