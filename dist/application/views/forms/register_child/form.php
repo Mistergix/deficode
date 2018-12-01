@@ -29,7 +29,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		                    </div>
                             <div class="form-group">
                                 <label class="col-md-4 control-label required" for="parent_phone">Votre numéro de téléphone portable</label>
-                                <div class="col-md-2 offset-md-5">
+                                <div class="col-md-4 offset-md-4">
                                     <input id="parent_phone" name="parent_phone" placeholder="0XXXXXXXXX" type="tel" maxlength="10" pattern="^0[1-9](?:\d{2}){4}$" title="0XXXXXXXXXXX" class="form-control input-md" value="<?=set_value('parent_phone');?>" required>
                                 </div>
                             </div>
