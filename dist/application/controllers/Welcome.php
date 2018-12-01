@@ -18,11 +18,9 @@ class Welcome extends Basecontroller
 
 	public function index()
 	{
-		$css_filename = "main";
-
 		if($this->today >= $this->start_date)
 		{
-			$this->load_page("landing_page", ["title" => "Déficode", "css_filename" => $css_filename, "scripts" => ["main"]]);
+			$this->load_page("landing_page", ["title" => "Déficode", "styles" => ["main"], "scripts" => ["main"]]);
 		}
 		else
 		{
