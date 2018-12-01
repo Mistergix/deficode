@@ -21,11 +21,11 @@ class Registerchild extends Basecontroller
 
 		if ($this->form_validation->run() == FALSE)
 		{
-			$this->load_page("forms/register_child/form", ["title" => "Inscrire mon enfant", "css_filename" => "main"]);
+			$this->load_page("forms/register_child/form", ["title" => "Inscrire mon enfant", "css_filename" => "main", "scripts" => ["main", "validate"]]);
 		}
 		else
 		{
-			$this->load_page("forms/register_child/success", ["title" => "Mon enfant est inscrit", "css_filename" => "main"]);
+			$this->load_page("forms/register_child/success", ["title" => "Mon enfant est inscrit", "css_filename" => "main", "scripts" => ["main"]]);
 		}
 	}
 }

@@ -22,7 +22,7 @@ class Welcome extends Basecontroller
 
 		if($this->today >= $this->start_date)
 		{
-			$this->load_page("landing_page", ["title" => "Déficode", "css_filename" => $css_filename]);
+			$this->load_page("landing_page", ["title" => "Déficode", "css_filename" => $css_filename, "scripts" => ["main"]]);
 		}
 		else
 		{
