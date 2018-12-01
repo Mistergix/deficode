@@ -57,12 +57,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		                    </div>
                             <div class="form-group">
 			                    <label class="col-md-4 control-label required" for="parent_comment">Un petit mot ?</label>
-			                    <div class="col-md-4 offset-md-4">
+			                    <div class="col-md-6 offset-md-3">
 				                    <textarea id="parent_comment" name="parent_comment" placeholder="Quelques lignes sur sa personnalité, ce que vous attendez du Déficode" type="text" class="form-control input-md"><?=set_value('parent_comment');?></textarea>
 			                    </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-2 offset-md-5">
+                                <div class="col-md-4 offset-md-4">
                                         <div id="loader" class="loader d-none">
                                                 <div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>
                                         </div>
