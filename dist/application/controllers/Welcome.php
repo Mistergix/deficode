@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller 
+require_once("Basecontroller.php");
+
+class Welcome extends Basecontroller 
 {
 	private $start_date;
 	private $today;
@@ -16,13 +18,15 @@ class Welcome extends CI_Controller
 
 	public function index()
 	{
+		$css_filename = "main";
+
 		if($this->today >= $this->start_date)
 		{
-			$this->load->view('landing_page');
+			$this->load_page("landing_page", ["title" => "Déficode", "css_filename" => $css_filename]);
 		}
 		else
 		{
-			$this->load->view('register_child');
+			$this->load_page("register_child", ["title" => "Inscrire mon enfant", "css_filename" => $css_filename]);
 		}
 		
 	}
