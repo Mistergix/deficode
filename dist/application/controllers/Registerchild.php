@@ -7,6 +7,6 @@ class Registerchild extends Basecontroller
 {
 	public function index()
 	{
-		redirect();
+		redirect("https://docs.google.com/forms/d/e/1FAIpQLSe2oRBW-CmG-KaPeRTkbGkXhwAUn4npNc37VW9-3VyGKRwHLQ/viewform?usp=pp_url");
 	}
 }
