@@ -151,6 +151,9 @@ class Serpent :
 	def MangerPomme(self):
 		self.corps.Grossir()
 
+	def Tete(self):
+		return self.corps.Tete()
+
 class Jeu:
 	def __init__(self):
 		self.NOMBRE_CASES = 30
@@ -166,7 +169,7 @@ class Jeu:
 		self.ECRAN = pg.display.set_mode((self.TAILLE_ECRAN, self.TAILLE_ECRAN))
 		pg.display.set_caption("Snake")
 		self.HORLOGE = pg.time.Clock()
-		
+
 		while self.LE_JEU_TOURNE:
 			self.Jouer()
 
@@ -191,8 +194,7 @@ class Jeu:
 		x_max = self.NOMBRE_CASES - 1
 		y_max = self.NOMBRE_CASES - 1
 		position = Position.PositionAleatoire(x_min, x_max, y_min, y_max)
-		x, y = position.EnTuple()
-		pomme = Pomme(Position(x, y))
+		pomme = Pomme(position)
 		return pomme
 
 	def Evenements(self):
@@ -212,7 +214,7 @@ class Jeu:
 					self.serpent.ChangerDirection(Direction.BAS)
 	
 	def LogiqueDuJeu(self):
-		x, y = self.serpent.corps.tete.position.EnTuple() # A changer
+		x, y = self.serpent.Tete().position.EnTuple()
 
 		if x == -1 or x == self.NOMBRE_CASES or y == -1 or y == self.NOMBRE_CASES:
 			self.GAME_OVER = True
