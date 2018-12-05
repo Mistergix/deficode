@@ -169,6 +169,8 @@ class Jeu:
 		while self.LE_JEU_TOURNE:
 			self.Jouer()
 			self.EcranGameOver()
+
+		pg.quit()
 	
 	def Jouer(self):
 		centre = self.NOMBRE_CASES // 2
@@ -198,7 +200,8 @@ class Jeu:
 		pass
 
 	def EcranGameOver(self):
-		pg.quit()
+		# Ne fait rien actuellement
+		pass
 
 	def Evenements(self):
 		for evenement in pg.event.get():
