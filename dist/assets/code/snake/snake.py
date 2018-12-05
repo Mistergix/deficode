@@ -4,8 +4,9 @@ import random as rnd
 class Colors:
     BLACK = (0,0,0)
     RED = (255,0,0)
-    BLUE = (0,0,255)
+    BLUE = (65, 114, 225)
     WHITE = (200,200,200)
+    YELLOW = (247, 230, 152)
 
 class Direction:
 	HAUT = "haut"
@@ -93,7 +94,7 @@ class Corps:
 		for membre in self.corps:
 			position = membre.position
 			rectangle = Dessinateur.ObtenirRectangle(position, taille)
-			pg.draw.rect(ecran, Colors.WHITE, rectangle)
+			pg.draw.rect(ecran, Colors.BLUE, rectangle)
 
 	def Grossir(self):
 		queue = self.Queue()
@@ -161,7 +162,7 @@ class Jeu:
 		self.TAILLE_ECRAN = self.NOMBRE_CASES * self.TAILLE_CASE
 
 		self.FPS = 15
-		self.COULEUR_ARRIERE_PLAN = Colors.BLUE
+		self.COULEUR_ARRIERE_PLAN = Colors.YELLOW
 		self.LE_JEU_TOURNE = True
 
 	def Demarrer(self):
