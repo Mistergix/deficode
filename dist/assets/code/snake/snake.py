@@ -55,17 +55,24 @@ class Position:
 		y = rnd.randint(y_min, y_max)
 		return Position(x,y)
 
-class Pomme :
-	def __init__(self, position):
-		self.position = position
-
-	def Dessiner(self, ecran, taille):
-		x, y = self.position.EnTuple()
+class Dessinateur:
+	@staticmethod
+	def ObtenirRectangle(position, taille):
+		x, y = position.EnTuple()
 		coin_gauche_x = x * taille
 		coin_gauche_y = y * taille
 		largeur = taille
 		hauteur = taille
 		rectangle = pg.Rect(coin_gauche_x, coin_gauche_y, largeur, hauteur)
+
+		return rectangle
+
+class Pomme :
+	def __init__(self, position):
+		self.position = position
+
+	def Dessiner(self, ecran, taille):
+		rectangle = Dessinateur.ObtenirRectangle(self.position, taille)
 		pg.draw.ellipse(ecran, Colors.RED, rectangle)
 
 class Membre:
@@ -85,12 +92,7 @@ class Corps:
 		# Faire un template method
 		for membre in self.corps:
 			position = membre.position
-			x, y = position.EnTuple()
-			coin_gauche_x = x * taille
-			coin_gauche_y = y * taille
-			largeur = taille
-			hauteur = taille
-			rectangle = pg.Rect(coin_gauche_x, coin_gauche_y, largeur, hauteur)
+			rectangle = Dessinateur.ObtenirRectangle(position, taille)
 			pg.draw.rect(ecran, Colors.WHITE, rectangle)
 
 	def Grossir(self):
