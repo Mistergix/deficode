@@ -117,10 +117,10 @@ class Corps:
 		x += deplacement_x
 		y += deplacement_y
 
-		nouvelle_tete = Membre(Position(x, y))
+		self.tete = Membre(Position(x, y))
 
 		self.corps.pop(self.LongueurCorps() - 1)
-		self.corps.insert(0, nouvelle_tete)
+		self.corps.insert(0, self.tete)
 
 	def LongueurCorps(self):
 		return len(self.corps)
@@ -143,12 +143,8 @@ class Serpent :
 		self.corps.Dessiner(ecran, taille)
 
 	def Avancer(self):
-		# A ameliorer
-		x, y = self.corps.tete.position.EnTuple()
-		deplacement_x, deplacement_y = Direction.DeplacementSelonDirection(self.direction)
-		x += deplacement_x
-		y += deplacement_y
-		self.corps.tete.position = Position(x, y)
+		deplacement = Direction.DeplacementSelonDirection(self.direction)
+		self.corps.Avancer(deplacement)
 
 	def MangerPomme(self):
 		self.corps.Grossir()
