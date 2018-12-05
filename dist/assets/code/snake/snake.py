@@ -166,11 +166,9 @@ class Jeu:
 		self.ECRAN = pg.display.set_mode((self.TAILLE_ECRAN, self.TAILLE_ECRAN))
 		pg.display.set_caption("Snake")
 		self.HORLOGE = pg.time.Clock()
-
-		self.EcranDeDemarrage()
+		
 		while self.LE_JEU_TOURNE:
 			self.Jouer()
-			self.EcranGameOver()
 
 		pg.quit()
 	
@@ -196,14 +194,6 @@ class Jeu:
 		x, y = position.EnTuple()
 		pomme = Pomme(Position(x, y))
 		return pomme
-
-	def EcranDeDemarrage(self):
-		# Ne fait rien actuellement
-		pass
-
-	def EcranGameOver(self):
-		# Ne fait rien actuellement
-		pass
 
 	def Evenements(self):
 		for evenement in pg.event.get():
