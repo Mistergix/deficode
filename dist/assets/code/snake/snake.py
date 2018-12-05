@@ -7,6 +7,7 @@ class Colors:
     BLUE = (65, 114, 225)
     WHITE = (200,200,200)
     YELLOW = (247, 230, 152)
+    DARKER_BLUE = (76, 124, 165)
 
 class Direction:
 	HAUT = "haut"
@@ -94,7 +95,11 @@ class Corps:
 		for membre in self.corps:
 			position = membre.position
 			rectangle = Dessinateur.ObtenirRectangle(position, taille)
-			pg.draw.rect(ecran, Colors.BLUE, rectangle)
+			if membre == self.tete:
+				color = Colors.DARKER_BLUE
+			else : 
+				color = Colors.BLUE
+			pg.draw.rect(ecran, color, rectangle)
 
 	def Grossir(self):
 		queue = self.Queue()
