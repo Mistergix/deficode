@@ -198,15 +198,13 @@ class Jeu:
 		pass
 
 	def EcranGameOver(self):
-		# Ne fait rien actuellement
-		pass
+		pg.quit()
 
 	def Evenements(self):
 		for evenement in pg.event.get():
 			if evenement.type == pg.QUIT:
 				self.GAME_OVER = True
 				self.LE_JEU_TOURNE = False
-				pg.quit()
 			elif evenement.type == pg.KEYDOWN:
 				touche = evenement.key
 				if touche == pg.K_LEFT:
