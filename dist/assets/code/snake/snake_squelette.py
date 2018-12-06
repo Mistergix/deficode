@@ -266,13 +266,11 @@ class Jeu:
 		"""
 		Il faut initialiser pygame au début
 		On crée un un écran dont la taille est définie par self.TAILLE_ECRAN
-		On donne un titre à la fenêtre
 		Tant que le jeu tourne, on joue
 		Il faut quitter pygame à la fin
 		"""
 		pg.???
 		self.ECRAN = pg.display.set_mode((..., ...))
-		pg.display.set_caption(...)
 		self.HORLOGE = pg.time.Clock() # Permettra de limiter le nombre d'images par seconde
 
 		while ...:
@@ -295,7 +293,7 @@ class Jeu:
 	
 	def Jouer(self):
 		"""
-		Le centre est la case centrale par exemple s'il y a 16 cases, le centre est la 8ème (attention que se passe-t-il s'il y a 15 cases ?)
+		Le centre est la case centrale, par exemple s'il y a 16 cases, le centre est la 8ème
 		On crée un serpent dont la position_initiale est au centre
 		On crée une nouvelle pomme
 		Tant que ce n'est pas GAME_OVER, on regarde les évenements, on applique la logique du jeu et on dessine les éléments
