@@ -88,7 +88,7 @@ class Dessinateur:
 		Convertit une position en le rectangle correspondant sur l'écran (Voir le site pour plus de détails)
 		(Par exemple si la taille d'une case est 20 pixels et la position est (1, 2), le coin gauche du rectangle est le pixel (20, 40)
 		et sa largeur x hauteur est (20, 20))
-		Complète cette méthode, n'oublie pas le return !
+		Complète cette méthode
 		"""
 		x, y = position.EnTuple()
 		coin_gauche_x = x * taille_rectangle
@@ -97,7 +97,7 @@ class Dessinateur:
 		hauteur = ...
 		rectangle = pg.Rect(..., coin_gauche_y, largeur, ...)
 
-		return 
+		return ...
 
 class Pomme :
 	def __init__(self, position):
@@ -182,130 +182,199 @@ class Corps:
 		return ...
 
 	def Avancer(self, deplacement):
+		"""
+		Pas facile, tu peux passer au début
+		On sait vers où le serpent se déplace, deplacement est un tuple qui indique de combien on bouge en x et en y, c'est un tuple
+		On récupère la position de la tête, on lui ajoute le déplacement
+		On crée un nouveau Membre avec cette nouvelle position
+		On retire le dernier élement de la liste (la queue)
+		On insert la tête en première position
+		"""
 		x, y = self.tete.position.EnTuple()
-		deplacement_x, deplacement_y = deplacement
+		deplacement_x, deplacement_y = ...
 		x += deplacement_x
-		y += deplacement_y
+		y += ...
 
 		self.tete = Membre(Position(x, y))
 
-		self.corps.pop(self.LongueurCorps() - 1)
-		self.corps.insert(0, self.tete)
-
+		self.corps.pop(...)
+		self.corps.insert(..., ...)
 
 class Serpent :
 	def __init__(self, position_initiale):
+		"""
+		La direction initiale du serpent est Direction.AUCUNE
+		"""
 		self.corps = Corps(position_initiale)
-		self.direction = Direction.AUCUNE
-
-	def ChangerDirection(self, direction):
-		if self.PeutAllerDansCetteDirection(direction):
-			self.direction = direction
+		self.direction = ...
 
 	def PeutAllerDansCetteDirection(self, direction):
-		direction_opposee = Direction.DirectionOpposee(direction)
-		return self.direction != direction_opposee
+		"""
+		Permet de savoir si le serpent peut aller dans une direction
+		Il peut aller dans une direction, s'il ne va pas déjà dans la direction opposée
+		Exemple : S'il va à dejà vers la gauche, il ne peut pas aller à droite
+		"""
+		direction_opposee = Direction.DirectionOpposee(...)
+		return ... != ...
+
+	def ChangerDirection(self, direction):
+		"""
+		S'il peut aller dans cette direction, on change sa direction
+		"""
+		if ???(direction):
+			self.direction = ...
 
 	def Dessiner(self, ecran, taille):
+		# Ici tu n'as rien à faire, on fait ce qu'on appelle une délégation, 
+		# cela veut dire que celui qui dessine n'est pas le serpent mais son corps
+		# La tâche de dessin est déléguée
 		self.corps.Dessiner(ecran, taille)
 
 	def Avancer(self):
-		deplacement = Direction.DeplacementSelonDirection(self.direction)
-		self.corps.Avancer(deplacement)
+		"""
+		Ici on délègue l'avancement du serpent à son corps
+		Il faut avant calculer le déplacement
+		"""
+		deplacement = Direction.DeplacementSelonDirection(...)
+		self.corps.Avancer(...)
 
 	def MangerPomme(self):
-		self.corps.Grossir()
+		"""
+		Quand le serpent mange une pomme, son corps grossit
+		"""
+		self.corps.???
 
 	def Tete(self):
+		# Tu n'as rien à faire, c'est une méthode pour récupérer la tête du serpent
 		return self.corps.Tete()
 
 class Jeu:
 	def __init__(self):
+		"""
+		Les constantes du jeu
+		Si on connait le nombre de cases, et la taille d'une case, qu'elle est la taille de la fenêtre ?
+		"""
 		self.NOMBRE_CASES = 30
 		self.TAILLE_CASE = 20 # En pixels
-		self.TAILLE_ECRAN = self.NOMBRE_CASES * self.TAILLE_CASE
+		self.TAILLE_ECRAN = ...
 
 		self.FPS = 15
 		self.COULEUR_ARRIERE_PLAN = Colors.YELLOW
 		self.LE_JEU_TOURNE = True
 
 	def Demarrer(self):
-		pg.init()
-		self.ECRAN = pg.display.set_mode((self.TAILLE_ECRAN, self.TAILLE_ECRAN))
-		pg.display.set_caption("Snake")
-		self.HORLOGE = pg.time.Clock()
+		"""
+		Il faut initialiser pygame au début
+		On crée un un écran dont la taille est définie par self.TAILLE_ECRAN
+		On donne un titre à la fenêtre
+		Tant que le jeu tourne, on joue
+		Il faut quitter pygame à la fin
+		"""
+		pg.???
+		self.ECRAN = pg.display.set_mode((..., ...))
+		pg.display.set_caption(...)
+		self.HORLOGE = pg.time.Clock() # Permettra de limiter le nombre d'images par seconde
 
-		while self.LE_JEU_TOURNE:
+		while ...:
 			self.Jouer()
 
-		pg.quit()
+		pg.???
+
+	def NouvellePomme(self):
+		"""
+		On crée une pomme à une position aléatoire
+		Il faut limiter l'endroit où apparaît la pomme avec x_min, x_max etc.
+		"""
+		x_min = ...
+		y_min = ...
+		x_max = ... - 1
+		y_max = ... - 1
+		position = Position.PositionAleatoire(..., ..., ..., y_max)
+		pomme = Pomme(...)
+		return ...
 	
 	def Jouer(self):
-		centre = self.NOMBRE_CASES // 2
+		"""
+		Le centre est la case centrale par exemple s'il y a 16 cases, le centre est la 8ème (attention que se passe-t-il s'il y a 15 cases ?)
+		On crée un serpent dont la position_initiale est au centre
+		On crée une nouvelle pomme
+		Tant que ce n'est pas GAME_OVER, on regarde les évenements, on applique la logique du jeu et on dessine les éléments
+		"""
+		centre = ...
 
-		self.serpent = Serpent(Position(centre, centre))
-		self.pomme = self.NouvellePomme()
+		self.serpent = Serpent(Position(..., ...))
+		self.pomme = self.???()
 
 		self.GAME_OVER = False
 
-		while not self.GAME_OVER:
+		while ... self.GAME_OVER:
 			self.Evenements()
 			self.LogiqueDuJeu()
 			self.Dessin()
 
-	def NouvellePomme(self):
-		x_min = 0
-		y_min = 0
-		x_max = self.NOMBRE_CASES - 1
-		y_max = self.NOMBRE_CASES - 1
-		position = Position.PositionAleatoire(x_min, x_max, y_min, y_max)
-		pomme = Pomme(position)
-		return pomme
-
 	def Evenements(self):
+		"""
+		Si l'evenement est QUIT, on met GAME_OVER à True et LE_JEU_TOURNE à False
+		Si on appuie sur une touche, on change la direction du serpent en conséquence
+		"""
 		for evenement in pg.event.get():
-			if evenement.type == pg.QUIT:
-				self.GAME_OVER = True
-				self.LE_JEU_TOURNE = False
-			elif evenement.type == pg.KEYDOWN:
+			if evenement.type == pg.???:
+				self.GAME_OVER = ...
+				self.??? = False
+			elif evenement.type == pg.???:
 				touche = evenement.key
 				if touche == pg.K_LEFT:
-					self.serpent.ChangerDirection(Direction.GAUCHE)
+					self.serpent.ChangerDirection(Direction.???)
 				elif touche == pg.K_RIGHT:
-					self.serpent.ChangerDirection(Direction.DROITE)
+					...
 				elif touche == pg.K_UP:
-					self.serpent.ChangerDirection(Direction.HAUT)
+					...
 				elif touche == pg.K_DOWN:
-					self.serpent.ChangerDirection(Direction.BAS)
+					...
 	
 	def LogiqueDuJeu(self):
+		"""
+		On vérifie si la tête du serpent touche les bords de l'écran
+		Ou si elle touche un autre membre du corps
+		Si c'est le cas, on met GAME_OVER à True et on arrête la fonction avec un return
+		Après on vérifie si elle touche une pomme, si oui le serpent mange la pomme et on crée une nouvelle pomme
+		Enfin on fait avancer le serpent
+		"""
 		x, y = self.serpent.Tete().position.EnTuple()
 
-		if x == -1 or x == self.NOMBRE_CASES or y == -1 or y == self.NOMBRE_CASES:
-			self.GAME_OVER = True
+		if x == -1 or x == ... or y == ... or y == self.NOMBRE_CASES:
+			# Le serpent touche le bord
+			self.GAME_OVER = ...
 			return
 		
-		for membre in self.serpent.corps.CorpsSansTete():
-			membre_x, membre_y = membre.position.EnTuple()
-			if x == membre_x and y == membre_y:
+		for membre in self.serpent.corps.???(): # On parcourt le corps du serpent, SANS la tête
+			membre_x, membre_y = membre.position.???()
+			if x == ... and ... == membre_y:
+				# Le serpent a touché un de ses membres
 				self.GAME_OVER = True
-				return
+				...
 
-		pomme_x, pomme_y = self.pomme.position.EnTuple()
-		if x == pomme_x and y == pomme_y:
-			self.serpent.MangerPomme()
-			self.pomme = self.NouvellePomme()
+		pomme_x, pomme_y = self.???.position.EnTuple()
+		if x ... pomme_x ... y ... pomme_y:
+			self.serpent.???()
+			self.??? = self.NouvellePomme()
 
-		self.serpent.Avancer()
+		self.serpent.???()
 		
 
 	def Dessin(self):
-		self.ECRAN.fill(self.COULEUR_ARRIERE_PLAN)
-		self.pomme.Dessiner(self.ECRAN, self.TAILLE_CASE)
-		self.serpent.Dessiner(self.ECRAN, self.TAILLE_CASE)
+		"""
+		On remplit l'écran de la couleur d'arrière plan
+		puis on dessine la pomme et le serpent
+		On met à jour l'affichage
+		Enfin, on limite le nombre de fps
+		"""
+		self.ECRAN.???(self.COULEUR_ARRIERE_PLAN)
+		self.pomme.???(self.ECRAN, self.TAILLE_CASE)
+		self.serpent.Dessiner(..., ...)
 
-		pg.display.update()
-		self.HORLOGE.tick(self.FPS)
+		pg.display.???()
+		self.HORLOGE.???(self.FPS)
 	
 jeu = Jeu()
 jeu.Demarrer()
