@@ -1,6 +1,12 @@
 @import "config";
 @import "menu";
 
-
+body,
+html {
+  font-family: "montserrat";
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
 
 @import "mobile";
