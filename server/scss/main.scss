@@ -1,12 +1,21 @@
 @import "config";
 @import "menu";
+@import "sections";
+@import "buttons";
 
 body,
 html {
-  font-family: "montserrat";
   height: 100%;
   width: 100%;
   text-align: center;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
 }
 
 @import "mobile";

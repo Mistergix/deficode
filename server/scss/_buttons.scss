@@ -1,0 +1,11 @@
+.btn-primary
+{
+    background-color: $ligh_blue;
+    border : none;
+
+    &:hover
+    {
+        background-color: darken($ligh_blue, 10);
+        border : none;
+    }
+}
