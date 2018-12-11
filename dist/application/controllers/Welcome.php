@@ -20,7 +20,8 @@ class Welcome extends Basecontroller
 	{
 		if($this->today >= $this->start_date || ENVIRONMENT == 'development')
 		{
-			$menu_links = ["label" => "#url"];
+			$menu_links = ["Accueil" => "#home", "Parkours" => "#parkours", "Formateurs" => "#creators", "Programme" => "#program",
+			"FAQ" => "#faq", "Contact" => "#contact"];
 			$this->load_page("landing_page", ["menu_links" => $menu_links, "title" => "Déficode : L'informatique au collège", "styles" => ["main"], "scripts" => ["main"], "description" => "Présentation du défiocde (l'informatique au collège) : qui sommes-nous ?, qui est Parkours ?, le programme proposé, la page de Foire aux questions et le bouton pour nous contacter"]);
 		}
 		else
