@@ -173,7 +173,6 @@ class Jeu:
 	def Demarrer(self):
 		pg.init()
 		self.ECRAN = pg.display.set_mode((self.TAILLE_ECRAN, self.TAILLE_ECRAN))
-		pg.display.set_caption("Snake")
 		self.HORLOGE = pg.time.Clock()
 
 		while self.LE_JEU_TOURNE:
