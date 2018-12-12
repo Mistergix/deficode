@@ -4,22 +4,24 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 <div class="container-fluid">
 <h3>FAQ</h3>
-	<?php foreach ($faq as $question => $answer): ?>
+<div class="row">
+<?php foreach ($faq as $question => $answer): ?>
 		<?php
-			$collapse_id = "collapse_" . uniqid();
-		?>
+$collapse_id = "collapse_" . uniqid();
+?>
 		<div class="col-12">
 			<div class="card my-3">
-				<div class="card-header btn collapsed" data-toggle="collapse" data-target="<?= "#$collapse_id";?>" aria-expanded="false" aria-controls="<?= $collapse_id; ?>">
-					<?= $question; ?>
+				<div class="card-header btn collapsed" data-toggle="collapse" data-target="<?="#$collapse_id";?>" aria-expanded="false" aria-controls="<?=$collapse_id;?>">
+					<?=$question;?>
 				</div>
-				<div id="<?= $collapse_id; ?>" class="collapse">
+				<div id="<?=$collapse_id;?>" class="collapse">
 					<div class="card-body">
-						<?= $answer; ?>
+						<?=$answer;?>
 					</div>
 				</div>
 			</div>
 		</div>
 		<?php endforeach;?>
-	</div> <!-- END ROW -->
+	</div>
+</div><!-- END ROW --> 
 </div>
