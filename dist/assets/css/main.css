@@ -32,6 +32,17 @@ section.below-menu {
     background-color: #6ca8c6;
     border: none; }
 
+#faq .card-header {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  white-space: normal;
+  font-size: 0.8rem;
+  background: #304269;
+  color: #D9E8F5; }
+  #faq .card-header:hover {
+    background: #40588c; }
+
 body,
 html {
   height: 100%;

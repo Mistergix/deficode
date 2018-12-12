@@ -26,7 +26,7 @@ class Welcome extends Basecontroller
 			$menu_links = [];
 			$sections = [];
 
-			$data = ["creators" => $this->getCreators(), "periods" => $this->getPeriods()];
+			$data = ["creators" => $this->getCreators(), "periods" => $this->getPeriods(), "faq" => $this->getFaq()];
 
 			for ($i=0; $i < count($section_ids); $i++) { 
 				$id = $section_ids[$i];
@@ -58,5 +58,15 @@ class Welcome extends Basecontroller
 		$period2 = ["name" => "Approfondissement", "description" => "L'aventure continue ! Votre enfant approfondira ses maîtrises en informatique en codant un jeu. Nous n'avons pas encore décidé de la façon de procéder.", "span" => "Du 15/03/2019 au 19/04/2019"];
 		$period3 = ["name" => "Développement web", "description" => "L'aventure s'achève ! Durant cette période, votre enfant créera son propre site internet et aura la possibilité de le mettre en ligne.", "span" => "Du 10/05/2019 au 28/06/2019"];
 		return [$period1, $period2, $period3];
+	}
+
+	private function getFaq()
+	{
+		$faq = [];
+		$faq["Quand ont lieu les séances ?"] = "Les séances ont lieu tous les vendredi soir (hors-vacances) de 17h30 à 19h.";
+		$faq["Quel-est le tarif ?"] = "Le tarif est de 19€/séance. La première séance est gratuite.";
+		$faq["Combien y-a-t-il de séances par période ?"] = "Il y'a 7 séances la première période, 6 la seconde, et 8 la dernière.";
+
+		return $faq;
 	}
 }
