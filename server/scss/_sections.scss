@@ -1,6 +1,27 @@
 section#home
 {
     height: 100vh;
-    background: $dark_blue;
     color : $white;
+    font-family: 'Ubuntu', cursive;
+
+    background: url("../img/bg-masthead.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position-x: 43%;
+
+    .btn
+    {
+        font-family: 'Roboto', cursive;
+    }
+
+    &::before
+    {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        min-height: 100%;
+        background: rgba($color: $dark_blue, $alpha: 0.7);
+    }
 }
