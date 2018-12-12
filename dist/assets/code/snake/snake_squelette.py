@@ -108,7 +108,7 @@ class Pomme :
 		Cette méthode dessine une pomme en forme de cercle rouge (Rappel un cercle est une ellipse)
 		Complète cette méthode, n'oublie pas de remplacer le ???
 		"""
-		rectangle = Dessinateur.ObtenirRectangle( , )
+		rectangle = Dessinateur.ObtenirRectangle( ..., ...)
 		pg.draw.???(... , Colors.RED, ...)
 
 class Membre:
