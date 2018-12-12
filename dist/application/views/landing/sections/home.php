@@ -1,3 +1,7 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+
 <div class="centered">
 	<div class="container-fluid">
 		<div class="row">

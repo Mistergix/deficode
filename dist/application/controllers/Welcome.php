@@ -26,10 +26,12 @@ class Welcome extends Basecontroller
 			$menu_links = [];
 			$sections = [];
 
+			$data = ["creators" => $this->getCreators()];
+
 			for ($i=0; $i < count($section_ids); $i++) { 
 				$id = $section_ids[$i];
 				$menu_links[$menu_labels[$i]] = "#" . $id;
-				$sections[$id] = $this->load->view("landing/sections/$id.php", NULL, TRUE);
+				$sections[$id] = $this->load->view("landing/sections/$id.php", $data, TRUE);
 			}
 
 			$menu_links = ["Accueil" => "#home", "Formateurs" => "#creators","Parkours" => "#parkours", "Programme" => "#program",
@@ -41,5 +43,12 @@ class Welcome extends Basecontroller
 			redirect('/registerchild');
 		}
 		
+	}
+
+	private function getCreators()
+	{
+		$julian = ["name" => "Julian MERLE", "description" => "Blabla bla. Patati patata", "website" => "#"];
+		$nicolas = ["name" => "Nicolas RUCHE", "description" => "Étudiant en informatique. Entrepreneur sur mon temps libre, j'aime beaucoup les activés créatives telles que le dessin ou les origamis.", "website" => "https://mistergix.github.io"];
+		return [$julian, $nicolas];
 	}
 }
