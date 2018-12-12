@@ -1,4 +1,4 @@
-<h1>Contact</h1>
+<h3>Contact</h3>
 
 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quam praesentium in! Inventore quasi enim dolorem qui eius veritatis, ipsam consequatur eveniet distinctio molestias repellendus debitis, nesciunt suscipit, placeat culpa.
 Ratione quia illum porro, repudiandae non quasi perspiciatis fuga maiores culpa veniam enim. Beatae, vitae sapiente iure sint architecto sunt facilis magni cum voluptas iusto saepe quia dignissimos temporibus in!
