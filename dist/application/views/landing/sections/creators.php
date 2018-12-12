@@ -2,10 +2,11 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 
-<h3>Un programme proposé par :</h3>
 <div class="container-fluid">
-	<?php foreach ($creators as $creator): ?>
+<h3>Un programme proposé par</h3>
 	<div class="row">
+	<?php foreach ($creators as $creator): ?>
+	
 		<div class="col-12">
 			<div class="card">
 				<div class="card-body">
@@ -15,6 +16,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</div>
 			</div>
 		</div>
-	</div>
+	
 	<?php endforeach;?>
+	</div>  <!-- END ROW -->
 </div>

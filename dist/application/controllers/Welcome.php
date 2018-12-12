@@ -26,7 +26,7 @@ class Welcome extends Basecontroller
 			$menu_links = [];
 			$sections = [];
 
-			$data = ["creators" => $this->getCreators()];
+			$data = ["creators" => $this->getCreators(), "periods" => $this->getPeriods()];
 
 			for ($i=0; $i < count($section_ids); $i++) { 
 				$id = $section_ids[$i];
@@ -50,5 +50,13 @@ class Welcome extends Basecontroller
 		$julian = ["name" => "Julian MERLE", "description" => "Blabla bla. Patati patata", "website" => "#"];
 		$nicolas = ["name" => "Nicolas RUCHE", "description" => "Étudiant en informatique. Entrepreneur sur mon temps libre, j'aime beaucoup les activés créatives telles que le dessin ou les origamis.", "website" => "https://mistergix.github.io"];
 		return [$julian, $nicolas];
+	}
+
+	private function getPeriods()
+	{
+		$period1 = ["name" => "Base de l'informatique", "description" => "L'aventure commence ! Votre enfant apprendra les notions essentielles de l'informatique, grâce au langage de programmation Python. Il s'agit d'un langage très utilisé par les professionnels et facile à apprendre.", "span" => "Du 11/01/2019 au 22/02/2019"];
+		$period2 = ["name" => "Approfondissement", "description" => "L'aventure continue ! Votre enfant approfondira ses maîtrises en informatique en codant un jeu. Nous n'avons pas encore décidé de la façon de procéder.", "span" => "Du 15/03/2019 au 19/04/2019"];
+		$period3 = ["name" => "Développement web", "description" => "L'aventure s'achève ! Durant cette période, votre enfant créera son propre site internet et aura la possibilité de le mettre en ligne.", "span" => "Du 10/05/2019 au 28/06/2019"];
+		return [$period1, $period2, $period3];
 	}
 }

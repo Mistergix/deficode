@@ -17,6 +17,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="col-12 mt-3">
 				<a href="#" class="btn btn-primary btn-block">Espace élèves</a>
 			</div>
-		</div>
+		</div>  <!-- END ROW -->
 	</div>
 </div>
