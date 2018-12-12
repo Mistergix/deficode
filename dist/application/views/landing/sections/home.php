@@ -8,7 +8,7 @@
 				<h3>L'informatique au collège</h3>
 			</div>
 			<div class="col-12 mt-3">
-				<a href="#" class="btn btn-primary btn-block">Inscrire mon enfant</a>
+				<a href="<?= site_url("registerchild"); ?>" class="btn btn-primary btn-block">Inscrire mon enfant</a>
 			</div>
 			<div class="col-12 mt-3">
 				<a href="#" class="btn btn-primary btn-block">Espace élèves</a>
