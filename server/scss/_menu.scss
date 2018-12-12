@@ -1,0 +1,6 @@
+#mainNav {
+  background-color: $dark_blue;
+  &.navbar-transparent {
+    visibility: hidden;
+  }
+}

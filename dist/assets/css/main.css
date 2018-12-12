@@ -1,13 +1,18 @@
+#mainNav {
+  background-color: #304269; }
+  #mainNav.navbar-transparent {
+    visibility: hidden; }
+
 section#home {
   height: 100vh;
   color: #fff;
-  font-family: 'Ubuntu', cursive;
+  font-family: "Ubuntu", cursive;
   background: url("../img/bg-masthead.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position-x: 43%; }
   section#home .btn {
-    font-family: 'Roboto', cursive; }
+    font-family: "Roboto", cursive; }
   section#home::before {
     content: "";
     position: absolute;
@@ -16,6 +21,9 @@ section#home {
     width: 100%;
     min-height: 100%;
     background: rgba(48, 66, 105, 0.7); }
+
+section.below-menu {
+  padding-top: 3.4rem; }
 
 .btn-primary {
   background-color: #91BED4;
@@ -31,7 +39,7 @@ html {
   text-align: center; }
 
 .centered {
-  position: fixed;
+  position: relative;
   top: 50%;
   left: 50%;
   /* bring your own prefixes */
