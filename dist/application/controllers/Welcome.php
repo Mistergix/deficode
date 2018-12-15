@@ -63,7 +63,7 @@ class Welcome extends Basecontroller
 	private function getFaq()
 	{
 		$faq = [];
-		$faq["Quand ont lieu les séances ?"] = "Les séances ont lieu tous les vendredi soir (hors-vacances) de 17h30 à 19h.";
+		$faq["Quand ont lieu les séances ?"] = "Les séances ont lieu tous les vendredi soir (hors-vacances) de 17h à 19h30.";
 		$faq["Quel-est le tarif ?"] = "Le tarif est de 19€/séance. La première séance est gratuite.";
 		$faq["Combien y-a-t-il de séances par période ?"] = "Il y'a 7 séances la première période, 6 la seconde, et 8 la dernière.";
 
