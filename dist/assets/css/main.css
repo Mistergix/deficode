@@ -3,27 +3,28 @@
   #mainNav.navbar-transparent {
     visibility: hidden; }
 
-section#home {
-  height: 100vh;
-  color: #fff;
-  font-family: "Ubuntu", cursive;
-  background: url("../img/bg-masthead.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position-x: 43%; }
-  section#home .btn {
-    font-family: "Roboto", cursive; }
-  section#home::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    min-height: 100%;
-    background: rgba(48, 66, 105, 0.7); }
-
-section.below-menu {
-  padding-top: 3.4rem; }
+section {
+  min-height: 30vh; }
+  section#home {
+    height: 100vh;
+    color: #fff;
+    font-family: "Ubuntu", cursive;
+    background: url("../img/bg-masthead.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position-x: 43%; }
+    section#home .btn {
+      font-family: "Roboto", cursive; }
+    section#home::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      min-height: 100%;
+      background: rgba(48, 66, 105, 0.7); }
+  section.below-menu {
+    padding-top: 3.4rem; }
 
 .btn-primary {
   background-color: #91BED4;
@@ -55,3 +56,8 @@ html {
   left: 50%;
   /* bring your own prefixes */
   transform: translate(-50%, -50%); }
+
+footer {
+  background-color: #6ca8c6; }
+  footer, footer a {
+    color: #fff; }
