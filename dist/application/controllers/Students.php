@@ -50,7 +50,7 @@ class Students extends Basecontroller
 		for ($i=0; $i < count($file_names); $i++) { 
 			$label = "Séance " . ($i+1) . " ($dates[$i])";
 			$file_name = $file_names[$i];
-			$seances_links[$label] = ["url" => "students/seances/seance/$file_name"];
+			$seances_links[$label] = ["url" => "seances/seance/$file_name"];
 		}
 		$this->load_page("students/seances", ["seances_links" => $seances_links, "menu_links" => $this->getMenuLinks(), "title" => "Déficode : Récap' des séances", "styles" => ["main"], "scripts" => ["main"], "description" => "Récapitulatif de toutes les séances précedentes, incluant la séance courante"]);
 	}
