@@ -12,7 +12,7 @@ class Welcome extends Basecontroller
 	{
 		parent::__construct();
 		date_default_timezone_set('UTC');
-		$this->start_date = strtotime ( '2019-01-17');
+		$this->start_date = strtotime ('02-01-2019'); // dd-mm-yyyy
 		$this->today = strtotime('now');
 	}
 

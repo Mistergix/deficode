@@ -29,6 +29,18 @@ class Students extends Basecontroller
 		$this->load_page("students/quizz", ["quizz_link" => $quizz_link, "menu_links" => $this->getMenuLinks(), "title" => "Déficode : Quizz de la semaine", "styles" => ["main"], "scripts" => ["main"], "description" => "La page qui redirige vers le quizz de la semaine du déficode"]);
 	}
 
+	public function sumup()
+	{
+		$this->load->library('datetofile');
+		$files_names = $this->datetofile->getFilesNames("sumup");
+		var_dump($files_names);
+	}
+
+	public function seances()
+	{
+
+	}
+
 	private function getMenuLinks()
 	{
 		$menu_labels = ["Accueil", "Le récap'", "Quizz", "Les séances"];
