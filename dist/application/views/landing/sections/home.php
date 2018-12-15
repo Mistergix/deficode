@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<a href="<?= site_url("registerchild"); ?>" class="btn btn-primary btn-block">Inscrire mon enfant</a>
 			</div>
 			<div class="col-12 mt-3 col-md-4 col-lg-2">
-				<a href="#" class="btn btn-primary btn-block">Espace élèves</a>
+				<a href="<?= site_url("students"); ?>" class="btn btn-primary btn-block">Espace élèves</a>
 			</div>
 		</div>  <!-- END ROW -->
 	</div>
