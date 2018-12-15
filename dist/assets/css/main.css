@@ -3,27 +3,30 @@
   #mainNav.navbar-transparent {
     visibility: hidden; }
 
-section {
-  min-height: 30vh; }
-  section#home {
-    height: 100vh;
+.section {
+  min-height: 85vh; }
+  .section:nth-child(2n+1) {
+    background-color: #304269;
+    color: #D9E8F5; }
+  .section#home {
+    height: 85vh;
     color: #fff;
     font-family: "Ubuntu", cursive;
     background: url("../img/bg-masthead.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-position-x: 43%; }
-    section#home .btn {
+    .section#home .btn {
       font-family: "Roboto", cursive; }
-    section#home::before {
+    .section#home::before {
       content: "";
       position: absolute;
       top: 0;
       right: 0;
       width: 100%;
-      min-height: 100%;
+      min-height: 85%;
       background: rgba(48, 66, 105, 0.7); }
-  section.below-menu {
+  .section.below-menu {
     padding-top: 3.4rem; }
 
 .btn-primary {

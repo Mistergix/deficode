@@ -1,8 +1,14 @@
-section {
-  min-height: 30vh;
+.section {
+  min-height: 85vh;
+
+  &:nth-child(2n+1)
+  {
+    background-color: $dark_blue;
+    color: $light_grey;
+  }
 
   &#home {
-    height: 100vh;
+    height: 85vh;
     color: $white;
     font-family: "Ubuntu", cursive;
 
@@ -21,7 +27,7 @@ section {
       top: 0;
       right: 0;
       width: 100%;
-      min-height: 100%;
+      min-height: 85%;
       background: rgba($color: $dark_blue, $alpha: 0.7);
     }
   }
