@@ -56,6 +56,26 @@ class Datetofile
 		return $files;
 	}
 
+	public function getDates()
+	{
+		$i = 0;
+		$today = strtotime("now");
+		$dates = [];
+		$len = count($this->dates);
+		do
+		{
+			$date = strtotime ($this->dates[$i]);
+			if($date <= $today || ENVIRONMENT == 'development')
+			{
+				$dates[] = $this->dates[$i];
+			}
+			$i++;
+		}
+		while ($i < $len && ($date <= $today || ENVIRONMENT == 'development'));
+
+		return $dates;
+	}
+
 	/**
 	 * Remove the slash in the dates
 	 */

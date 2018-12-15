@@ -2,7 +2,8 @@
   background-color: #304269; }
 
 .section {
-  min-height: 100vh; }
+  min-height: 100vh;
+  padding-bottom: 2rem; }
   .section:nth-child(2n+1) {
     background-color: #304269;
     color: #fff; }
