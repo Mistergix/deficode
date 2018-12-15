@@ -4,13 +4,19 @@
     word-wrap: break-word;
     hyphens: auto;
     white-space: normal;
-    font-size: 0.8rem;
-    background: $dark_blue;
-    color: $light_grey;
+    font-size: 1.1rem;
+    background: $ligh_blue;
+    color: $white;
+    font-weight: bold;
 
     &:hover
     {
-        background: lighten($dark_blue, 10);
+        background: darken($ligh_blue, 10);
     }
+  }
+
+  .card-body
+  {
+    color: $black;
   }
 }

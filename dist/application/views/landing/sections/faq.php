@@ -9,7 +9,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<?php
 $collapse_id = "collapse_" . uniqid();
 ?>
-		<div class="col-12">
+		<div class="col-12 col-md-6">
 			<div class="card my-3">
 				<div class="card-header btn collapsed" data-toggle="collapse" data-target="<?="#$collapse_id";?>" aria-expanded="false" aria-controls="<?=$collapse_id;?>">
 					<?=$question;?>

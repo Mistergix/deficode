@@ -5,7 +5,7 @@
   min-height: 100vh; }
   .section:nth-child(2n+1) {
     background-color: #304269;
-    color: #D9E8F5; }
+    color: #fff; }
   .section#parkours .white-box {
     background-color: #fff;
     padding: 4rem;
@@ -45,11 +45,15 @@
   word-wrap: break-word;
   hyphens: auto;
   white-space: normal;
-  font-size: 0.8rem;
-  background: #304269;
-  color: #D9E8F5; }
+  font-size: 1.1rem;
+  background: #91BED4;
+  color: #fff;
+  font-weight: bold; }
   #faq .card-header:hover {
-    background: #40588c; }
+    background: #6ca8c6; }
+
+#faq .card-body {
+  color: #000; }
 
 body,
 html {
