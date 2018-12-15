@@ -47,11 +47,11 @@ class Datetofile
 			$date = strtotime ($this->dates[$i]);
 			if($date <= $today)
 			{
-				$files[] = $prefix . $this->dateFormat($this->dates[$i]);
+				$files[] = $this->getFileTitle($prefix, $this->dates[$i]);
 			}
 			$i++;
 		}
-		while ($i < $len && $date <= $today);
+		while ($i < $len && $date > $today);
 
 		return $files;
 	}
@@ -62,5 +62,23 @@ class Datetofile
 	private function dateFormat($dateString)
 	{
 		return str_replace("-", "", $dateString);
+	}
+
+	private function getFileTitle($prefix, $date)
+	{
+		return $prefix . $this->dateFormat($date);
+	}
+
+	/**
+	 * Form : prefixddmmyyyy.extension
+	 */
+	public function generateFiles($prefix, $location, $extension="php")
+	{
+		foreach ($this->dates as $date) {
+			$title = $this->getFileTitle($prefix, $date);
+			$path = "$location/$title.$extension";
+			$file = fopen($path, "w");
+			fclose($file);
+		}
 	}
 }
