@@ -5,7 +5,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <div class="container-fluid">
 <h3>Programme</h3>
 	<div class="row">
-		<div class="col-12">
+		<div class="col-12 col-md-6 offset-md-3">
 			<p>
 				L'informatique est enseignée bien trop tard en France.
 				En inscrivant votre enfant à ce programme, vous lui permettez de prendre une grande avance dans un domaine essentiel.
@@ -13,7 +13,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			</p>
 		</div>	
 	<?php foreach ($periods as $period): ?>
-		<div class="col-12">
+		<div class="col-12 col-md-6 offset-md-3">
 			<div class="card">
 				<div class="card-body">
 					<h4 class="card-title"><?=$period["name"];?></h4>
