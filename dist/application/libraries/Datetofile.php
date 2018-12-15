@@ -39,19 +39,19 @@ class Datetofile
 	public function getFilesNames($prefix)
 	{
 		$i = 0;
-		$today = strtotime('now');
+		$today = strtotime("now");
 		$files = [];
 		$len = count($this->dates);
 		do
 		{
 			$date = strtotime ($this->dates[$i]);
-			if($date <= $today)
+			if($date <= $today || ENVIRONMENT == 'development')
 			{
 				$files[] = $this->getFileTitle($prefix, $this->dates[$i]);
 			}
 			$i++;
 		}
-		while ($i < $len && $date > $today);
+		while ($i < $len && ($date <= $today || ENVIRONMENT == 'development'));
 
 		return $files;
 	}

@@ -35,7 +35,7 @@ class Students extends Basecontroller
 		$file_names = $this->datetofile->getFilesNames("sumup");
 		$views = [];
 		foreach ($file_names as $name) {
-			$views[] = $this->load->view($name, NULL, TRUE);
+			$views[$name] = $this->load->view("students/sumup/$name", NULL, TRUE);
 		}
 		$this->load_page("students/sumup", ["sumups" => $views, "menu_links" => $this->getMenuLinks(), "title" => "Déficode : Récap' des séances", "styles" => ["main"], "scripts" => ["main"], "description" => "Récapitulatif de toutes les séances précedentes, incluant la séance courante"]);
 	}
