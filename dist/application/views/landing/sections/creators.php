@@ -2,8 +2,9 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 
+
 <div class="container-fluid">
-<h3>Un programme proposé par</h3>
+<h1>Un programme proposé par</h1>
 	<div class="row">
 	<?php foreach ($creators as $creator): ?>
 	

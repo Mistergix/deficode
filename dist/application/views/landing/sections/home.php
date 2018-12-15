@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-
-<div class="centered">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-12 col-md-6 offset-md-3">
@@ -19,4 +17,3 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 		</div>  <!-- END ROW -->
 	</div>
-</div>
