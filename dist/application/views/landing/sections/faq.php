@@ -24,4 +24,3 @@ $collapse_id = "collapse_" . uniqid();
 		<?php endforeach;?>
 	</div>
 </div><!-- END ROW --> 
-</div>
