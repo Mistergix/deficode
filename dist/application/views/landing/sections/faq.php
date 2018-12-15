@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 
 <div class="container-fluid">
-<h3>FAQ</h3>
+<h1>FAQ</h1>
 <div class="row">
 <?php foreach ($faq as $question => $answer): ?>
 		<?php

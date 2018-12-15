@@ -68,6 +68,12 @@ html {
   /* bring your own prefixes */
   transform: translate(-50%, -50%); }
 
+.card {
+  margin-bottom: .8rem; }
+
+h1 {
+  margin-bottom: 1rem; }
+
 footer {
   background-color: #6ca8c6; }
   footer, footer a {
