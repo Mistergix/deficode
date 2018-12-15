@@ -7,7 +7,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<div class="row">
 	<?php foreach ($creators as $creator): ?>
 	
-		<div class="col-12">
+		<div class="col-12 col-md-6 offset-md-3">
 			<div class="card">
 				<div class="card-body">
 					<h4 class="card-title"><?=$creator["name"];?></h4>
