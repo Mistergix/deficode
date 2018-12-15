@@ -13,6 +13,24 @@ class Students extends Basecontroller
 
 	public function index()
 	{
+		$this->load_page("students/landing_page", ["menu_links" => $this->getMenuLinks(), "title" => "Déficode : Espace élèves", "styles" => ["main"], "scripts" => ["main"], "description" => "La page d'accueil des élèves du déficode"]);
+	}
+
+	public function quizz()
+	{
+		// redirect to quizz according to date
+		$quizz_data = json_decode(file_get_contents('https://script.google.com/macros/s/AKfycbwAqcPNcb6murqs8yR_L9ou9CUplJi3ziuqAT7dsIHcinOHz6I/exec'));
+		$quizz_link = $quizz_data->quizz_link;
+		if(!isset($quizz_link))
+		{
+			show_404();
+		}
+
+		$this->load_page("students/quizz", ["quizz_link" => $quizz_link, "menu_links" => $this->getMenuLinks(), "title" => "Déficode : Quizz de la semaine", "styles" => ["main"], "scripts" => ["main"], "description" => "La page qui redirige vers le quizz de la semaine du déficode"]);
+	}
+
+	private function getMenuLinks()
+	{
 		$menu_labels = ["Accueil", "Le récap'", "Quizz", "Les séances"];
 		$menu_keys = ["", "students/sumup", "students/quizz", "students/seances"];
 		$menu_links = [];
@@ -23,6 +41,6 @@ class Students extends Basecontroller
 			$menu_links[$label] = ["url" => $key, "classes" => ""];
 		}
 
-		$this->load_page("students/landing_page", ["menu_links" => $menu_links, "title" => "Déficode : Espace élèves", "styles" => ["main"], "scripts" => ["main"], "description" => "La page d'accueil des élèves du déficode"]);
+		return $menu_links;
 	}
 }
