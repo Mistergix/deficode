@@ -45,6 +45,9 @@ class Students extends Basecontroller
 		$this->load->library('datetofile');
 		$file_names = $this->datetofile->getFilesNames("seance");
 		$dates = $this->datetofile->getDates();
+
+		$this->datetofile->generateFiles("seance", FCPATH . "application/views/students/seances");
+
 		$seances_links = [];
 		for ($i=0; $i < count($file_names); $i++) { 
 			$label = "Séance " . ($i+1) . " ($dates[$i])";
