@@ -8,17 +8,6 @@
     color: $white;
   }
 
-  &#parkours
-  {
-    .white-box
-    {
-      background-color: $white;
-      padding: 4rem;
-      color: $black;
-      border-radius: 5px;
-    }
-  }
-
   &#home {
     height: 100vh;
     color: $white;
@@ -29,6 +18,9 @@
     background-size: cover;
     background-position-x: 43%;
 
+    padding-bottom: 0;
+    padding-top: 0;
+
     .btn {
       font-family: "Roboto", cursive;
     }
@@ -36,15 +28,12 @@
     &::before {
       content: "";
       position: absolute;
-      top: 0;
+      top: $padding_top;
       right: 0;
       width: 100%;
       min-height: 100%;
       background: rgba($color: $dark_blue, $alpha: 0.7);
     }
-  }
-  &.below-menu {
-    padding-top: 3.4rem;
   }
 
 }

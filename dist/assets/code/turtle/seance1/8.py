@@ -1,21 +1,20 @@
 import turtle as trt
 
-tortue = trt.Turtle()
-
 distance = 70
+angle = 90
 
 for compteur in range(4):
 	if compteur == 0:
-		tortue.color("blue")
+		trt.color("blue")
 	elif compteur == 1:
-		tortue.color("red")
+		trt.color("red")
 	elif compteur == 2:
-		tortue.color("green")
+		trt.color("green")
 	else :
-		tortue.color("orange")
-	tortue.write(compteur)
-	tortue.forward(distance)
-	tortue.left(90)
+		trt.color("orange")
+	trt.write(compteur)
+	trt.forward(distance)
+	trt.left(angle)
 
 trt.done()
 

@@ -3,14 +3,15 @@ import turtle as trt
 tortue = trt.Turtle()
 
 distance = 70
+angle = 90
 
 tortue.forward(distance)
-tortue.left(90)
+tortue.left(angle)
 tortue.forward(distance)
-tortue.left(90)
+tortue.left(angle)
 tortue.forward(distance)
-tortue.left(90)
+tortue.left(angle)
 tortue.forward(distance)
-tortue.left(90)
+tortue.left(angle)
 
 trt.done()

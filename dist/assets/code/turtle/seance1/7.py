@@ -1,17 +1,15 @@
 import turtle as trt
 
-tortue = trt.Turtle()
-
-compteur = 1
+compteur = 0
 
 if compteur == 0:
-	tortue.color("blue")
+	trt.color("blue")
 elif compteur == 1:
-	tortue.color("red")
+	trt.color("red")
 elif compteur == 2:
-	tortue.color("green")
+	trt.color("green")
 else :
-	tortue.color("orange")
+	trt.color("orange")
 
-tortue.forward(70)
+trt.forward(70)
 trt.done()

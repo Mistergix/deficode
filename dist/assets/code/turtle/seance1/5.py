@@ -1,12 +1,11 @@
 import turtle as trt
 
-tortue = trt.Turtle()
-
 distance = 70
+angle = 90
 
 for compteur in range(4):
-	tortue.write(compteur)
-	tortue.forward(distance)
-	tortue.left(90)
+	trt.write(compteur)
+	trt.forward(distance)
+	trt.left(angle)
 
 trt.done()
