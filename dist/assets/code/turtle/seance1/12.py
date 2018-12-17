@@ -17,10 +17,13 @@ def dessinerBranche(nombreV, tailleV):
 	trt.backward(nombreV * tailleV)
 
 def dessinerFlocon(nombreBranche, nombreV, tailleV):
+	trt.pensize(6)
+	trt.color("white")
+	trt.Screen().bgcolor("turquoise")
 	for compteur in range(nombreBranche):
 		dessinerBranche(nombreV, tailleV)
 		trt.right(360/nombreBranche)
 
-dessinerFlocon(12, 20, 5)
+dessinerFlocon(6, 6, 10)
 
 trt.done()
