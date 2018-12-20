@@ -12,8 +12,10 @@ class Seances extends Basecontroller
                 // Whoops, we don't have a page for that!
                 show_404();
 		}
+
+		$editor = "Visual Studio Code";
 		
-		$this->load_page("students/seances/$page", ["menu_links" => $this->getMenuLinks(), "title" => "Déficode - Séance", "styles" => ["main"], "scripts" => ["main"], "description" => "Une séance du déficode"]);
+		$this->load_page("students/seances/$page", ["editor" => $editor, "menu_links" => $this->getMenuLinks(), "title" => "Déficode - Séance", "styles" => ["main"], "scripts" => ["main"], "description" => "Une séance du déficode"]);
 	}
 
 	private function getMenuLinks()
