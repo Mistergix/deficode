@@ -12,8 +12,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<div class="card">
 				<div class="card-body">
 					<h4 class="card-title"><?=$creator["name"];?></h4>
+					<?php if(isset($creator["description"])):?>
 					<p class="card-text"><?=$creator["description"]?></p>
+					<?php endif;?>
+					<?php if(isset($creator["website"])):?>
 					<a href="<?=$creator["website"]?>" target="_blank" rel="noopener noreferrer" class="card-link btn btn-primary btn-block">Visiter son site</a>
+					<?php endif;?>
 				</div>
 			</div>
 		</div>

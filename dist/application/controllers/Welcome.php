@@ -12,7 +12,7 @@ class Welcome extends Basecontroller
 	{
 		parent::__construct();
 		date_default_timezone_set('UTC');
-		$this->start_date = strtotime ('02-01-2019'); // dd-mm-yyyy
+		$this->start_date = strtotime ('19-12-2018'); // dd-mm-yyyy
 		$this->today = strtotime('now');
 	}
 
@@ -46,7 +46,7 @@ class Welcome extends Basecontroller
 
 	private function getCreators()
 	{
-		$julian = ["name" => "Julian MERLE", "description" => "Blabla bla. Patati patata", "website" => "#"];
+		$julian = ["name" => "Julian MERLE"];
 		$nicolas = ["name" => "Nicolas RUCHE", "description" => "Étudiant en informatique. Entrepreneur sur mon temps libre, j'aime beaucoup les activés créatives telles que le dessin ou les origamis.", "website" => "https://mistergix.github.io"];
 		return [$julian, $nicolas];
 	}
