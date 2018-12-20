@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <section class="below-menu section align-items-center d-flex" id="main">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="offset-lg-3"></div>
+			<div class="offset-lg-2"></div>
 			<?php foreach ($menu_links as $label => $link_data): ?>
 			<?php if($link_data['url'] != ""):?>
 			<div class="col-12 mt-3 col-md-4 col-lg-2">

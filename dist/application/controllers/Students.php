@@ -57,8 +57,8 @@ class Students extends Basecontroller
 
 	private function getMenuLinks()
 	{
-		$menu_labels = ["Accueil", "Le récap'", "Quizz", "Les séances"];
-		$menu_keys = ["", "students/sumup", "students/quizz", "students/seances"];
+		$menu_labels = ["Accueil", "Le récap'", "Quizz", "Les séances", "Autre"];
+		$menu_keys = ["", "students/sumup", "students/quizz", "students/seances", "students/other"];
 		$menu_links = [];
 
 		for ($i=0; $i < count($menu_labels); $i++) { 
