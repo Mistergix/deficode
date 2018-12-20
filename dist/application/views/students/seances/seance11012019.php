@@ -120,6 +120,9 @@ trt.done()
 age = 15
 					</pre>
 				</div>
+				<p class="warning">
+					Les noms que l'on donne aux variables ne doivent <strong>PAS</strong> contenir d'accents ou d'espaces.
+				</p>
 				<div class="exercice">
 					<p>
 						Crée un fichier <span class="file">carre_variable.py</span>.
@@ -416,7 +419,7 @@ trt.done()
 					C'est la <strong>définition</strong> de la fonction.
 				</p>
 				<p>
-					2) Puis on demande à l'ordinateur de dessiner des carrés. C'est <strong>l'appel</strong> de la fonction.
+					2) Puis on demande à l'ordinateur de d'exécuter la fonction, c'est-à-dire dessiner des carrés. C'est <strong>l'appel</strong> de la fonction.
 				</p>
 				<div class="exercice">
 					<p>

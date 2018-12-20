@@ -36,9 +36,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <a href="https://mistergix.github.io" target="_blank" rel="noopener noreferrer">Nicolas RUCHE <i class="fas fa-external-link-alt"></i></a>
               </li>
               <li>
-                <a href="#!" target="_blank" rel="noopener noreferrer">Julian MERLE <i class="fas fa-external-link-alt"></i></a>
-              </li>
-              <li>
                 <a href="<?= site_url("contact");?>" target="_blank" rel="noopener noreferrer">Contacts <i class="fas fa-external-link-alt"></i></a>
               </li>
             </ul>
