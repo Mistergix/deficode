@@ -55,9 +55,15 @@ class Students extends Basecontroller
 		$this->load_page("students/seances", ["seances_links" => $seances_links, "menu_links" => $this->getMenuLinks(), "title" => "Déficode : Récap' des séances", "styles" => ["main"], "scripts" => ["main"], "description" => "Récapitulatif de toutes les séances précedentes, incluant la séance courante"]);
 	}
 
+	public function other()
+	{
+		$others_links = ["Installer Python" => ["url" => "install_python"]];
+		$this->load_page("students/other", ["others_links" => $others_links, "menu_links" => $this->getMenuLinks(), "title" => "Déficode : Autres", "styles" => ["main"], "scripts" => ["main"], "description" => "Autres liens et ressources"]);
+	}
+
 	private function getMenuLinks()
 	{
-		$menu_labels = ["Accueil", "Le récap'", "Quizz", "Les séances", "Autre"];
+		$menu_labels = ["Accueil", "Le récap'", "Quizz", "Les séances", "Autres"];
 		$menu_keys = ["", "students/sumup", "students/quizz", "students/seances", "students/other"];
 		$menu_links = [];
 
