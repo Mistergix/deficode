@@ -63,5 +63,89 @@ print(phrase)
 					</div>
 				</div>
 			</div> <!-- END ROW -->
+			<div class="row white-box">
+				<div class="col-12">
+					<h1>Les booléens</h1>
+					<p>
+						On a vu qu'on peut mettre des nombres et des string dans des variables.
+					</p>
+					<p>
+						On peut aussi y mettre des <strong>booléens</strong>.
+					</p>
+					<p>
+						Un booléen permet de dire si quelque chose est vrai ou faux. Il ne peuvent donc avoir que deux valeurs : <strong>True</strong>
+						et <strong>False</strong>.
+					</p>
+					<p class="warning">
+						Certaines expressions peuvent être des booléens cachés : 15 < 16 est une comparaison, qui vaut True.
+					</p>
+					<div class="exercice">
+						<p>
+							Teste les programmes suivants :
+						</p>
+					<div class="code-box">
+						<pre>
+monstreEstVivant = True
+jaiMonPermis = False
+
+print(monstreEstVivant)
+print(jaiMonPermis)
+						</pre>
+					</div>
+					<div class="code-box">
+						<pre>
+a = 15 <= 16
+b = 12 == 14
+
+print(a)
+print(b)
+						</pre>
+					</div>
+					</div>
+					<p>
+					On peut combiner les booléens ensembles grâce aux mots-clés <code>and</code>, <code>or</code> et <code>not</code>.
+				</p>
+				<div class="exercice">
+						<p>
+							Teste les programmes suivants :
+						</p>
+					<div class="code-box">
+						<pre>
+permis = True
+plusDe18Ans = True
+
+if permis and plusDe18Ans:
+	print("Je peux conduire")
+else :
+	print("Je ne peux pas conduire")
+
+						</pre>
+					</div>
+					<div class="code-box">
+						<pre>
+roi = True
+trefle = True
+
+if roi or trefle:
+	print("J'ai un roi ou un trèfle (ou les DEUX)")
+else :
+	print("Je n'ai pas de roi et pas de trèfle")
+
+						</pre>
+					</div>
+					<div class="code-box">
+						<pre>
+perdu = False
+
+if not perdu:
+	print("Je n'ai pas perdu")
+else :
+	print("J'ai perdu")
+
+						</pre>
+					</div>
+					</div>
+				</div>
+			</div><!-- END ROW -->
 	</div>
 </main>
