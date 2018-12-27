@@ -456,5 +456,92 @@ L'ennemi est mort
 					</div>
 				</div>
 			</div><!-- END ROW -->
+			<div class="row white-box">
+				<div class="col-12">
+					<h1>Un peu de Turtle</h1>
+					<p>
+						Les turtles sont des objets, on peut en créer en écrivant <code>trt.Turtle()</code>.
+					</p>
+					<div class="exercice">
+						<p>
+							Teste le code suivant :
+						</p>
+						<div class="code-box">
+							<pre>
+import turtle as trt
+
+nicolas = trt.Turtle()
+
+nicolas.goto(200, 200)
+
+nicolas.pencolor("blue")
+nicolas.forward(20)
+nicolas.penup()
+nicolas.forward(50)
+nicolas.pendown()
+nicolas.forward(50)
+
+
+trt.done()
+
+							</pre>
+						</div>
+						<p>
+							Que fait <code>goto</code> ?
+						</p>
+						<p>
+							Que fait <code>penup</code> ?
+						</p>
+						<p>
+							Que fait <code>pendown</code> ?
+						</p>
+					</div>
+					<div class="exercice">
+						<p>
+							Teste le code suivant :
+						</p>
+						<div class="code-box">
+							<pre>
+import turtle as trt
+
+nicolas = trt.Turtle()
+julian = trt.Turtle()
+
+nicolas.pencolor("red")
+nicolas.pensize(5)
+nicolas.backward(50)
+nicolas.write("Nicolas")
+
+julian.pencolor("blue")
+julian.pensize(15)
+julian.forward(50)
+julian.write("Julian")
+
+
+trt.done()
+
+
+							</pre>
+						</div>
+						<p>
+							Que fait <code>pensize</code> ?
+						</p>
+					</div>
+				</div>
+				
+				</div><!-- END ROW -->
+				<div class="row white-box">
+				<div class="col-12">
+					<h1>Flocons en POO</h1>
+					<div class="exercice">
+						<p>
+							Télécharge ce <a href="<?= code_url("seance2/floconPOO");?>" download="floconPoo.py">fichier</a> et complète le.
+						</p>
+					</div>
+				</div>
+			</div><!-- END ROW -->
+			</div>
+
+			
 	</div>
 </main>
