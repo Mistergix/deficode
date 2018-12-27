@@ -326,6 +326,134 @@ chatMeow.Miauler()
 					<p>
 						Puis on appelle leur méthoder Miauler.
 					</p>
+
+					<p>
+						Les méthodes peuvent être appelées de partout, et peuvent prendre des arguments.
+					</p>
+					<div class="exercice">
+						<p>
+							Teste ce code :
+						</p>
+						<div class="code-box">
+							<pre>
+class Chat :
+	def __init__(self, miaulement):
+		print("Chat créé")
+		self.miaulement = miaulement
+
+	def Miauler(self):
+		print(self.miaulement)
+
+	def MiaulerPleinDeFois(self, nombre):
+		for compteur in range(nombre):
+			self.Miauler()
+
+chat = Chat("Miaou")
+
+chat.MiaulerPleinDeFois(10)
+							</pre>
+						</div>
+						<p>
+							Que se passe-t-il ?
+						</p>
+					</div>
+					<p>
+						Ici la méthode <code>MiaulerPleinDeFois</code> a un argument et elle appelle la méthode <code>Miauler</code>.
+					</p>
+				</div>
+			</div><!-- END ROW -->
+			<div class="row white-box">
+				<div class="col-12">
+					<h1>POO : La composition</h1>
+					<p>
+						Quand un objet possède un autre objet, on dit qu'on les compose.
+					</p>
+					<p>
+						Par exemple, un maître possède un chat.
+					</p>
+					<div class="exercice">
+						<p>
+							Teste ce code :
+						</p>
+						<div class="code-box">
+							<pre>
+class Chat :
+	def __init__(self, miaulement):
+		print("Chat créé")
+		self.miaulement = miaulement
+
+	def Miauler(self):
+		print(self.miaulement)
+
+	def MiaulerPleinDeFois(self, nombre):
+		for compteur in range(nombre):
+			self.Miauler()
+
+class Maitre:
+	def __init__(self, chat):
+		self.chat = chat
+
+	def NourrirChat(self):
+		print("Tiens minou")
+		self.chat.MiaulerPleinDeFois(5)
+
+chat = Chat("Miaou")
+maitre = Maitre(chat)
+
+maitre.NourrirChat()
+							</pre>
+						</div>
+						<p>
+							Que se passe-t-il ?
+						</p>
+					</div>
+					<p>
+						Quand un objet en possède un autre, il peut utiliser ses méthodes.
+					</p>
+					<p class="example">
+						Ici, le maitre possède le chat. Il peut appeler sa méthode <code>MiaulerPleinDeFois</code>.
+					</p>
+					<div class="exercice">
+						<p>
+							Copie le code suivant : 
+						</p>
+						<div class="code-box">
+							<pre>
+class Ennemi :
+	...
+class Arme:
+	...
+class Hero :
+	...
+
+degats = 10
+PV = 50
+
+epee = Arme(degats)
+hero = Hero(epee)
+ennemi = Ennemi(PV)
+
+for i in range(5):
+	hero.Attaquer(ennemi)
+
+							</pre>
+						</div>
+						<p>
+							Compléte-le de sorte qu'il affiche :
+						</p>
+						<div class="code-box">
+							<pre>
+Arme créée
+Héro créé
+Ennemi créé
+Il reste 40 PV à l'ennemi
+Il reste 30 PV à l'ennemi
+Il reste 20 PV à l'ennemi
+Il reste 10 PV à l'ennemi
+L'ennemi est mort
+							</pre>
+						</div>
+					</div>
 				</div>
 			</div><!-- END ROW -->
 	</div>
