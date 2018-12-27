@@ -144,7 +144,188 @@ else :
 
 						</pre>
 					</div>
+					<p>
+						A quoi servent <code>and</code>, <code>or</code> et <code>not</code> ?
+					</p>
 					</div>
+					<p class="warning">
+						<code>or</code> est <strong>inclusif</strong> contrairement au français. Quand on dit "Entrée OU dessert", c'est l'un ou l'autre, <strong>pas les deux</strong>. Ce <strong>ou</strong>
+						est <strong>exclusif</strong>. En Python quand on dit "roi or trefle", on peut avoir l'un ou l'autre, ou <strong>les deux</strong>.
+					</p>
+				</div>
+			</div><!-- END ROW -->
+			<div class="row white-box">
+				<div class="col-12">
+					<h1>La programmation orientée objets (POO) : Classes et instances</h1>
+					<p>
+						La POO consiste à considérer des <strong>objets</strong> et leur <strong>définition</strong>.
+					</p>
+					<p>
+						Un chat noir et un chat blanc sont deux objets différents, mais ils ont la même définition.
+					</p>
+					<p class="warning">
+						En POO, <strong>tout</strong> peut être un objet : une table, un chat, Napoléon etc.
+					</p>
+					<p>
+						En POO la définition d'un objet s'appelle sa <strong>classe</strong>, et les objets sont appelés des <strong>instances</strong>.
+					</p>
+					<p class="example">
+						Un chat noir et un chat blanc sont des instances de la classe Chat.
+					</p>
+					<p>
+						En Python, pour créer une classe, on utilise le mot <code>class</code>.
+					</p>
+					<p>
+						Pour créer des instances, on définit la fonction <code>__init__</code> dans la classe.
+					</p>
+					<div class="exercice">
+						<p>
+							Teste le code suivant :
+						</p>
+					<div class="code-box">
+						<pre>
+class Chat:
+	def __init__(self):
+		print("Chat créé")
+
+monChat = Chat()
+						</pre>
+					</div>
+					</div>
+					<p>
+						On définit ici la classe Chat et on crée une instance de cette classe : monChat.
+					</p>
+					<p>
+						<code>__init__</code> est appelée le <strong>constructeur</strong> de la classe. Il sert à définir ce qu'il se passe lors que l'on
+						<strong>crée</strong> un objet. Il a <strong>toujours au moins un argument</strong> : <code>self</code>. Ici quand on crée le chat,
+						il s'affiche une fois "Chat créé".
+					</p>
+					<p>
+						On stocke les instances dans des variables. Pour créer une instance, on écrit le nom de la classe suivi de parenthèses.
+					</p>
+				</div>
+			</div><!-- END ROW -->
+			<div class="row white-box">
+				<div class="col-12">
+					<h1>POO : Les attributs</h1>
+					<p>
+						Un chat possède une couleur qui lui est propre.
+					</p>
+					<p>
+						Les choses que possède un objet s'appellent ses <strong>attributs</strong> (ou ses champs).
+					</p>
+					<p>
+						Pour accéder à un attribut d'un objet, on écrit :
+					</p>
+					<ul>
+						<li>Dans la classe : <code>self.[nom de l'attribut]</code> (self veut dire "soi", donc ici on dit "son attribut à soi")</li>
+						<li>En dehors : <code>[nom de l'objet].[nom de l'attribut]</code></li>
+					</ul>
+					<p>
+						On peut initialiser les attributs d'un objet dans son constructeur.
+					</p>
+					<div class="exercice">
+						<p>
+							Teste ce code :
+						</p>
+						<div class="code-box">
+							<pre>
+class Chat :
+	def __init__(self, couleur):
+		print("Chat créé")
+		self.couleur = couleur
+
+chatBlanc = Chat("Blanc")
+chatNoir = Chat("Noir")
+
+print(chatBlanc.couleur)
+print(chatNoir.couleur)
+							</pre>
+						</div>
+						<p>
+							Que se passe-t-il ?
+						</p>
+					</div>
+					<p>
+						On rajoute dans les arguments du constructeur les données que l'on veut utiliser quand on crée une instance.
+					</p>
+					<p>
+						Ici on passe la couleur du chat.
+					</p>
+					<p>
+						On initialise les attributs de l'objet en écrivant : <code>self.[attribut] = valeur</code>.
+					</p>
+					<p class="example">
+						Ici on a self.couleur = couleur
+					</p>
+					<p>
+						Pour créer les instances, on met dans les parenthèses les valeurs dans le même ordre que le constructeur.
+					</p>
+					<p class="example">
+						Ici on a chatNoir = Chat("Noir")
+					</p>
+					<p class="warning">
+						On n'écrit pas le self lors de l'instanciation !
+					</p>
+					<p>
+						Enfin on peut accéder à un attribut en écrivant <code>[nom de l'objet].[nom de l'attribut]</code>.
+					</p>
+					<p class="example">
+						Ici on a chatBlanc.couleur
+					</p>
+				</div>
+			</div><!-- END ROW -->
+
+			<div class="row white-box">
+				<div class="col-12">
+					<h1>POO : Les méthodes</h1>
+					<p>
+						Un chat peut miauler.
+					</p>
+					<p>
+						On appelle <strong>méthode</strong> ce qu'un objet peut faire. C'est une fonction dans une classe.
+					</p>
+					<p>
+						Pour utiliser une méthode d'un objet, on écrit :
+					</p>
+					<ul>
+						<li>Dans la classe : <code>self.[nom de la méthode](argument1, argument2 ...)</code> (On doit passer les bons arguments, s'il y en a)</li>
+						<li>En dehors : <code>[nom de l'objet].[nom de la méthode](argument1, argument2 ...)</code></li>
+					</ul>
+					<div class="exercice">
+						<p>
+							Teste ce code :
+						</p>
+						<div class="code-box">
+							<pre>
+class Chat :
+	def __init__(self, miaulement):
+		print("Chat créé")
+		self.miaulement = miaulement
+
+	def Miauler(self):
+		print(self.miaulement)
+
+chatMiaou = Chat("Miaou")
+chatMeow = Chat("Meow")
+
+chatMiaou.Miauler()
+chatMeow.Miauler()
+							</pre>
+						</div>
+						<p>
+							Que se passe-t-il ?
+						</p>
+					</div>
+					<p>
+						On définit une méthode comme une fonction. Celle-ci se place <strong>dans</strong> la classe. Comme le constructeur, on doit mettre le <strong>self</strong>.
+					</p>
+					<p>
+						D'abord on instancie les chats avec leur miaulement.
+					</p>
+					<p>
+						Puis on appelle leur méthoder Miauler.
+					</p>
 				</div>
 			</div><!-- END ROW -->
 	</div>
