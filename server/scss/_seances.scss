@@ -36,6 +36,11 @@ main
     .exercice
     {
         background-color: #e6f4fa;
+        &::before
+        {
+            content: "Exercice : ";
+            color: 	blue;
+        }
     }
 
     .file

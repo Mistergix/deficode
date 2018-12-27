@@ -11,9 +11,9 @@ class Flocon:
 		self.tortue.color(couleur)
 
 	def AllerSansTracer(self, x, y):
-		self.tortue.penup()
-		self.tortue.goto(x, y)
-		self.tortue.pendown()
+		...
+		...
+		...
 
 	def DessinerV(self):
 		self.tortue.right(25)

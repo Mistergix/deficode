@@ -8,7 +8,7 @@ class Ennemi :
 	def PrendreDegats(self, degats):
 		self.PV = self.PV - degats
 		if self.PV > 0 :
-			print ("Il reste {0} PV à l'ennemi".format(self.PV))
+			print ("Il reste {} PV à l'ennemi".format(self.PV))
 		else :
 			print("L'ennemi est mort")
 
