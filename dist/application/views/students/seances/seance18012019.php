@@ -535,7 +535,16 @@ trt.done()
 					<h1>Flocons en POO</h1>
 					<div class="exercice">
 						<p>
-							Télécharge ce <a href="<?= code_url("seance2/floconPOO");?>" download="floconPoo.py">fichier</a> et complète le.
+							Télécharge ce <a href="<?= code_url("seance2/floconPOO");?>" download="floconPoo.py">fichier</a> et complète le :
+						</p>
+						<p>
+							Il s'agit de remplacer les ... et ??? par du code.
+						</p>
+						<p>
+							Il s'agit des flocons vus la semaine dernière, mais en POO. On peut de plus spécifier la position du flocon dans la méthode <code>Dessiner(x, y)</code>.
+						</p>
+						<p>
+							La méthode <code>AllerSansTracer</code> permet à la turtle d'aller à un endroit sans dessiner. Pense à utiliser <code>goto</code>, <code>penup</code> and <code>pendown</code>.
 						</p>
 					</div>
 				</div>

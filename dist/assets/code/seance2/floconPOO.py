@@ -36,9 +36,12 @@ class Flocon:
 		for compteur in range(...):
 			self.DessinerBranche()
 			angle = 360/...
-			self.tortue.right(...)
+			???.right(...)
 
-floconBleu = Flocon(6,4,30,5,"blue")
-floconBleu = Flocon(..., ..., ..., ..., ...)
+floconBleu = Flocon(6, 4, 30, 5, "blue")
+floconBleu.Dessiner(0, 0)
+
+monFlocon = Flocon(..., ..., ..., ..., ...)
+monFlocon.Dessiner(..., ...)
 
 trt.done()
