@@ -7,7 +7,6 @@ def triangle(distance):
 		trt.forward(distance)
 		trt.left(120)
 
-triangle(distance)
 triangle(distance/2)
 trt.forward(distance/2)
 triangle(distance/2)

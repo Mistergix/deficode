@@ -19,7 +19,6 @@ class Direction:
 	DROITE = "droite"
 	AUCUNE = "aucune"
 
-	@staticmethod
 	def DirectionOpposee(direction):
 		"""
 		Cette méthode prend une direction et en renvoit l'opposé (par exemple l'opposé de Direction.DROITE c'est Direction.GAUCHE)
@@ -37,7 +36,6 @@ class Direction:
 		# La direction passée en argument n'a pas d'opposé
 		return Direction.AUCUNE
 
-	@staticmethod
 	def DeplacementSelonDirection(direction):
 		"""
 		Cette méthode renvoit un tuple indiquant la valeur qu'on doit ajouter à une position pour aller dans cette direction.
@@ -68,7 +66,6 @@ class Position:
 		"""
 		return (..., ...)
 	
-	@staticmethod
 	def PositionAleatoire(x_min, x_max, y_min, y_max):
 		"""
 		Cette méthode renvoit une position aléatoire
@@ -81,8 +78,7 @@ class Position:
 		return Position(x, y)
 
 class Dessinateur:
-	# Permet de dessiner facile certains objets
-	@staticmethod
+	# Permet de dessiner facilement certains objets
 	def ObtenirRectangle(position, taille_rectangle):
 		"""
 		Convertit une position en le rectangle correspondant sur l'écran (Voir le site pour plus de détails)
@@ -248,6 +244,17 @@ class Serpent :
 		# Tu n'as rien à faire, c'est une méthode pour récupérer la tête du serpent
 		return self.corps.Tete()
 
+	def SeTouche(self):
+		x, y = self.Tete().position.EnTuple()
+		for membre in self.corps.???(): # On parcourt le corps du serpent, SANS la tête
+			membre_x, membre_y = membre.position.???()
+			if x == ... and ... == membre_y:
+				# Le serpent se touche
+				return ...
+
+		# on a parcourut tout le corps, le serpent ne se touche pas
+		return ...
+
 class Jeu:
 	def __init__(self):
 		"""
@@ -290,6 +297,25 @@ class Jeu:
 		position = Position.PositionAleatoire(..., ..., ..., y_max)
 		pomme = Pomme(...)
 		return ...
+
+	def SerpentToucheUnBord(self):
+		x, y = self.serpent.Tete().position.EnTuple()
+
+		if x == -1 or x == ... or y == ... or y == self.NOMBRE_CASES:
+			# Le serpent touche le bord
+			return ...
+
+		return ...
+
+	def SerpentTouchePomme(self):
+		pomme_x, pomme_y = self.???.position.EnTuple()
+		x, y = self.serpent.Tete().position.EnTuple()
+		if x ... pomme_x ... y ... pomme_y:
+			# le serpent touche la pomme
+			return ...
+
+		return ...
+		
 	
 	def Jouer(self):
 		"""
@@ -338,22 +364,12 @@ class Jeu:
 		Après on vérifie si elle touche une pomme, si oui le serpent mange la pomme et on crée une nouvelle pomme
 		Enfin on fait avancer le serpent
 		"""
-		x, y = self.serpent.Tete().position.EnTuple()
 
-		if x == -1 or x == ... or y == ... or y == self.NOMBRE_CASES:
-			# Le serpent touche le bord
+		if self.SerpentToucheUnBord() or self.serpent.SeTouche():
 			self.GAME_OVER = ...
 			return
-		
-		for membre in self.serpent.corps.???(): # On parcourt le corps du serpent, SANS la tête
-			membre_x, membre_y = membre.position.???()
-			if x == ... and ... == membre_y:
-				# Le serpent a touché un de ses membres
-				self.GAME_OVER = True
-				...
-
-		pomme_x, pomme_y = self.???.position.EnTuple()
-		if x ... pomme_x ... y ... pomme_y:
+			
+		if self.SerpentTouchePomme():
 			self.serpent.???()
 			self.??? = self.NouvellePomme()
 

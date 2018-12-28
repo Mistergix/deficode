@@ -546,7 +546,7 @@ trt.done()
 						</div>
 					</div> <!-- END IMAGES -->
 					<p>
-						Télécharge la <a href="<?= code_url("turtle/seance1/correction_seance1", "zip");?>" download="correction_seance1.zip">correction <i class="fa fa-download" aria-hidden="true"></i></a>.
+						Télécharge la <a href="<?= code_url("seance1/correction_seance1", "zip");?>" download="correction_seance1.zip">correction <i class="fa fa-download" aria-hidden="true"></i></a>.
 					</p>
 				</div>
 			</div>

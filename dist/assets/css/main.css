@@ -71,6 +71,9 @@ main {
       color: green; }
   main .exercice {
     background-color: #e6f4fa; }
+    main .exercice::before {
+      content: "Exercice : ";
+      color: blue; }
   main .file {
     background: #b3b3b3;
     padding: 0.1rem;
