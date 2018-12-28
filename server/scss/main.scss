@@ -3,6 +3,7 @@
 @import "sections";
 @import "buttons";
 @import "faq";
+@import "seances";
 
 body,
 html {
@@ -29,6 +30,23 @@ h1
   margin-bottom: 1rem;
 }
 
+.below-menu {
+  padding-top: $padding_top;
+}
+
+q
+{
+  margin: 0.4rem;
+}
+
+.white-box
+    {
+      background-color: $white;
+      padding: 1rem;
+      margin-top: 1rem;
+      color: $black;
+      border-radius: $border-radius;
+    }
 
 footer
 {

@@ -3,19 +3,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 require_once("Basecontroller.php");
 
-class Seances extends Basecontroller 
+class Others extends Basecontroller 
 {
-	public function seance($page)
+	public function other($page)
 	{
-		if ( ! file_exists(APPPATH.'views/students/seances/'.$page.'.php'))
+		if ( ! file_exists(APPPATH.'views/students/other/'.$page.'.php'))
         {
-                // Whoops, we don't have a page for that!
+				// Whoops, we don't have a page for that!
+				echo ("in");
                 show_404();
 		}
-
-		$editor = "Visual Studio Code";
 		
-		$this->load_page("students/seances/$page", ["editor" => $editor, "menu_links" => $this->getMenuLinks(), "title" => "Déficode - Séance", "styles" => ["main"], "scripts" => ["main"], "description" => "Une séance du déficode"]);
+		$this->load_page("students/other/$page", ["menu_links" => $this->getMenuLinks(), "title" => "Déficode - Séance", "styles" => ["main"], "scripts" => ["main"], "description" => "Une séance du déficode"]);
 	}
 
 	private function getMenuLinks()

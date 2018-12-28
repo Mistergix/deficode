@@ -14,7 +14,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
   gtag('config', 'UA-128603942-2');
 </script>
-
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title><?= $title; ?></title>

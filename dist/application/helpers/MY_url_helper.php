@@ -12,3 +12,8 @@ function js_url($name)
 {
     return base_url("assets/js/$name.js");
 }
+
+function code_url($name, $ext="py")
+{
+	return base_url("assets/code/$name.$ext");
+}
