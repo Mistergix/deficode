@@ -1,4 +1,5 @@
 import random as rnd
+#exercice final
 
 class Monstre:
 	def __init__(self, PV, ATK):
@@ -36,7 +37,7 @@ class Joueur:
 		if entier <= 2 :
 			return True
 		else :
-			return False  # expliquer qu'on peut directement écrire return entier <= 3
+			return False  # expliquer qu'on peut directement écrire return entier <= 2
 
 	def PrendreDegats(self, ATK):
 		if self.ParadeReussie() :
