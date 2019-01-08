@@ -415,7 +415,7 @@ maitre.NourrirChat()
 					</p>
 					<div class="exercice">
 						<p>
-							Copie le code suivant : 
+							Copie le code suivant (ne cherche pas à l'exécuter, il ne marche pas à cause des ...): 
 						</p>
 						<div class="code-box">
 							<pre>
