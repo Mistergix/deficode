@@ -46,7 +46,7 @@ class Welcome extends Basecontroller
 
 	private function getCreators()
 	{
-		$julian = ["name" => "Julian MERLE"];
+		$julian = ["name" => "Julian MERLE", "description" => "Etudiant en Informatique et en Maths, je construis une société de vente de contenus pour jeux sérieux. Je m'y connais en trains et je mange trop de saumon."];
 		$nicolas = ["name" => "Nicolas RUCHE", "description" => "Étudiant en informatique. Entrepreneur sur mon temps libre, j'aime beaucoup les activés créatives telles que le dessin ou les origamis.", "website" => "https://mistergix.github.io"];
 		return [$julian, $nicolas];
 	}
