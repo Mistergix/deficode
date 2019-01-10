@@ -13,7 +13,7 @@ class Seances extends Basecontroller
                 show_404();
 		}
 
-		$editor = "Visual Studio Code";
+		$editor = "Pyzo";
 		
 		$this->load_page("students/seances/$page", ["editor" => $editor, "menu_links" => $this->getMenuLinks(), "title" => "Déficode - Séance", "styles" => ["main"], "scripts" => ["main"], "description" => "Une séance du déficode"]);
 	}
