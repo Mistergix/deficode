@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</p>
 				<div class="exercice">
 					<p>
-						Ouvre <?= $editor; ?>.
+						Ouvre Pyzo.
 					</p>
 					<p>
 						Crée un fichier <span class="file">turtle_introdution.py</span>.
@@ -474,7 +474,7 @@ trt.done()
 				<h1>Des flocons de neige</h1>
 				<div class="exercice">
 					<p>
-						Télécharge ce <a href="<?= code_url("turtle/seance1/flocon_squelette");?>" download="flocon_squelette.py">fichier Python <i class="fa fa-download" aria-hidden="true"></i></a>.
+						Télécharge ce <a href="<?= code_url("seance1/flocon_squelette");?>" download="flocon_squelette.py">fichier Python <i class="fa fa-download" aria-hidden="true"></i></a>.
 					</p>
 					<p>
 						Complète la fonction <code>dessinerV</code> en remplaçant les ... (Tu peux t'aider des images ci-dessous). L'argument 
