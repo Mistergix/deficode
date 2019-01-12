@@ -57,8 +57,7 @@ class Students extends Basecontroller
 
 	public function other()
 	{
-		$others_links = ["Installer Python" => ["url" => "install_python"]];
-		$others_links["Installer VS Code"] = ["url" => "install_vscode"];
+		$others_links = ["Installer Python et Pyzo" => ["url" => "install_python"]];
 
 		$this->load_page("students/other", ["others_links" => $others_links, "menu_links" => $this->getMenuLinks(), "title" => "Déficode : Autres", "styles" => ["main"], "scripts" => ["main"], "description" => "Autres liens et ressources"]);
 	}
