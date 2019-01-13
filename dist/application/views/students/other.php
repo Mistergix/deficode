@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<?php foreach ($others_links as $label => $link_data): ?>
 			<?php if($link_data['url'] != ""):?>
 			<div class="col-12 mt-3 col-md-6 offset-md-3">
-				<a href="<?= site_url("others/other/" . $link_data['url']); ?>" class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer"><?= $label ?></a>
+				<a href="<?= site_url("others/other/" . $link_data['url']); ?>" class="btn btn-primary btn-block"><?= $label ?></a>
 			</div>
 			<?php endif;?>
 			<?php endforeach;?>
