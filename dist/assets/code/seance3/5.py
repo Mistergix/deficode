@@ -15,7 +15,7 @@ systeme_solaire.insert(0, "Mercure")
 print(systeme_solaire)
 
 print("Correction de Terre")
-systeme_solaire[1] = "Terre"
+systeme_solaire[2] = "Terre"
 print(systeme_solaire)
 
 print("Il y a {} planètes dans le système solaire".format(len(systeme_solaire)))
