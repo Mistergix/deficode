@@ -9,9 +9,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="col-12">
 				<h1>Le retour des fonctions: mot clef <code>return</code></h1>
         <p>
-          Le mot clef <code>return</code> est la dernière instruction qui doit être exécutée par une fonction.<br>
-          Une fois le <code>return</code> franchi, Python quitte la fonction.
-        </p>
+          Le mot clef <code>return</code> peut servir à arrêter une fonction.
+				</p>
         <p>
           Il n'est pas obligatoirement en fin de fonction.
         </p>
@@ -35,10 +34,9 @@ aEncoreFaim(1000)
             Pourquoi <code>"il y a peu de frites..."</code> n'est écrit qu'une seule fois?
           </p>
 				</div>
-        <p>
-          Il sert aussi à faire remonter des informations à celui qui a exécuter la fonction,<wbr>
-          cela se produit lorsque l'on ajoutes variables ou des objets Python après <code>return</code>.
-        </p>
+				<p>
+					On peut faire remonter des informations en plaçant une expression après <code>return</code>.
+				</p>
         <div class="example">
         <p>
           On peut retourner un élément:
