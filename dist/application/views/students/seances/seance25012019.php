@@ -333,7 +333,7 @@ print("J'ai été téléporté(e) ici : {}; TROOOOP COOL!!".format(endroit))
   		<div class="row white-box">
 				<div class="col-12">
 					<h1>La boucle <code>while</code></h1>
-          <div class="example">
+          <div class="exercice">
   					<div class="code-box">
 							<pre>
 import random as rnd
