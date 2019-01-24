@@ -77,46 +77,45 @@ print(...)
       </div>
 		</div>
     
-		<div class="row  white-box">
-				<div class="col-12">
-					<h1>Les listes <code>list</code></h1>
+		<div class="row white-box">
+			<div class="col-12">
+					<h1>Les listes</h1>
 					<p>
 						On a vu que l'on peut stocker des informations dans des variables.
 					</p>
           <p>
             Mais que faire si l'on veut écrire les courses de la semaine en Python? <br>
-            Une variable par chose à acheter? ça deviendrait ingérable rapidement.
+            Une variable par chose à acheter? Ça deviendrait ingérable rapidement.
           </p>
           <p>
-            Python nous propose la même solution que dans la vraire vie: LA LISTE
+            Python nous propose la même solution que dans la vraire vie: LA <strong>LISTE</strong> ! 
           </p>
 					<div class="example">
 						<div class="code-box">
 							<pre>
-liste_de_course = ["fromage", "gateaux", "fraises", "croissant", "papier wc", "vase", "pain"]
+liste_de_courses = ["fromage", "gateaux", "fraises", "croissant", "papier wc", "vase", "pain"]
 							</pre>
 						</div>
 					</div>
           <p>
-            Celle-ci peut contenir toutce que l'on veut:
-            <li>Des chaines de caractères</li>
+            Celle-ci peut contenir tout ce que l'on veut:
+					</p>
+					<ul>
+						<li>Des chaines de caractères</li>
             <li>Des nombres</li>
             <li>Des instances de classes</li>
-            <li>Et tout ce qui est une objet python en général</li>
-          </p>
-  				<div class="example">
-						<div class="code-box">
-							<pre>
-liste_de_course = ["fromage", "gateaux", "fraises", "croissant", "papier wc", "vase", "pain"]
-							</pre>
-						</div>
-					</div>
+            <li>Et tout ce qui est une objet Python en général</li>
+					</ul>
           <p>
             
           </p>
 					<div class="exercice">
 					</div>
-					<h2>Listes et indices</h2>
+			</div>
+		</div>
+		<div class="row white-box">
+			<div class="col-12">
+					<h1>Listes et indices</h1>
           <p class="warning">
   						L'indices i doit être inférieur à la longueur de la liste !
 					</p>
@@ -129,7 +128,11 @@ liste_de_course = ["fromage", "gateaux", "fraises", "croissant", "papier wc", "v
 					</div>
 					<div class="exercice">
 					</div>
-          <h2>Listes et boucle <code>for</code></h2>
+				</div>
+			</div>
+			<div class="row white-box">
+				<div class="col-12">
+          <h1>Listes et boucle <code>for</code></h1>
           <div class="example">
 						<div class="code-box">
 							<pre>
@@ -139,7 +142,11 @@ liste_de_course = ["fromage", "gateaux", "fraises", "croissant", "papier wc", "v
 					</div>
 					<div class="exercice">
 					</div>
-          <h2>Listes et fonctions usuelles</h2>
+				</div>
+			</div>
+			<div class="row white-box">
+				<div class="col-12">
+          <h1>Listes et fonctions usuelles</h1>
           <div class="example">
   					<div class="code-box">
 							<pre>
@@ -152,50 +159,11 @@ liste_de_course = ["fromage", "gateaux", "fraises", "croissant", "papier wc", "v
 				</div>
 			</div>
 
-			<p>
-          Mais on peut aussi retourner plusieurs trucs à la fois:
-        </p>
-  				<div class="code-box">
-						<pre>
-def f():
-  a = 1
-  b = True
-  c = "pratique"
-  
-  return a, b, c
-  
-nb, test, chaine = f()
-print(nb, test, chaine)
-						</pre>
-					</div>
-					
-					<div class="exercice">
-        <p>
-          Ecris ce code avec Pyzo et complete-le (sur les ...) pour que la fonction <code>impots(argent)</code> retourne 
-					l'argent qu'il reste après la collecte des impôts et l'argent qui a été collecté
-        </p>
-  				<div class="code-box">
-						<pre>
-def impots(argent):
-  taxe_pourcent = 33
-  
-  il_reste_ca = argent - argent * (taxe_pourcent / 100)
-  
-  return ...
-  
-... = impots(1000)
-  
-print("il me reste {} €! {}€ ont été pris.".format(...))
-						</pre>
-					</div>
-				</div>
-			
 			<div class="row white-box">
 				<div class="col-12">
 					<h1>Les tuples <code>tuple</code></h1>
-          <div class="example">
+          <div class="exercice">
   					<div class="code-box">
-            
 							<pre>
 # https://www.rapidtables.com/web/color/RGB_Color.html
 
@@ -210,39 +178,43 @@ print("Le bleu est présent à {} %".format(bleu /255 * 100))
 							</pre>
 						</div>
 					</div>
-        <div class="exercice">
-      		<div class="code-box">
-						<pre>
-class Chocolatine:
-    def __init__(self):
-        print("je suis mangé!")
-    
-    def nom(self):
-        return "CH0C0LA71N3 !!!!!"
-
-
-cadeau = (Chocolatine(), "Nicolas", "Julian")
-
-#déplier un tuple
-objet, destinataire, expediteur = cadeau
-
-#afficher un tuple
-print(cadeau)
-
-#fonction qui mange un objet de type: tuple(objet, destinataire, expediteur)
-def offrir( truc ):
-    liste_des_trucs_offert = []
-    
-    objet, destinataire, expediteur = truc
-    print("-> {} offre {} à {}. Le voici dans le return:".format(expediteur, objet.nom(), destinataire))
-    
-    return objet
-
-truc_pour_untel = offrir(cadeau)
-print(truc_pour_untel)
-						</pre>
+					<div class="example">
+							<div class="code-box">
+									<pre>
+def f():
+	a = 1
+	b = True
+	c = "pratique"
+	
+	return a, b, c
+	
+nb, test, chaine = f()
+print(nb, test, chaine)
+									</pre>
+								</div>
 					</div>
-				</div>
+					<div class="exercice">
+							<p>
+								Ecris ce code avec Pyzo et complete-le (remplace les ...) pour que la fonction <code>impots(argent)</code> retourne 
+								l'argent qu'il reste après la collecte des impôts et l'argent qui a été collecté
+							</p>
+								<div class="code-box">
+									<pre>
+def impots(argent):
+	taxe_pourcent = 33
+
+	collecte = argent * (taxe_pourcent / 100)
+	
+	il_reste_ca = argent - ...
+	
+	return ..., collecte
+
+
+il_reste_ca, ... = impots(1000)	
+print("il me reste {} €! {}€ ont été pris.".format(..., ...))
+									</pre>
+								</div>
+							</div>
 				</div>
 			</div>
 			
@@ -410,6 +382,52 @@ print("Le gobelin a atteint son objectif !")
 				</div>
 			</div>
 			
+
+
+
+
+			<div class="exercice">
+      		<div class="code-box">
+						<pre>
+class Chocolatine:
+    def __init__(self):
+        print("je suis mangé!")
+    
+    def nom(self):
+        return "CH0C0LA71N3 !!!!!"
+
+
+cadeau = (Chocolatine(), "Nicolas", "Julian")
+
+#déplier un tuple
+objet, destinataire, expediteur = cadeau
+
+#afficher un tuple
+print(cadeau)
+
+#fonction qui mange un objet de type: tuple(objet, destinataire, expediteur)
+def offrir( truc ):
+    liste_des_trucs_offert = []
+    
+    objet, destinataire, expediteur = truc
+    print("-> {} offre {} à {}. Le voici dans le return:".format(expediteur, objet.nom(), destinataire))
+    
+    return objet
+
+truc_pour_untel = offrir(cadeau)
+print(truc_pour_untel)
+						</pre>
+					</div>
+				</div>
+
+
+
+
+
+
+
+
+
 			<div class="row white-box">
 				<div class="col-12">
           <h1>Du héros et des monstres...</h1>
@@ -537,11 +555,9 @@ jeu.Jouer()
 							</pre>
 						</div>
 						<p>
-							 
 						</p>
 					</div>
 				</div>
 			</div>
-		</div>
 	</div>
 </main>
