@@ -38,9 +38,6 @@ aEncoreFaim(1000)
 					On peut faire remonter des informations en plaçant une expression après <code>return</code>.
 				</p>
         <div class="example">
-        <p>
-          On peut retourner un élément:
-        </p>
 					<div class="code-box">
 						<pre>
 def asterisque():
@@ -51,51 +48,32 @@ code = asterisque()
 print(code)
 						</pre>
 					</div>
-        <br>
-        <p>
-          Mais on peut aussi retourner plusieurs trucs à la fois:
-        </p>
-  				<div class="code-box">
-						<pre>
-def f():
-  a = 1
-  b = True
-  c = "pratique"
-  
-  return a, b, c
-  
-nb, test, chaine = f()
-print(nb, test, chaine)
-						</pre>
-					</div>
-          <p>
-            On t'invite à tester ces deux examples pour t'en convaincre !
-          </p>
 				</div>
-        <p>
-          De façon plus réelle, on peut s'en servir comme ça:
-        </p>
 				<div class="exercice">
-        <p>
-          Ecris ce code avec Pyzo et completes-le (sur les ...) pour que la fonction <code>impots(argent)</code> retourne <wbr>
-          l'argent qu'il reste après la collecte des impots et l'argent qui a été collecté
-        </p>
-  				<div class="code-box">
+					<p>
+						Voici une fonction qu'un site de recettes pourrait utiliser :
+					</p>
+					<p>
+						Quand j'écris <code>CreerRecette(3, 200, 50)</code>, la fonction renvoit la phrase : 
+						"Cassez 3 oeufs, mélangez-les avec 200 grammes de farine et 50 grammes de beurre".
+					</p>
+					<p>
+					Complète le code ci-dessus pour qu'il fonctionne.
+					</p>
+					<div class="code-box">
 						<pre>
-def impots(argent):
-  taxe_pourcent = 33
-  
-  il_reste_ca = argent - argent * (taxe_pourcent / 100)
-  
-  return ...
-  
-... = impots(1000)
-  
-print("il me reste {} €! {}€ ont été pris.".format(...))
+def CreerRecette(nombreOeufs, ..., poidsBeurre):
+		recette = "Cassez {} oeufs, mélangez-les avec {} grammes de farine et {} grammes de beurre".format(..., poidsFarine, ...)
+		... recette
+
+recette_traditionnelle = CreerRecette(3, 200, 50)
+print(recette_traditionnelle)
+
+recette_grasse = CreerRecette(3, 200, 200)
+print(...)
 						</pre>
 					</div>
 				</div>
-        
       </div>
 		</div>
     
@@ -173,6 +151,44 @@ liste_de_course = ["fromage", "gateaux", "fraises", "croissant", "papier wc", "v
 					</div>
 				</div>
 			</div>
+
+			<p>
+          Mais on peut aussi retourner plusieurs trucs à la fois:
+        </p>
+  				<div class="code-box">
+						<pre>
+def f():
+  a = 1
+  b = True
+  c = "pratique"
+  
+  return a, b, c
+  
+nb, test, chaine = f()
+print(nb, test, chaine)
+						</pre>
+					</div>
+					
+					<div class="exercice">
+        <p>
+          Ecris ce code avec Pyzo et complete-le (sur les ...) pour que la fonction <code>impots(argent)</code> retourne 
+					l'argent qu'il reste après la collecte des impôts et l'argent qui a été collecté
+        </p>
+  				<div class="code-box">
+						<pre>
+def impots(argent):
+  taxe_pourcent = 33
+  
+  il_reste_ca = argent - argent * (taxe_pourcent / 100)
+  
+  return ...
+  
+... = impots(1000)
+  
+print("il me reste {} €! {}€ ont été pris.".format(...))
+						</pre>
+					</div>
+				</div>
 			
 			<div class="row white-box">
 				<div class="col-12">
