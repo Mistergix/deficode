@@ -275,7 +275,7 @@ print("Le nombre est {}".format(nombre))
             La fonction <code>rnd.randint(min, max)</code> retourne un entier aléatoirement entre <code>min</code> inclus et <code>max</code> inclus
           </p>
 					<div class="exercice">
-          <p>Testes le code suivant:</p>
+          <p>Teste le code suivant:</p>
     				<div class="code-box">
 							<pre>
 import random as rnd
@@ -296,27 +296,26 @@ else :
 							</pre>
 						</div>
           <p>
-            Que permet-il de faire?
+            Que se passe-t-il si tu l'exécutes plusieurs fois ?
           </p>
 					</div>
-				</div>
           <p>
-            La fonction <code>rnd.choice(liste)</code> retourne un élément aléatoir de la liste!
+            La fonction <code>rnd.choice(liste)</code> retourne un élément aléatoire de la liste!
           </p>
           <p class="warning">
   						<code>liste</code> ne doit pas être vide! C'est à dire que: <code>liste != []</code>
 					</p>
   				<div class="exercice">
-          <p>Testes le code suivant:</p>
+          <p>Teste le code suivant:</p>
     				<div class="code-box">
 							<pre>
 import random as rnd
 
-endroits_cools = ["Vénus", "ma maison", "Mars", "le kébab au bout", "Saturne", "Uranus" ,"Châtelet-les Halles"]
+endroits_cools = ["Vénus", "ma maison", "Mars", "le kébab au bout", "Saturne", "Uranus" ,"Châtelet-les-Halles"]
 
 endroit = rnd.choice(endroits_cools)
 
-print("J'ai été téléporté sur {}; TROOOOP COOL!!".format(endroit))
+print("J'ai été téléporté(e) ici : {}; TROOOOP COOL!!".format(endroit))
 							</pre>
 						</div>
           <p>
@@ -325,8 +324,8 @@ print("J'ai été téléporté sur {}; TROOOOP COOL!!".format(endroit))
 					</div>
 
           <p>
-            Les fonctions de ce module te serviront et <wbr>t'accompagneront tout le temps lorsque tu fais un jeu<br>
-            Elles te permettent de donner un peu d'innatendu au joueur <wbr>et de le surprendre même lorsqu'il rejouera!
+            Les fonctions de ce module te serviront et t'accompagneront tout le temps lorsque tu fais un jeu.
+						Elles te permettent de donner un peu d'inattendu au joueur et de le surprendre même lorsqu'il rejouera!
           </p>
 				</div>
 			</div>
