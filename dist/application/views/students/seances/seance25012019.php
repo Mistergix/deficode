@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </p>
         <div class="exercice">
         <p>
-          Ecris ce code et testes le avec Pyzo:
+          Ecris ce code et testes le avec <?= $editor; ?>:
         </p>
     			<div class="code-box">
 						<pre>
@@ -79,7 +79,7 @@ print(nb, test, chaine)
         </p>
 				<div class="exercice">
         <p>
-          Ecris ce code avec Pyzo et completes-le (sur les ...) pour que la fonction <code>impots(argent)</code> retourne <wbr>
+          Ecris ce code avec <?= $editor; ?> et completes-le (sur les ...) pour que la fonction <code>impots(argent)</code> retourne <wbr>
           l'argent qu'il reste après la collecte des impots et l'argent qui a été collecté
         </p>
   				<div class="code-box">
@@ -115,59 +115,268 @@ print("il me reste {} €! {}€ ont été pris.".format(...))
             Python nous propose la même solution que dans la vraire vie: LA LISTE
           </p>
 					<div class="example">
+          <p>
+            On peut créer des liste déjà remplies:
+          </p>
 						<div class="code-box">
 							<pre>
 liste_de_course = ["fromage", "gateaux", "fraises", "croissant", "papier wc", "vase", "pain"]
 							</pre>
 						</div>
+            <p>
+              Mais aussi créer des listes vides:
+            </p>
+  					<div class="code-box">
+							<pre>
+liste_vide = []
+							</pre>
+						</div>
+					</div>
+  				<div class="exercice">
+            <p>
+              Toi aussi essaies de créer une liste!
+            </p>
+  					<div class="code-box">
+							<pre>
+ma_liste = ...
+print(ma_liste)
+							</pre>
+						</div>
 					</div>
           <p>
-            Celle-ci peut contenir toutce que l'on veut:
+            Celle-ci peut contenir tout ce que l'on veut:
+            <ul>
             <li>Des chaines de caractères</li>
             <li>Des nombres</li>
             <li>Des instances de classes</li>
             <li>Et tout ce qui est une objet python en général</li>
+            </ul>
           </p>
   				<div class="example">
 						<div class="code-box">
 							<pre>
-liste_de_course = ["fromage", "gateaux", "fraises", "croissant", "papier wc", "vase", "pain"]
+def f():
+  print("je suis f")
+  
+class Chien:
+  def __init__(self):
+    print("wouf")
+              
+tas = ["camembert", Chien, 42, True, [0, "cocotier"], f, "pain"]
 							</pre>
 						</div>
+            <p>
+              Ici, le 5e élément de<code>tas</code> est une liste, <wbr>
+              le 2e élément de <code>tas</code> est une classe, et <wbr>
+              le 6e élément de <code>tas</code> est une fonction.
+            </p>
 					</div>
           <p>
-            
+            Les listes peuvent aussi être collées les unes à la suite des autres une, une plusieurs fois avec les opérateurs + et * :
           </p>
-					<div class="exercice">
-					</div>
+      		<div class="exercice">
+            <p>
+              Testes ça!
+            </p>
+            <div class="code-box">
+						  <pre>
+objets_perdus = ["crayon HB"] + ["feutre", "cartable"] * 2 + ["le futur de mon frère"]
+print(objets_perdus)
+						  </pre>
+					  </div>
+            <p>
+              Essaies d'ajouter des éléments et de voir ce que ça donne!
+            </p>
+          </div>
+          <p>
+            Les listes, c'est encore meileur quand on les utilise pour y faire ranger des informations non pas par nous <wbr>
+            mais pas notre programme Python directement:
+          </p>
 					<h2>Listes et indices</h2>
+          <p>
+            On peut acceder à chaque élément de la liste avec ce que l'on appelle son <b>indice</b>. <br>
+            Il s'agit en fait de sa position dans la liste...
+          </p>
           <p class="warning">
-  						L'indices i doit être inférieur à la longueur de la liste !
+    					En python, le premier élément est d'indice 0
+          </p>
+    			<div class="exercice">
+              <div class="code-box">
+							  <pre>
+l = [13, 4, 7]
+print(l[0], l[1])
+							  </pre>
+						  </div>
+              <p>
+                Quel est l'affichage produit par ce bout de code?
+              </p>
+          </div>
+          <p class="warning">
+  						L'indice <code>i</code> doit être inférieur <b>strictement</b> à la longueur de la liste !
 					</p>
   				<div class="example">
 						<div class="code-box">
 							<pre>
-"""code python"""
+l = [13, 4, 7]
+print(l[3])
 							</pre>
 						</div>
+            <p>
+              Ce code génère une erreur... car la liste ne comptient que 3 élément.
+            </p>
+            <p>
+              L'indice max de cette liste <code>l</code> est en effet <code>2</code> !
+            </p>
 					</div>
 					<div class="exercice">
+            <p>
+              Reprenons l'exemple d'avant maintenant qu'on le comprends, essayons d'extraire ce qui nous intéresse de la liste!
+            </p>
+            <p>
+              Recopies le code suivant sur <?= $editor; ?>
+            </p>
+						<div class="code-box">
+							<pre>
+def f():
+  print("je suis f")
+  
+class Chien:
+  def __init__(self):
+    print("wouf")
+              
+tas = ["camembert", Chien, 42, True, [0, "cocotier"], f, "pain"]
+tas[...]()
+tas[...]()
+print(tas[...])
+							</pre>
+						</div>
+            <p>
+              Completes sur les pointilés ce qui précède,<wbr> et esssaies d'obtenir l'affichage suivant sur ta console <?= $editor; ?>:
+            </p>
+  					<div class="code-box">
+							<pre>
+wouf
+je suis f
+[0, 'cocotier']
+  						</pre>
+						</div>
+            <p class="warning">
+              Si tu obiens l'erreur <i><code>TypeError: 'str' object is not callable</code></i><wbr>
+              C'est que tu t'es trompé d'indice!
+            </p>
 					</div>
+          
           <h2>Listes et boucle <code>for</code></h2>
+          <p>
+            L'accès par indice est très utile pour parcourir une liste avec une boucle <code>for</code>
+          </p>
+        	<div class="exercice">
+            <p>
+              Essaies ça avec <?= $editor; ?> !
+            </p>
+              <div class="code-box">
+							  <pre>
+liste_ports = [8080, 943]
+for i in range(2):
+  print("virus {} envoyé sur le port {}!".format(i, liste_ports[i]))
+							  </pre>
+						  </div>
+              <p>
+                Quel est l'affichage produit par ce bout de code?<br>
+                Pourquoi avoir mis <code>range(2)</code>?
+              </p>
+          </div>
+          <p>
+            Python propose aussi un raccourcis lorsque l'on a besoin uniquement de la valeur sans l'indice.
+          </p>
           <div class="example">
 						<div class="code-box">
 							<pre>
-"""code python"""
+cool_zones = ["Dupanloup", "la boulangerie", "Châtelet-les Halles", "Sceaux", "la maison"]
+for endroit in cool_zones:
+  print("Je suis allé à {}!".format(endroit))
 							</pre>
 						</div>
+            <p>
+              <code>endroit</code> est un élément de la liste <code>cool_zones</code>. <wbr>
+              Y assigner des choses ne change pas la liste originale.<wbr>
+              C'est à dire que écrire <code>endroit = 5</code> ne sert à rien.
+            </p>
 					</div>
 					<div class="exercice">
+  					<div class="code-box">
+							<pre>
+panier = []
+liste_de_course = ["fromage", "gateaux", "fraises", "croissant", "papier wc", "vase", "pain"]
+
+liste_de_course = liste_de_course + ["pizza", "cornichons"] + ["pommes"]
+
+
+class Boulangerie:
+    def __init__(self):
+        self.produits = ["croissant", "pain", "chocolatine", "gateaux"]
+        
+class Epicerie:
+    def __init__(self):
+        self.produits = ["cornichons", "fromage", "papier wc", "pommes", "fraises", "pizza"]
+    
+class GarsChelou:
+    def __init__(self):
+        self.produits = ["vase"]
+        
+def magasiner(magasin, courses):
+#    print("j'achète des trucs chez: ", magasin)
+    panier = []
+    for produit in magasin.produits:
+        if produit in courses:
+            panier.append(produit)
+    return panier
+        
+panier_boulangerie = magasiner(Boulangerie(), liste_de_course)
+panier_epicerie    = magasiner(Epicerie()   , liste_de_course)
+panier_ruelle      = magasiner(GarsChelou() , liste_de_course)
+
+panier = panier_boulangerie + panier_epicerie + panier_ruelle
+
+print("j''ai acheté:", panier)
+							</pre>
+						</div>
 					</div>
           <h2>Listes et fonctions usuelles</h2>
           <div class="example">
   					<div class="code-box">
 							<pre>
-"""code python"""
+print("Initialisation")
+systeme_solaire = ["Vénus", "Tere", "Mars", "Jupiter", "Saturne", "Uranus", "Pluton"] # penser à préciser qu'on peut initialiser une liste vide
+print(systeme_solaire)
+
+print("Ajout de Neptune")
+systeme_solaire.append("Neptune")
+print(systeme_solaire)
+
+print("Retrait de Pluton")
+systeme_solaire.remove("Pluton")
+print(systeme_solaire)
+
+print("Insertion de Mercure")
+systeme_solaire.insert(0, "Mercure")
+print(systeme_solaire)
+
+print("Correction de Terre")
+systeme_solaire[2] = "Terre"
+print(systeme_solaire)
+
+print("Il y a {} planètes dans le système solaire".format(len(systeme_solaire)))
+
+for planete in systeme_solaire:
+  print(planete)
+
+dernier_indice = len(systeme_solaire) - 1
+derniere_planete = systeme_solaire[dernier_indice]
+print("La dernière planète du système solaire est {}".format(derniere_planete))
+
+print("Le système solaire sans la première et la dernière planète")
+print(systeme_solaire[1 : dernier_indice])
 							</pre>
 						</div>
 					</div>
