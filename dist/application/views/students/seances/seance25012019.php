@@ -5,10 +5,105 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <main class="container-fluid below-menu" id="main">
   <div class="container">
 	
-	
+		<div class="row white-box">
+			<div class="col-12">
+				<h1>Le retour des fonctions: mot clef <code>return</code></h1>
+        <p>
+          Le mot clef <code>return</code> est la dernière instruction qui doit être exécutée par une fonction.<br>
+          Une fois le <code>return</code> franchi, Python quitte la fonction.'
+        </p>
+        <p>
+          Il n'est pas obligatoire en fin de fonction.
+        </p>
+        <div class="exercice">
+        <p>
+          Ecris ce code et testes le avec Pyzo:
+        </p>
+    			<div class="code-box">
+						<pre>
+def aEncoreFaim(nb_frites):
+  if nb_frites > 42:
+    print("j'ai plus faim.")
+    return
+  print("il y a peu de frites...")
+
+aEncoreFaim(6)
+aEncoreFaim(1000)
+						</pre>
+					</div>
+          <p>
+            Pourquoi <code>"il y a peu de frites..."</code> n'est écrit qu'une seule fois?
+          </p>
+				</div>
+        <p>
+          Il sert aussi à faire remonter des informations à celui qui a exécuter la fonction,<wbr>
+          cela se produit lorsque l'on ajoutes variables ou des objets Python après <code>return</code>.
+        </p>
+        <div class="example">
+        <p>
+          On peut retourner un élément:
+        </p>
+					<div class="code-box">
+						<pre>
+def asterisque():
+  return 42
+  
+code = asterisque()
+
+print(code)
+						</pre>
+					</div>
+        <br>
+        <p>
+          Mais on peut aussi retourner plusieurs trucs à la fois:
+        </p>
+  				<div class="code-box">
+						<pre>
+def f():
+  a = 1
+  b = True
+  c = "pratique"
+  
+  return a, b, c
+  
+nb, test, chaine = f()
+print(nb, test, chaine)
+						</pre>
+					</div>
+          <p>
+            On t'invite à tester ces deux examples pour t'en convaincre !
+          </p>
+				</div>
+        <p>
+          De façon plus réelle, on peut s'en servir comme ça:
+        </p>
+				<div class="exercice">
+        <p>
+          Ecris ce code avec Pyzo et completes-le (sur les ...) pour que la fonction <code>impots(argent)</code> retourne <wbr>
+          l'argent qu'il reste après la collecte des impots et l'argent qui a été collecté
+        </p>
+  				<div class="code-box">
+						<pre>
+def impots(argent):
+  taxe_pourcent = 33
+  
+  il_reste_ca = argent - argent * (taxe_pourcent / 100)
+  
+  return ...
+  
+... = impots(1000)
+  
+print("il me reste {} €! {}€ ont été pris.".format(...))
+						</pre>
+					</div>
+				</div>
+        
+      </div>
+		</div>
+    
 		<div class="row  white-box">
 				<div class="col-12">
-					<h1>Les listes <code>List</code></h1>
+					<h1>Les listes <code>list</code></h1>
 					<p>
 						On a vu que l'on peut stocker des informations dans des variables.
 					</p>
@@ -86,67 +181,224 @@ liste_de_course = ["fromage", "gateaux", "fraises", "croissant", "papier wc", "v
 					<h1>Les tuples <code>tuple</code></h1>
           <div class="example">
   					<div class="code-box">
+            
 							<pre>
-"""code python"""
+# https://www.rapidtables.com/web/color/RGB_Color.html
+
+COULEUR = (..., ..., ...)
+
+rouge, vert, bleu = COULEUR
+
+print("Dans ma couleur :")
+print("Le rouge est présent à {} %".format(rouge /255 * 100))
+print("Le vert est présent à {} %".format(vert /255 * 100))
+print("Le bleu est présent à {} %".format(bleu /255 * 100))
 							</pre>
 						</div>
 					</div>
-					<div class="exercice">
+        <div class="exercice">
+      		<div class="code-box">
+						<pre>
+class Chocolatine:
+    def __init__(self):
+        print("je suis mangé!")
+    
+    def nom(self):
+        return "CH0C0LA71N3 !!!!!"
+
+
+cadeau = (Chocolatine(), "Nicolas", "Julian")
+
+#déplier un tuple
+objet, destinataire, expediteur = cadeau
+
+#afficher un tuple
+print(cadeau)
+
+#fonction qui mange un objet de type: tuple(objet, destinataire, expediteur)
+def offrir( truc ):
+    liste_des_trucs_offert = []
+    
+    objet, destinataire, expediteur = truc
+    print("-> {} offre {} à {}. Le voici dans le return:".format(expediteur, objet.nom(), destinataire))
+    
+    return objet
+
+truc_pour_untel = offrir(cadeau)
+print(truc_pour_untel)
+						</pre>
 					</div>
 				</div>
-			</div>
-
-			<div class="row white-box">
-				<div class="col-12">
-					<h1>La boucle <code>while</code></h1>
-          <div class="example">
-  					<div class="code-box">
-							<pre>
-"""code python"""
-							</pre>
-						</div>
-					</div>
-					<div class="exercice">
-					</div>
 				</div>
 			</div>
 			
 			<div class="row white-box">
 				<div class="col-12">
 					<h1>L'aléatoire avec <code>random</code></h1>
+          <p>
+            Random veut dire aléatoire en anglais.
+          </p>
+          <p>
+            Ce module permet de faire faire à l'ordinateur des actions nécessitant du hasard.
+          </p>
+          <p>
+            La fonction <code>rnd.random()</code> retourne un nombre à virgule aléatoirement choisi entre 0.0 inclus et 1.0 exclu. <br>
+            Le module entier a été construit autour de ce que cette fonction permet!
+          </p>
           <div class="example">
   					<div class="code-box">
 							<pre>
-"""code python"""
+import random as rnd
+
+nombre = rnd.random()
+
+print("Le nombre est {}".format(nombre))
 							</pre>
 						</div>
 					</div>
+          <p>
+            On utilise souvent d'autres fonctons plus concrètes dans nos programmes tout de même; ça permet de gagner du temps:
+          </p>
+          <p>
+            La fonction <code>rnd.randint(min, max)</code> retourne un entier aléatoirement entre <code>min</code> inclus et <code>max</code> exclu
+          </p>
 					<div class="exercice">
-					</div>
-				</div>
-			</div>
-			
-			<div class="row white-box">
-				<div class="col-12">
-					<h1>Le retour des fonctions: mot clef <code>return</code></h1>
-          <div class="example">
-  					<div class="code-box">
+          <p>Testes le code suivant:</p>
+    				<div class="code-box">
 							<pre>
-"""code python"""
+import random as rnd
+
+minimum = 1
+maximum = 6
+
+nombre = rnd.randint(minimum, maximum)
+
+print("Le nombre est {}".format(nombre))
+
+if nombre <= 3 :
+  print("En dessous ou égal à 3")
+elif nombre == 4 :
+  print("Egal à 4")
+else :
+	print("Au dessus ou égal à 5")
 							</pre>
 						</div>
-					</div>
-					<div class="exercice">
+          <p>
+            Que permet-il de faire?
+          </p>
 					</div>
 				</div>
-			</div>
-			
-<!-- ::example:: -->
-			<div class="row white-box">
-				<div class="col-12">
-					<p class="warning">
-							Tout comme on peut faire des fautes en français, on peut faire des fautes en Python !
+          <p>
+            La fonction <code>rnd.choice(liste)</code> retourne un élément aléatoir de la liste!
+          </p>
+          <p class="warning">
+  						<code>liste</code> ne doit pas être vide! C'est à dire que: <code>liste != []</code>
 					</p>
+  				<div class="exercice">
+          <p>Testes le code suivant:</p>
+    				<div class="code-box">
+							<pre>
+import random as rnd
+
+endroits_cools = ["Vénus", "ma maison", "Mars", "le kébab au bout", "Saturne", "Uranus" ,"Châtelet-les Halles"]
+
+endroit = rnd.choice(endroits_cools)
+
+print("J'ai été téléporté sur {}; TROOOOP COOL!!".format(endroit))
+							</pre>
+						</div>
+          <p>
+            Que permet-il de faire? Puis-je être téléporté sur la gare de Pau avec ce code?
+          </p>
+					</div>
+
+          <p>
+            Les fonctions de ce module te serviront et <wbr>t'accompagneront tout le temps lorsque tu fais un jeu<br>
+            Elles te permettent de donner un peu d'innatendu au joueur <wbr>et de le surprendre même lorsqu'il rejouera!
+          </p>
+				</div>
+			</div>
+			
+  		<div class="row white-box">
+				<div class="col-12">
+					<h1>La boucle <code>while</code></h1>
+          <div class="example">
+  					<div class="code-box">
+							<pre>
+import random as rnd
+
+continuer = True
+
+while continuer :
+  nombre = rnd.randint(1, 1000)
+	print(nombre)
+	if nombre < 5 :
+		continuer = False
+							</pre>
+						</div>
+					</div>
+					<div class="exercice">
+          
+    				<div class="code-box">
+							<pre>
+class Mine :
+  def __init__(self):
+		self.tresorerie = 0
+
+	def Travailler(self):
+		self.tresorerie += 10
+
+class Forge :
+	def __init__(self):
+		self.tresorerie = 0
+
+	def Travailler(self):
+		self.tresorerie += 50
+
+class Taverne :
+	def __init__(self):
+		self.tresorerie = 0
+
+	def Travailler(self):
+		self.tresorerie += 20
+
+class Gobelin:
+	def __init__(self):
+		self.mine = Mine()
+		self.forge = Forge()
+		self.taverne = Taverne()
+
+		self.objectif = 1000
+
+		print("Le gobelin veut {} pièces d'or".format(self.objectif))
+
+	def Travailler(self):
+		self.mine.Travailler()
+		self.forge.Travailler()
+		self.taverne.Travailler()
+		print("La trésorerie du gobelin est de {} pièces d'or".format(self.TotalTresorerie()))
+
+	def ObjectifAtteint(self):
+		return self.TotalTresorerie() >= self.objectif
+
+	def TotalTresorerie(self):
+		return self.mine.tresorerie + self.forge.tresorerie + self.taverne.tresorerie
+
+gobelin = Gobelin()
+
+while not gobelin.ObjectifAtteint() :
+	gobelin.Travailler()
+
+print("Le gobelin a atteint son objectif !")
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row white-box">
+				<div class="col-12">
+          <h1>Du héros et des monstres...</h1>
 					<p class="example">
 						mon_programme.py
 					</p>
@@ -162,18 +414,116 @@ liste_de_course = ["fromage", "gateaux", "fraises", "croissant", "papier wc", "v
 						</p>
 						<div class="code-box">
 							<pre>
-import turtle as trt
+import random as rnd
 
-trt.forward(50)
-trt.right(90)
-trt.backward(50)
-trt.left(90)
+class Monstre:
+  def __init__(self, PV, ATK):
+		self.PV = PV
+		self.ATK = ATK
+		self.AfficherEtat()
 
-trt.done()
+	def EstVivant(self):
+		return self.PV > 0
+
+	def AttaquerJoueur(self, joueur):
+		joueur.PrendreDegats(self.ATK)
+
+	def PrendreDegats(self, ATK):
+		self.PV -= ATK
+		print("Il reste {} PV au monstre".format(self.PV))
+
+	def AfficherEtat(self):
+		print("Le monstre a {} PV et {} ATK".format(self.PV, self.ATK))
+
+class Joueur:
+	def __init__(self, PV, ATK):
+		self.PV = PV
+		self.ATK = ATK
+		self.AfficherEtat()
+
+	def EstVivant(self):
+		return self.PV > 0
+
+	def AttaquerMonstre(self, monstre):
+		monstre.PrendreDegats(self.ATK)
+
+	def ParadeReussie(self):
+		entier = rnd.randint(1,6)
+		if entier <= 2 :
+			return True
+		else :
+			return False  # expliquer qu'on peut directement écrire return entier <= 2
+
+	def PrendreDegats(self, ATK):
+		if self.ParadeReussie() :
+			print("Le joueur a paré")
+		else :
+			self.PV -= ATK
+			print("Il reste {} PV au joueur".format(self.PV))
+
+	def AfficherEtat(self):
+		print("Le joueur a {} PV et {} ATK".format(self.PV, self.ATK))
+
+class Jeu:
+	def __init__(self):
+		pv_joueur = self.NombreAleatoireDansIntervalle((50, 200))
+		atk_joueur = self.NombreAleatoireDansIntervalle((5, 20))
+		self.joueur = Joueur(pv_joueur, atk_joueur)
+
+		nombre_monstres = self.NombreAleatoireDansIntervalle((5, 20))
+		self.monstres = []
+
+		for compteur in range(nombre_monstres):
+			pv = self.NombreAleatoireDansIntervalle((10, 30))
+			atk = self.NombreAleatoireDansIntervalle((5, 20))
+			monstre = Monstre(pv, atk)
+
+			self.monstres.append(monstre)
+
+		print()
+
+	def NombreAleatoireDansIntervalle(self, intervalle):
+		minimum, maximum = intervalle
+		nombre = rnd.randint(minimum, maximum)
+		return nombre
+
+	def IlResteDesMonstres(self):
+		return len(self.monstres) > 0
+
+	def MonstreSuivant(self):
+		print("Il reste {} monstres".format(len(self.monstres)))
+		monstre = self.monstres.pop()
+
+		monstre.AfficherEtat()
+
+		return monstre
+
+	def Jouer(self):
+		monstre = self.MonstreSuivant()
+		while self.joueur.EstVivant() and self.IlResteDesMonstres() and monstre.EstVivant():
+			self.joueur.AttaquerMonstre(monstre)
+
+			if monstre.EstVivant() :
+				monstre.AttaquerJoueur(self.joueur)
+			else :
+				print("Le monstre est mort")
+				print()
+				monstre = self.MonstreSuivant()
+
+		if self.joueur.EstVivant():
+			print("Le joueur a gagné !")
+			self.joueur.AfficherEtat()
+		else :
+			print("Les monstres ont gagné ...")
+
+		
+jeu = Jeu()
+
+jeu.Jouer()
 							</pre>
 						</div>
 						<p>
-							Que font les commandes <code>trt.forward</code>, <code>trt.backward</code>, <code>trt.left</code> et <code>trt.right</code> ?
+							 
 						</p>
 					</div>
 				</div>
