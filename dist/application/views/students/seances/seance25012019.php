@@ -217,6 +217,32 @@ print("il me reste {} €! {}€ ont été pris.".format(..., ...))
 							</div>
 				</div>
 			</div>
+
+			<div class="row white-box">
+					<div class="col-12">
+						<h1>Les nombres flottants</h1>
+						<p>
+							Un nombre flottant est un nombre à virgule.
+						</p>
+						<p class="warning">
+							En Python, on remplace la virgule par un point !
+						</p>
+						<div class="exercice">
+							<p>
+								Teste ce petit programme :
+							</p>
+							<div class="code-box">
+								<pre>
+a = 1.5
+b = 7 / 2
+
+print(a)
+print(b)
+								</pre>
+							</div>
+						</div>
+					</div>
+			</div>
 			
 			<div class="row white-box">
 				<div class="col-12">
@@ -229,7 +255,7 @@ print("il me reste {} €! {}€ ont été pris.".format(..., ...))
           </p>
           <p>
             La fonction <code>rnd.random()</code> retourne un nombre à virgule aléatoirement choisi entre 0.0 inclus et 1.0 exclu. <br>
-            Le module entier a été construit autour de ce que cette fonction permet!
+            Tout le module a été construit autour de ce que cette fonction permet!
           </p>
           <div class="example">
   					<div class="code-box">
