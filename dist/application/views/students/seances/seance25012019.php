@@ -10,14 +10,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<h1>Le retour des fonctions: mot clef <code>return</code></h1>
         <p>
           Le mot clef <code>return</code> est la dernière instruction qui doit être exécutée par une fonction.<br>
-          Une fois le <code>return</code> franchi, Python quitte la fonction.'
+          Une fois le <code>return</code> franchi, Python quitte la fonction.
         </p>
         <p>
-          Il n'est pas obligatoire en fin de fonction.
+          Il n'est pas obligatoirement en fin de fonction.
         </p>
         <div class="exercice">
         <p>
-          Ecris ce code et testes le avec Pyzo:
+          Ecris ce code et teste le avec Pyzo:
         </p>
     			<div class="code-box">
 						<pre>
