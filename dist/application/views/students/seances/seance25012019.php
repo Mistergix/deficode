@@ -254,7 +254,7 @@ print(b)
             Ce module permet de faire faire à l'ordinateur des actions nécessitant du hasard.
           </p>
           <p>
-            La fonction <code>rnd.random()</code> retourne un nombre à virgule aléatoirement choisi entre 0.0 inclus et 1.0 exclu. <br>
+            La fonction <code>rnd.random()</code> retourne un nombre flottant aléatoirement choisi entre 0.0 inclus et 1.0 exclu. <br>
             Tout le module a été construit autour de ce que cette fonction permet!
           </p>
           <div class="example">
@@ -269,10 +269,10 @@ print("Le nombre est {}".format(nombre))
 						</div>
 					</div>
           <p>
-            On utilise souvent d'autres fonctons plus concrètes dans nos programmes tout de même; ça permet de gagner du temps:
+            On utilise souvent d'autres fonctions plus pratiques dans nos programmes tout de même, ça permet de gagner du temps:
           </p>
           <p>
-            La fonction <code>rnd.randint(min, max)</code> retourne un entier aléatoirement entre <code>min</code> inclus et <code>max</code> exclu
+            La fonction <code>rnd.randint(min, max)</code> retourne un entier aléatoirement entre <code>min</code> inclus et <code>max</code> inclus
           </p>
 					<div class="exercice">
           <p>Testes le code suivant:</p>
