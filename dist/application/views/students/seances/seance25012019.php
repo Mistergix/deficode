@@ -348,68 +348,41 @@ while continuer :
 							</pre>
 						</div>
 					</div>
-					<div class="exercice">
-          
-    				<div class="code-box">
-							<pre>
-class Mine :
-  def __init__(self):
-		self.tresorerie = 0
-
-	def Travailler(self):
-		self.tresorerie += 10
-
-class Forge :
-	def __init__(self):
-		self.tresorerie = 0
-
-	def Travailler(self):
-		self.tresorerie += 50
-
-class Taverne :
-	def __init__(self):
-		self.tresorerie = 0
-
-	def Travailler(self):
-		self.tresorerie += 20
-
-class Gobelin:
-	def __init__(self):
-		self.mine = Mine()
-		self.forge = Forge()
-		self.taverne = Taverne()
-
-		self.objectif = 1000
-
-		print("Le gobelin veut {} pièces d'or".format(self.objectif))
-
-	def Travailler(self):
-		self.mine.Travailler()
-		self.forge.Travailler()
-		self.taverne.Travailler()
-		print("La trésorerie du gobelin est de {} pièces d'or".format(self.TotalTresorerie()))
-
-	def ObjectifAtteint(self):
-		return self.TotalTresorerie() >= self.objectif
-
-	def TotalTresorerie(self):
-		return self.mine.tresorerie + self.forge.tresorerie + self.taverne.tresorerie
-
-gobelin = Gobelin()
-
-while not gobelin.ObjectifAtteint() :
-	gobelin.Travailler()
-
-print("Le gobelin a atteint son objectif !")
-							</pre>
-						</div>
-					</div>
 				</div>
 			</div>
 			
-
-
-
+			<div class="row white-box">
+					<div class="col-12">
+						<h1>Le gobelin de la mine</h1>
+						<div class="exercice">
+							<p>
+								Télécharge ce <a href="<?= code_url("seance3/gobelin");?>" download="gobelin_squelette.py">fichier Python <i class="fa fa-download" aria-hidden="true"></i></a>.
+							</p>
+							<p>
+								Le gobelin possèe une mine, une forge et une taverne. Tous les jours il travaille dans les 3 établissements.
+							</p>
+							<p>
+								La mine lui rapporte 10 sous, la forge 50 et la taverne 20.
+							</p>
+							<p>
+								Il veut gagner 1000 pièce d'or.
+							</p>
+							<p>
+								Pour cela, tant qu'il n'a pas atteint son objectif, il travaille.
+							</p>
+							<p>
+									La méthode TotalTresorerie renvoit la somme des pièces d'or de la mine, de la forge et de la taverne du gobelin.
+							</p>
+							<p>
+								La méthode ObjectifAtteint renvoit True si la trésorerie du gobelin dépasse son objectif.
+							</p>
+							
+							<p>
+								Remplace les <code>...</code> et <code>???</code> dans le fichier.
+							</p>
+						</div>
+					</div>
+			</div>
 
 			<div class="exercice">
       		<div class="code-box">
