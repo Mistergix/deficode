@@ -195,8 +195,8 @@ print(nb, test, chaine)
 					</div>
 					<div class="exercice">
 							<p>
-								Ecris ce code avec Pyzo et complete-le (remplace les ...) pour que la fonction <code>impots(argent)</code> retourne 
-								l'argent qu'il reste après la collecte des impôts et l'argent qui a été collecté
+								Ecris ce code avec Pyzo et complete-le (remplace les ???) pour que la fonction <code>impots(argent)</code> retourne 
+								l'argent qu'il reste après la collecte des impôts et l'argent qui a été collecté.
 							</p>
 								<div class="code-box">
 									<pre>
@@ -205,13 +205,13 @@ def impots(argent):
 
 	collecte = argent * (taxe_pourcent / 100)
 	
-	il_reste_ca = argent - ...
+	il_reste_ca = argent - ???
 	
-	return ..., collecte
+	return ???, collecte
 
 
-il_reste_ca, ... = impots(1000)	
-print("il me reste {} €! {}€ ont été pris.".format(..., ...))
+il_reste_ca, ??? = impots(1000)	
+print("il me reste {} €! {}€ ont été pris.".format(???, ???))
 									</pre>
 								</div>
 							</div>
@@ -350,6 +350,27 @@ while continuer :
 					</div>
 				</div>
 			</div>
+
+			<div class="row white-box">
+					<div class="col-12">
+						<h1>Les commentaires</h1>
+						<p>
+							On peut rajouter des commentaires, c'est à dire du texte que Python ignore de 2 façons :
+						</p>
+						<div class="example">
+							<div class="code-box">
+								<pre>
+# Avec un hashtag (Alt Gr + 3)
+
+"""
+Ou avec 3 guillemets les uns à la suite des autres
+Tout ce qui est entre est ignoré par Python
+"""
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
 			
 			<div class="row white-box">
 					<div class="col-12">
@@ -359,7 +380,7 @@ while continuer :
 								Télécharge ce <a href="<?= code_url("seance3/gobelin");?>" download="gobelin_squelette.py">fichier Python <i class="fa fa-download" aria-hidden="true"></i></a>.
 							</p>
 							<p>
-								Le gobelin possèe une mine, une forge et une taverne. Tous les jours il travaille dans les 3 établissements.
+								Le gobelin possède une mine, une forge et une taverne. Tous les jours il travaille dans les 3 établissements.
 							</p>
 							<p>
 								La mine lui rapporte 10 sous, la forge 50 et la taverne 20.
@@ -378,184 +399,64 @@ while continuer :
 							</p>
 							
 							<p>
-								Remplace les <code>...</code> et <code>???</code> dans le fichier.
+								Remplace les <code>???</code> dans le fichier.
 							</p>
 						</div>
 					</div>
 			</div>
 
-			<div class="exercice">
-      		<div class="code-box">
-						<pre>
-class Chocolatine:
-    def __init__(self):
-        print("je suis mangé!")
-    
-    def nom(self):
-        return "CH0C0LA71N3 !!!!!"
-
-
-cadeau = (Chocolatine(), "Nicolas", "Julian")
-
-#déplier un tuple
-objet, destinataire, expediteur = cadeau
-
-#afficher un tuple
-print(cadeau)
-
-#fonction qui mange un objet de type: tuple(objet, destinataire, expediteur)
-def offrir( truc ):
-    liste_des_trucs_offert = []
-    
-    objet, destinataire, expediteur = truc
-    print("-> {} offre {} à {}. Le voici dans le return:".format(expediteur, objet.nom(), destinataire))
-    
-    return objet
-
-truc_pour_untel = offrir(cadeau)
-print(truc_pour_untel)
-						</pre>
-					</div>
-				</div>
-
-
-
-
-
-
-
-
-
 			<div class="row white-box">
-				<div class="col-12">
-          <h1>Du héros et des monstres...</h1>
-					<p class="example">
-						mon_programme.py
-					</p>
-					<div class="exercice">
-						<p>
-							Ouvre <?= $editor; ?>.
+					<div class="col-12">
+						<h1>Le héro et les monstres</h1>
+						<p class="warning">
+							Cet exercice est assez difficile !
 						</p>
-						<p>
-							Crée un fichier <span class="file">turtle_introdution.py</span>.
-						</p>
-						<p>
-							Tape le code suivant et exécute-le :
-						</p>
-						<div class="code-box">
-							<pre>
-import random as rnd
-
-class Monstre:
-  def __init__(self, PV, ATK):
-		self.PV = PV
-		self.ATK = ATK
-		self.AfficherEtat()
-
-	def EstVivant(self):
-		return self.PV > 0
-
-	def AttaquerJoueur(self, joueur):
-		joueur.PrendreDegats(self.ATK)
-
-	def PrendreDegats(self, ATK):
-		self.PV -= ATK
-		print("Il reste {} PV au monstre".format(self.PV))
-
-	def AfficherEtat(self):
-		print("Le monstre a {} PV et {} ATK".format(self.PV, self.ATK))
-
-class Joueur:
-	def __init__(self, PV, ATK):
-		self.PV = PV
-		self.ATK = ATK
-		self.AfficherEtat()
-
-	def EstVivant(self):
-		return self.PV > 0
-
-	def AttaquerMonstre(self, monstre):
-		monstre.PrendreDegats(self.ATK)
-
-	def ParadeReussie(self):
-		entier = rnd.randint(1,6)
-		if entier <= 2 :
-			return True
-		else :
-			return False  # expliquer qu'on peut directement écrire return entier <= 2
-
-	def PrendreDegats(self, ATK):
-		if self.ParadeReussie() :
-			print("Le joueur a paré")
-		else :
-			self.PV -= ATK
-			print("Il reste {} PV au joueur".format(self.PV))
-
-	def AfficherEtat(self):
-		print("Le joueur a {} PV et {} ATK".format(self.PV, self.ATK))
-
-class Jeu:
-	def __init__(self):
-		pv_joueur = self.NombreAleatoireDansIntervalle((50, 200))
-		atk_joueur = self.NombreAleatoireDansIntervalle((5, 20))
-		self.joueur = Joueur(pv_joueur, atk_joueur)
-
-		nombre_monstres = self.NombreAleatoireDansIntervalle((5, 20))
-		self.monstres = []
-
-		for compteur in range(nombre_monstres):
-			pv = self.NombreAleatoireDansIntervalle((10, 30))
-			atk = self.NombreAleatoireDansIntervalle((5, 20))
-			monstre = Monstre(pv, atk)
-
-			self.monstres.append(monstre)
-
-		print()
-
-	def NombreAleatoireDansIntervalle(self, intervalle):
-		minimum, maximum = intervalle
-		nombre = rnd.randint(minimum, maximum)
-		return nombre
-
-	def IlResteDesMonstres(self):
-		return len(self.monstres) > 0
-
-	def MonstreSuivant(self):
-		print("Il reste {} monstres".format(len(self.monstres)))
-		monstre = self.monstres.pop()
-
-		monstre.AfficherEtat()
-
-		return monstre
-
-	def Jouer(self):
-		monstre = self.MonstreSuivant()
-		while self.joueur.EstVivant() and self.IlResteDesMonstres() and monstre.EstVivant():
-			self.joueur.AttaquerMonstre(monstre)
-
-			if monstre.EstVivant() :
-				monstre.AttaquerJoueur(self.joueur)
-			else :
-				print("Le monstre est mort")
-				print()
-				monstre = self.MonstreSuivant()
-
-		if self.joueur.EstVivant():
-			print("Le joueur a gagné !")
-			self.joueur.AfficherEtat()
-		else :
-			print("Les monstres ont gagné ...")
-
-		
-jeu = Jeu()
-
-jeu.Jouer()
-							</pre>
+						<div class="exercice">
+							<p>
+								Télécharge ce <a href="<?= code_url("seance3/minirpg");?>" download="heros_et_monstres_squelette.py">fichier Python <i class="fa fa-download" aria-hidden="true"></i></a>.
+							</p>
+							<p>
+								Le monstre et le joueurs possèdent des points de vie (PV) et d'attaque (ATK).
+							</p>
+							<p>
+								La méthode EstVivant renvoit True si les PV sont plus grands que 0.
+							</p>
+							<p>
+								La méthode AttaquerJoueur(joueur) prend le joueur en argument, et appelle sa méthode PrendreDegats en utilisant l'ATK du monstre.
+							</p>
+							<p>
+								La méthode PrendreDegats du <strong>monstre</strong> lui retire autant de PV que l'argument ATK. Elle affiche aussi les PV restants du monstre.
+							</p>
+							<p>
+									La méthode AttaquerMonstre(monstre) prend un joueur en argument, et appelle sa méthode PrendreDegats en utilisant l'ATK du joueur.
+							</p>
+							<p>
+								La méthode ParadeReussie calcule un entier aléatoire entre 1 et 6 et renvoit True si le nombre est plus petit que 2.
+							</p>
+							<p>
+									La méthode PrendreDegats du <strong>joueur</strong> vérifie si la parade est réussie, si oui elle affiche "Le joueur a paré"
+									sinon elle lui retire autant de PV que l'argument ATK. Elle affiche aussi ses PV restants.
+							</p>
+							<p>
+								La classe Jeu crée un joueur dont les PV sont pris aléatoirement entre 50 et 200 et l'ATK entre 5, 20.
+							</p>
+							<p>
+								Elle crée aussi entre 5 et 20 monstres dont les PV sont entre 10 et 30 et l'ATK entre 5 et 20.
+							</p>
+							<p>
+								La méthode IlResteDesMonstres renvoit True si la taille de la liste self.monstres et plus grande que 0.
+							</p>
+							<p>
+								La méthode MonstreSuivant affiche combien de monstres il reste. Puis retire un monstre de la liste. Puis elle le renvoit.
+							</p>
+							<p>
+								La méthode Jouer est commentée directement dans le fichier.
+							</p>
+							<p>
+								Remplace les <code>???</code> dans le fichier.
+							</p>
 						</div>
-						<p>
-						</p>
 					</div>
-				</div>
 			</div>
 	</div>
 </main>
