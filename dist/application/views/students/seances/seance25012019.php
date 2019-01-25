@@ -276,7 +276,7 @@ je suis f
             </p>
               <div class="code-box">
 							  <pre>
-liste_ports = [8080, 943]
+liste_ports = [80, 8080, 943, 22]
 for i in range(2):
   print("virus {} envoyé sur le port {}!".format(i, liste_ports[i]))
 							  </pre>
@@ -292,7 +292,7 @@ for i in range(2):
           <div class="example">
 						<div class="code-box">
 							<pre>
-cool_zones = ["Dupanloup", "la boulangerie", "Châtelet-les Halles", "Sceaux", "la maison"]
+cool_zones = ["Dupanloup", "la maison", "la boulangerie", "Châtelet-les Halles", "Charleroi" ]
 for endroit in cool_zones:
   print("Je suis allé à {}!".format(endroit))
 							</pre>
@@ -304,83 +304,166 @@ for endroit in cool_zones:
             </p>
 					</div>
 					<div class="exercice">
+          <p>
+            Saisis-toi de <?= $editor; ?> et tapes le code suivant!
+            Completes la fonction <code>magasiner(magasin, courses)</code>
+            afin qu'elle <i>retourne</i> la liste des produits figurant 
+            sur la liste <code>course</code> 
+            qui sont présent parmis les <code>produits</code> 
+            du <code>magasin</code>.
+          </p>
+          <p>
+            Utilises la boucle <code>for</code>!
+          </p>
   					<div class="code-box">
 							<pre>
 panier = []
-liste_de_course = ["fromage", "gateaux", "fraises", "croissant", "papier wc", "vase", "pain"]
+liste_de_course = ["croissant", "vase", "pain"]
 
-liste_de_course = liste_de_course + ["pizza", "cornichons"] + ["pommes"]
+liste_de_course = liste_de_course + ["pizza", "cornichons"]
 
 
 class Boulangerie:
     def __init__(self):
-        self.produits = ["croissant", "pain", "chocolatine", "gateaux"]
+        self.produits = ["croissant", "pain"]
         
 class Epicerie:
     def __init__(self):
-        self.produits = ["cornichons", "fromage", "papier wc", "pommes", "fraises", "pizza"]
+        self.produits = ["cornichons", "pizza"]
     
-class GarsChelou:
+class MarchandTapis:
     def __init__(self):
         self.produits = ["vase"]
         
 def magasiner(magasin, courses):
-#    print("j'achète des trucs chez: ", magasin)
-    panier = []
-    for produit in magasin.produits:
-        if produit in courses:
-            panier.append(produit)
-    return panier
+    ...
         
 panier_boulangerie = magasiner(Boulangerie(), liste_de_course)
-panier_epicerie    = magasiner(Epicerie()   , liste_de_course)
-panier_ruelle      = magasiner(GarsChelou() , liste_de_course)
+panier_epicerie    = magasiner(Epicerie(), liste_de_course)
+panier_ruelle      = magasiner(MarchandTapis(), liste_de_course)
 
 panier = panier_boulangerie + panier_epicerie + panier_ruelle
 
 print("j''ai acheté:", panier)
 							</pre>
 						</div>
+            <p>
+              Quelle est le type du premier paramètre de la fonction <code>magasiner</code>?<br>
+              Pouvais-tu utiliser la boucle <code>for</code> autrement?
+            </p>
 					</div>
+          <p>
+            Allons maintenant nous munir de fonction pour manipuler les listes
+          </p>
           <h2>Listes et fonctions usuelles</h2>
-          <div class="example">
+          <div class="exercice">
+            <p>
+              Completes ton fichier python tout au long de l'exercice!
+            </p>
+            <p>
+              On commence d'abord par créer notre liste, comme précédemment
+            </p>
   					<div class="code-box">
 							<pre>
 print("Initialisation")
-systeme_solaire = ["Vénus", "Tere", "Mars", "Jupiter", "Saturne", "Uranus", "Pluton"] # penser à préciser qu'on peut initialiser une liste vide
+systeme_solaire = ["Vénus", "Tere", "Mars", "Jupiter", "Saturne", "Uranus", "Pluton"]
 print(systeme_solaire)
-
+  						</pre>
+						</div>
+            <p>
+              <code>systeme_solaire<b>.append(x)</b></code> permet d'ajouter un nouvel élément 
+              <code>x</code> à la fin de la liste
+            </p>
+            <p>
+              Ajoute Neptune à la liste avec <code>append</code>!
+            </p>
+    				<div class="code-box">
+							<pre>
 print("Ajout de Neptune")
-systeme_solaire.append("Neptune")
+...
 print(systeme_solaire)
-
+  						</pre>
+						</div>
+            <p>
+              <code>systeme_solaire<b>.remove(x)</b></code> permet de retirer le premier élément nommé
+              <code>x</code> de la liste
+            </p>
+            <p>
+              Retires Pluton de la lsite des planetes!
+            </p>
+    				<div class="code-box">
+							<pre>
 print("Retrait de Pluton")
-systeme_solaire.remove("Pluton")
+...
 print(systeme_solaire)
-
+  						</pre>
+						</div>
+            <p>
+              <code>systeme_solaire<b>.insert(i, x)</b></code> permet d'ajouter un nouvel élément 
+              <code>x</code> à la position <code>i</code> dans la liste.<br>
+              L'élément qui était alors en <code>i</code> se retrouve en <code>i+1</code><br>
+            </p>
+            <p>
+              Inseres Mercure en tête de liste! (indice 0)
+            </p>
+    				<div class="code-box">
+							<pre>
 print("Insertion de Mercure")
-systeme_solaire.insert(0, "Mercure")
+...
 print(systeme_solaire)
-
+  						</pre>
+						</div>
+            <p>
+              <code>systeme_solaire<b>[i]</b></code> permet donc d'obetnir ou de modifier la valeur de l'élément
+              <code>i</code> de la liste
+            </p>
+            <p>
+              Corriges la faute d'orthographe à "Tere"!
+            </p>
+    				<div class="code-box">
+							<pre>
 print("Correction de Terre")
-systeme_solaire[2] = "Terre"
+...
 print(systeme_solaire)
-
-print("Il y a {} planètes dans le système solaire".format(len(systeme_solaire)))
-
-for planete in systeme_solaire:
-  print(planete)
-
-dernier_indice = len(systeme_solaire) - 1
-derniere_planete = systeme_solaire[dernier_indice]
-print("La dernière planète du système solaire est {}".format(derniere_planete))
-
+  						</pre>
+						</div>
+            <p>
+              <code><b>len(l)</b></code> permet d'obetnir le nombre d'éléments de la liste
+            </p>
+            <p>
+              Affiches le nombre de planètes!
+            </p>
+    				<div class="code-box">
+							<pre>
+print(...)
+  						</pre>
+						</div>
+            <p>
+              <code><b>len(l) - 1</b></code> est donc le dernier indice de la liste
+            </p>
+            <p>
+              Affiches le nom de la dernière planète de la liste!
+            </p>
+    				<div class="code-box">
+							<pre>
+dernier_indice = ...
+derniere_planete = ...
+print(...)
+  						</pre>
+						</div>
+            <p>
+              <code><b>l[i : j]</b></code> permet de tronquer la liste en ne gardant que les éléments de
+              <code>l[i]</code> à <code>l[j-1]</code>
+            </p>
+            <p>
+              Affiches le nombre de planètes!
+            </p>
+    				<div class="code-box">
+							<pre>
 print("Le système solaire sans la première et la dernière planète")
-print(systeme_solaire[1 : dernier_indice])
+print(systeme_solaire[...])
 							</pre>
 						</div>
-					</div>
-					<div class="exercice">
 					</div>
 				</div>
 			</div>
@@ -388,12 +471,52 @@ print(systeme_solaire[1 : dernier_indice])
 			<div class="row white-box">
 				<div class="col-12">
 					<h1>Les tuples <code>tuple</code></h1>
-          <div class="example">
-  					<div class="code-box">
-            
+          <p>
+            Un tuple se comporte comme à liste à trois exceptions prêt:
+            <ul>
+              <li>Il est encadré par des parenthèses ( ) et non des crochets [ ]</li>
+              <li>Il ne peut pas changer de longueur</li>
+              <li>On ne peut pas changer ses élements</li>
+            </ul>
+          </p>
+          <div class="exercice">
+            <p>
+              Le tuple est ici composé de 3 éléments désignant la position d'un avion
+            </p>
+    				<div class="code-box">
 							<pre>
-# https://www.rapidtables.com/web/color/RGB_Color.html
-
+position = (11.0, 1100.2, 45.2)
+print("hauteur de l'avion: {}".format(position[1]))
+						  </pre>
+					  </div>
+            <p>
+              On souhaite faire descendre l'avion de 1.0 mètre.
+            </p>
+      			<p class="warning">
+        		 <code>position[1] = position[1] - 1</code> est illégal
+      			</p>
+            <p>
+              Pour modifier une valeur dans un tuple, 
+              on est donc obligé de refaire un nouveau tuple:
+            </p>
+      			<div class="code-box">
+							<pre>
+position = (position[0], position[1] - 1, position[2])
+print(position)
+						  </pre>
+					  </div>
+				  </div>
+          <p>
+            A ton tour de fabriquer un tuple et de découvrir une autre propriété: <b>la décomposition</b>
+          </p>
+          <div class="exercice">
+            <p>
+              Vas sur <a href="https://www.rapidtables.com/web/color/RGB_Color.html">ce site</a>,
+              choisis une couleur, puis reporte les valeurs R, G et B dans les champs
+              en pointillé:
+            </p>
+  					<div class="code-box">
+							<pre>
 COULEUR = (..., ..., ...)
 
 rouge, vert, bleu = COULEUR
@@ -402,37 +525,29 @@ print("Dans ma couleur :")
 print("Le rouge est présent à {} %".format(rouge /255 * 100))
 print("Le vert est présent à {} %".format(vert /255 * 100))
 print("Le bleu est présent à {} %".format(bleu /255 * 100))
-							</pre>
-						</div>
+						</pre>
 					</div>
+          <p>
+            Sur la 2e ligne, on remarque qu'il y a 3 variables à gauche du <code>=</code> au lieu d'une! Il s'agit
+            de la <b>décomposition</b>. Il doit y avoir <b>autant de variables à gauche que d'élément dans le tuple</b> ou
+            la liste pour que cela fonctionne.
+          </p>
+				</div>
         <div class="exercice">
+        <p>
+          Modifies la fonction <code>offrir</code> pour qu'elle retourne le nom de l'objet offert et
+          affiche qui en est le destinataire!
+        </p>
       		<div class="code-box">
 						<pre>
-class Chocolatine:
+class Nonos:
     def __init__(self):
         print("je suis mangé!")
-    
-    def nom(self):
-        return "CH0C0LA71N3 !!!!!"
 
-
-cadeau = (Chocolatine(), "Nicolas", "Julian")
-
-#déplier un tuple
-objet, destinataire, expediteur = cadeau
-
-#afficher un tuple
-print(cadeau)
-
-#fonction qui mange un objet de type: tuple(objet, destinataire, expediteur)
 def offrir( truc ):
-    liste_des_trucs_offert = []
-    
-    objet, destinataire, expediteur = truc
-    print("-> {} offre {} à {}. Le voici dans le return:".format(expediteur, objet.nom(), destinataire))
-    
-    return objet
+    ...
 
+cadeau = (Nonos(), "Nicolas", "Médor")
 truc_pour_untel = offrir(cadeau)
 print(truc_pour_untel)
 						</pre>
