@@ -507,6 +507,28 @@ print("Le vert est présent à {} %".format(vert /255 * 100))
 print("Le bleu est présent à {} %".format(bleu /255 * 100))
 						</pre>
 					</div>
+					<div class="exercice">
+							<p>
+								Ecris ce code avec Pyzo et complete-le (remplace les ???) pour que la fonction <code>impots(argent)</code> retourne 
+								l'argent qu'il reste après la collecte des impôts et l'argent qui a été collecté.
+							</p>
+								<div class="code-box">
+									<pre>
+def impots(argent):
+	taxe_pourcent = 33
+
+	collecte = argent * (taxe_pourcent / 100)
+	
+	il_reste_ca = argent - ???
+	
+	return ???, collecte
+
+
+il_reste_ca, ??? = impots(1000)	
+print("il me reste {} €! {}€ ont été pris.".format(???, ???))
+									</pre>
+								</div>
+							</div>
           <p>
             Sur la 2e ligne, on remarque qu'il y a 3 variables à gauche du <code>=</code> au lieu d'une! Il s'agit
             de la <b>décomposition</b>. Il doit y avoir <b>autant de variables à gauche que d'élément dans le tuple</b> ou
@@ -731,9 +753,7 @@ Tout ce qui est entre est ignoré par Python
 							</div>
 						</div>
 					</div>
-				</div>
-
-
+        </div>
 				<div class="row white-box">
 						<div class="col-12">
 							<h1>Les assertions</h1>
