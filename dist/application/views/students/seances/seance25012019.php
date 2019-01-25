@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </p>
         <div class="exercice">
         <p>
-          Ecris ce code et testes le avec <?= $editor; ?>:
+          Ecris ce code et teste le avec Pyzo :
         </p>
     			<div class="code-box">
 						<pre>
@@ -65,15 +65,15 @@ print(code)
 					</p>
 					<div class="code-box">
 						<pre>
-def CreerRecette(nombreOeufs, ..., poidsBeurre):
-		recette = "Cassez {} oeufs, mélangez-les avec {} grammes de farine et {} grammes de beurre".format(..., poidsFarine, ...)
-		... recette
+def CreerRecette(nombreOeufs, ???, poidsBeurre):
+		recette = "Cassez {} oeufs, mélangez-les avec {} grammes de farine et {} grammes de beurre".format(???, poidsFarine, ???)
+		??? recette
 
 recette_traditionnelle = CreerRecette(3, 200, 50)
 print(recette_traditionnelle)
 
 recette_grasse = CreerRecette(3, 200, 200)
-print(...)
+print(???)
 						</pre>
 					</div>
 				</div>
@@ -96,7 +96,7 @@ print(...)
           </p>
 					<div class="example">
           <p>
-            On peut créer des liste déjà remplies:
+            On peut créer des listes déjà remplies:
           </p>
 						<div class="code-box">
 							<pre>
@@ -114,7 +114,7 @@ liste_vide = []
 					</div>
   				<div class="exercice">
             <p>
-              Toi aussi essaies de créer une liste!
+              Toi aussi essaie de créer une liste!
             </p>
   					<div class="code-box">
 							<pre>
@@ -125,13 +125,13 @@ print(ma_liste)
 					</div>
           <p>
             Celle-ci peut contenir tout ce que l'on veut:
-            <ul>
-            <li>Des chaines de caractères</li>
+          </p>
+					<ul>
+            <li>Des chaînes de caractères</li>
             <li>Des nombres</li>
             <li>Des instances de classes</li>
             <li>Et tout ce qui est une objet Python en général</li>
             </ul>
-          </p>
   				<div class="example">
 						<div class="code-box">
 							<pre>
@@ -146,17 +146,17 @@ tas = ["camembert", Chien, 42, True, [0, "cocotier"], f, "pain"]
 							</pre>
 						</div>
             <p>
-              Ici, le 5e élément de<code>tas</code> est une liste, <wbr>
-              le 2e élément de <code>tas</code> est une classe, et <wbr>
+              Ici, le 5e élément de <code>tas</code> est une liste, 
+              le 2e élément de <code>tas</code> est une classe, et 
               le 6e élément de <code>tas</code> est une fonction.
             </p>
 					</div>
           <p>
-            Les listes peuvent aussi être collées les unes à la suite des autres une, une plusieurs fois avec les opérateurs + et * :
+            Les listes peuvent aussi être collées les unes à la suite des autres avec les opérateurs + et * :
           </p>
       		<div class="exercice">
             <p>
-              Testes ça!
+              Teste ça!
             </p>
             <div class="code-box">
 						  <pre>
@@ -165,16 +165,21 @@ print(objets_perdus)
 						  </pre>
 					  </div>
             <p>
-              Essaies d'ajouter des éléments et de voir ce que ça donne!
+              Essaie d'ajouter des éléments et de voir ce que ça donne!
             </p>
           </div>
-          <p>
-            Les listes, c'est encore meileur quand on les utilise pour y faire ranger des informations non pas par nous <wbr>
-            mais pas notre programme Python directement:
+					</div>
+		</div>
+    
+		<div class="row white-box">
+			<div class="col-12">
+					<h1>Listes et indices</h1>
+					<p>
+            Les listes, c'est encore meilleur quand on les utilise pour y faire ranger des informations non pas par nous
+            mais par Python directement !
           </p>
-					<h2>Listes et indices</h2>
           <p>
-            On peut acceder à chaque élément de la liste avec ce que l'on appelle son <b>indice</b>. <br>
+            On peut accéder à chaque élément de la liste avec ce que l'on appelle son <b>indice</b>.
             Il s'agit en fait de sa position dans la liste...
           </p>
           <p class="warning">
@@ -183,8 +188,8 @@ print(objets_perdus)
     			<div class="exercice">
               <div class="code-box">
 							  <pre>
-l = [13, 4, 7]
-print(l[0], l[1])
+ma_liste = [13, 4, 7]
+print(ma_liste[0], ma_liste[1])
 							  </pre>
 						  </div>
               <p>
@@ -197,151 +202,103 @@ print(l[0], l[1])
   				<div class="example">
 						<div class="code-box">
 							<pre>
-l = [13, 4, 7]
-print(l[3])
+ma_liste = [13, 4, 7]
+print(ma_liste[3])
 							</pre>
 						</div>
             <p>
-              Ce code génère une erreur... car la liste ne comptient que 3 élément.
+              Ce code génère une erreur... car la liste ne contient que 3 éléments.
             </p>
             <p>
-              L'indice max de cette liste <code>l</code> est en effet <code>2</code> !
+              L'indice max de cette liste <code>ma_liste</code> est en effet <code>2</code> !
             </p>
 					</div>
-					<div class="exercice">
-            <p>
-              Reprenons l'exemple d'avant maintenant qu'on le comprends, essayons d'extraire ce qui nous intéresse de la liste!
-            </p>
-            <p>
-              Recopies le code suivant sur <?= $editor; ?>
-            </p>
-						<div class="code-box">
-							<pre>
-def f():
-  print("je suis f")
-  
-class Chien:
-  def __init__(self):
-    print("wouf")
-              
-tas = ["camembert", Chien, 42, True, [0, "cocotier"], f, "pain"]
-tas[...]()
-tas[...]()
-print(tas[...])
-							</pre>
-						</div>
-            <p>
-              Completes sur les pointilés ce qui précède,<wbr> et esssaies d'obtenir l'affichage suivant sur ta console <?= $editor; ?>:
-            </p>
-  					<div class="code-box">
-							<pre>
-wouf
-je suis f
-[0, 'cocotier']
-  						</pre>
-						</div>
-            <p class="warning">
-              Si tu obiens l'erreur <i><code>TypeError: 'str' object is not callable</code></i><wbr>
-              C'est que tu t'es trompé d'indice!
-            </p>
-					</div>
-          
-          <h2>Listes et boucle <code>for</code></h2>
+          </div>
+		</div>
+    
+		<div class="row white-box">
+			<div class="col-12">
+          <h1>Listes et boucle <code>for</code></h1>
           <p>
             L'accès par indice est très utile pour parcourir une liste avec une boucle <code>for</code>
           </p>
         	<div class="exercice">
             <p>
-              Essaies ça avec <?= $editor; ?> !
+              Essaie ça avec Pyzo !
             </p>
               <div class="code-box">
 							  <pre>
 liste_ports = [80, 8080, 943, 22]
-for i in range(2):
+for i in range(3):
   print("virus {} envoyé sur le port {}!".format(i, liste_ports[i]))
 							  </pre>
 						  </div>
               <p>
-                Quel est l'affichage produit par ce bout de code?<br>
-                Pourquoi avoir mis <code>range(2)</code>?
+                Quel est l'affichage produit par ce bout de code?
               </p>
+							<p>
+								Que se passe-t-il si on met <code>range(4)</code> ? Pourquoi ?
+							</p>
           </div>
           <p>
-            Python propose aussi un raccourcis lorsque l'on a besoin uniquement de la valeur sans l'indice.
+            Python propose aussi un raccourci lorsque l'on a besoin uniquement de la valeur sans l'indice.
           </p>
-          <div class="example">
+          <div class="exercice">
+					<p>
+						Teste ce code :
+					</p>
 						<div class="code-box">
 							<pre>
-cool_zones = ["Dupanloup", "la maison", "la boulangerie", "Châtelet-les Halles", "Charleroi" ]
+endroits_cools = ["Dupanloup", "la maison", "la boulangerie", "Châtelet-les Halles", "Charleroi" ]
 for endroit in cool_zones:
   print("Je suis allé à {}!".format(endroit))
 							</pre>
 						</div>
             <p>
-              <code>endroit</code> est un élément de la liste <code>cool_zones</code>. <wbr>
-              Y assigner des choses ne change pas la liste originale.<wbr>
-              C'est à dire que écrire <code>endroit = 5</code> ne sert à rien.
+              <code>endroit</code> est un élément de la liste <code>cool_zones</code>. 
+              Y assigner des choses ne change pas la liste originale.
+              C'est à dire qu'écrire <code>endroit = 5</code> ne sert à rien.
             </p>
 					</div>
-					<div class="exercice">
-          <p>
-            Saisis-toi de <?= $editor; ?> et tapes le code suivant!
-            Completes la fonction <code>magasiner(magasin, courses)</code>
-            afin qu'elle <i>retourne</i> la liste des produits figurant 
-            sur la liste <code>course</code> 
-            qui sont présent parmis les <code>produits</code> 
-            du <code>magasin</code>.
-          </p>
-          <p>
-            Utilises la boucle <code>for</code>!
-          </p>
-  					<div class="code-box">
-							<pre>
-panier = []
-liste_de_course = ["croissant", "vase", "pain"]
-
-liste_de_course = liste_de_course + ["pizza", "cornichons"]
-
-
-class Boulangerie:
-    def __init__(self):
-        self.produits = ["croissant", "pain"]
-        
-class Epicerie:
-    def __init__(self):
-        self.produits = ["cornichons", "pizza"]
+					</div>
+		</div>
     
-class MarchandTapis:
-    def __init__(self):
-        self.produits = ["vase"]
-        
-def magasiner(magasin, courses):
-    ...
-        
-panier_boulangerie = magasiner(Boulangerie(), liste_de_course)
-panier_epicerie    = magasiner(Epicerie(), liste_de_course)
-panier_ruelle      = magasiner(MarchandTapis(), liste_de_course)
-
-panier = panier_boulangerie + panier_epicerie + panier_ruelle
-
-print("j''ai acheté:", panier)
-							</pre>
-						</div>
-            <p>
-              Quelle est le type du premier paramètre de la fonction <code>magasiner</code>?<br>
-              Pouvais-tu utiliser la boucle <code>for</code> autrement?
-            </p>
-					</div>
-          <p>
-            Allons maintenant nous munir de fonction pour manipuler les listes
+		<div class="row white-box">
+			<div class="col-12">
+          <h1>Listes et fonctions usuelles</h1>
+					<p>
+            Allons maintenant nous munir de fonctions pour manipuler les listes.
           </p>
-          <h2>Listes et fonctions usuelles</h2>
+					<ul>
+						<li><code>liste<b>.append(x)</b></code> permet d'ajouter un nouvel élément 
+								<code>x</code> à la fin de la liste.</li>
+						<li>
+								<code>liste<b>.remove(x)</b></code> permet de retirer le premier élément
+								<code>x</code> de la liste.
+							</li>
+							<li>
+						Le mot-clé <code>in</code> permet de vérifier si un élément est dans la liste.
+            </li>
+						<li>
+						<code>liste<b>.insert(i, x)</b></code> permet d'insérer un nouvel élément 
+              <code>x</code> à la position <code>i</code> dans la liste.
+              L'élément qui était alors en <code>i</code> se retrouve en <code>i+1</code>
+						</li>
+						<li>
+						<code><b>len(liste)</b></code> permet d'obtenir le nombre d'éléments de la liste.
+						</li>
+						<li>
+						<code><b>len(liste) - 1</b></code> est donc le dernier indice de la liste.
+						</li>
+						<li><code><b>liste[i : j]</b></code> permet de tronquer la liste en ne gardant que les éléments de
+              <code>liste[i]</code> à <code>liste[j-1]</code>.</li>
+					</ul>
           <div class="exercice">
             <p>
-              Completes ton fichier python tout au long de l'exercice!
+              Crée un fichier Python et complète le tout au long de l'exercice!
             </p>
             <p>
-              On commence d'abord par créer notre liste, comme précédemment
+              On commence d'abord par créer notre liste, comme précédemment.
             </p>
   					<div class="code-box">
 							<pre>
@@ -350,10 +307,6 @@ systeme_solaire = ["Vénus", "Tere", "Mars", "Jupiter", "Saturne", "Uranus", "Pl
 print(systeme_solaire)
   						</pre>
 						</div>
-            <p>
-              <code>systeme_solaire<b>.append(x)</b></code> permet d'ajouter un nouvel élément 
-              <code>x</code> à la fin de la liste
-            </p>
             <p>
               Ajoute Neptune à la liste avec <code>append</code>!
             </p>
@@ -365,86 +318,81 @@ print(systeme_solaire)
   						</pre>
 						</div>
             <p>
-              <code>systeme_solaire<b>.remove(x)</b></code> permet de retirer le premier élément nommé
-              <code>x</code> de la liste
-            </p>
-            <p>
-              Retires Pluton de la lsite des planetes!
+              Retire Pluton de la liste des planètes!
             </p>
     				<div class="code-box">
 							<pre>
 print("Retrait de Pluton")
-...
+systeme_solaire.???("Pluton")
 print(systeme_solaire)
   						</pre>
 						</div>
             <p>
-              <code>systeme_solaire<b>.insert(i, x)</b></code> permet d'ajouter un nouvel élément 
-              <code>x</code> à la position <code>i</code> dans la liste.<br>
-              L'élément qui était alors en <code>i</code> se retrouve en <code>i+1</code><br>
+              Ajoute ce code pour vérifier si Pluton est dans la liste :
             </p>
+    				<div class="code-box">
+							<pre>
+if "Pluton" in systeme_solaire :
+	print("Pluton est dedans")
+else :
+	print("Pluton n'est pas dedans")
+  						</pre>
+						</div>
             <p>
-              Inseres Mercure en tête de liste! (indice 0)
+              Insère Mercure en tête de liste! (indice 0)
             </p>
     				<div class="code-box">
 							<pre>
 print("Insertion de Mercure")
-...
+systeme_solaire.???(???, ???)
 print(systeme_solaire)
   						</pre>
 						</div>
             <p>
-              <code>systeme_solaire<b>[i]</b></code> permet donc d'obetnir ou de modifier la valeur de l'élément
-              <code>i</code> de la liste
+              <code>systeme_solaire<b>[i]</b></code> permet donc d'obtenir ou de modifier la valeur de l'élément
+              <code>i</code> de la liste.
             </p>
             <p>
-              Corriges la faute d'orthographe à "Tere"!
+              Corrige la faute d'orthographe à "Tere"!
             </p>
     				<div class="code-box">
 							<pre>
 print("Correction de Terre")
-...
+??? = "Terre"
 print(systeme_solaire)
   						</pre>
 						</div>
             <p>
-              <code><b>len(l)</b></code> permet d'obetnir le nombre d'éléments de la liste
-            </p>
-            <p>
-              Affiches le nombre de planètes!
+              Affiche le nombre de planètes!
             </p>
     				<div class="code-box">
 							<pre>
-print(...)
+print("Il y a {} planètes".format(???))
   						</pre>
 						</div>
             <p>
-              <code><b>len(l) - 1</b></code> est donc le dernier indice de la liste
-            </p>
-            <p>
-              Affiches le nom de la dernière planète de la liste!
+              Affiche le nom de la dernière planète de la liste!
             </p>
     				<div class="code-box">
 							<pre>
-dernier_indice = ...
-derniere_planete = ...
-print(...)
+dernier_indice = ???
+derniere_planete = ???
+print(derniere_planete)
   						</pre>
 						</div>
             <p>
-              <code><b>l[i : j]</b></code> permet de tronquer la liste en ne gardant que les éléments de
-              <code>l[i]</code> à <code>l[j-1]</code>
-            </p>
-            <p>
-              Affiches le nombre de planètes!
+              Affiche le système solaire sans la première et la dernière planète :
             </p>
     				<div class="code-box">
 							<pre>
 print("Le système solaire sans la première et la dernière planète")
-print(systeme_solaire[...])
+premier_indice = ???
+dernier_indice = ???
+print(systeme_solaire[??? : ???])
 							</pre>
 						</div>
 					</div>
+					
 				</div>
 			</div>
 			
@@ -459,57 +407,49 @@ print(systeme_solaire[...])
               <li>On ne peut pas changer ses élements</li>
             </ul>
           </p>
-          <div class="exercice">
+          <div class="example">
             <p>
               Le tuple est ici composé de 3 éléments désignant la position d'un avion
             </p>
     				<div class="code-box">
 							<pre>
 position = (11.0, 1100.2, 45.2)
-print("hauteur de l'avion: {}".format(position[1]))
 						  </pre>
 					  </div>
+					</div>
+						<p>
+							On peut décomposer un tuple :
+						</p>
+						<div class="example">
+    				<div class="code-box">
+							<pre>
+x, y, z = position
+						  </pre>
+					  </div>
+					</div>
+					<p class="warning">
+					Il doit y avoir <b>autant de variables à gauche que d'éléments dans le tuple</b> pour que cela fonctionne.
+          </p>
             <p>
               On souhaite faire descendre l'avion de 1.0 mètre.
             </p>
-      			<p class="warning">
-        		 <code>position[1] = position[1] - 1</code> est illégal
-      			</p>
             <p>
               Pour modifier une valeur dans un tuple, 
-              on est donc obligé de refaire un nouveau tuple:
+              on est obligé de refaire un nouveau tuple:
             </p>
+						<div class="example">
       			<div class="code-box">
 							<pre>
-position = (position[0], position[1] - 1, position[2])
+x, y, z = position
+y = y - 1
+position = (x, y, z)
 print(position)
 						  </pre>
 					  </div>
-				  </div>
-          <p>
-            A ton tour de fabriquer un tuple et de découvrir une autre propriété: <b>la décomposition</b>
-          </p>
-          <div class="exercice">
-            <p>
-              Vas sur <a href="https://www.rapidtables.com/web/color/RGB_Color.html">ce site</a>,
-              choisis une couleur, puis reporte les valeurs R, G et B dans les champs
-              en pointillé:
-            </p>
-  					<div class="code-box">
-							<pre>
-COULEUR = (..., ..., ...)
-
-rouge, vert, bleu = COULEUR
-
-print("Dans ma couleur :")
-print("Le rouge est présent à {} %".format(rouge /255 * 100))
-print("Le vert est présent à {} %".format(vert /255 * 100))
-print("Le bleu est présent à {} %".format(bleu /255 * 100))
-						</pre>
 					</div>
 					<div class="exercice">
 							<p>
-								Ecris ce code avec Pyzo et complete-le (remplace les ???) pour que la fonction <code>impots(argent)</code> retourne 
+								Complète ce code (remplace les ???) pour que la fonction <code>impots(argent)</code> retourne 
 								l'argent qu'il reste après la collecte des impôts et l'argent qui a été collecté.
 							</p>
 								<div class="code-box">
@@ -521,7 +461,7 @@ def impots(argent):
 	
 	il_reste_ca = argent - ???
 	
-	return ???, collecte
+	return (???, collecte)
 
 
 il_reste_ca, ??? = impots(1000)	
@@ -529,76 +469,10 @@ print("il me reste {} €! {}€ ont été pris.".format(???, ???))
 									</pre>
 								</div>
 							</div>
-          <p>
-            Sur la 2e ligne, on remarque qu'il y a 3 variables à gauche du <code>=</code> au lieu d'une! Il s'agit
-            de la <b>décomposition</b>. Il doit y avoir <b>autant de variables à gauche que d'élément dans le tuple</b> ou
-            la liste pour que cela fonctionne.
-          </p>
-		</div>
-		<p>
-			Tuples et fonctions
-		</p>
-					<div class="example">
-							<div class="code-box">
-									<pre>
-def f():
-	a = 1
-	b = True
-	c = "pratique"
-	
-	return a, b, c
-	
-nb, test, chaine = f()
-print(nb, test, chaine)
-									</pre>
-								</div>
-					</div>
-					<div class="exercice">
-							<p>
-								Ecris ce code avec Pyzo et complete-le (remplace les ???) pour que la fonction <code>impots(argent)</code> retourne 
-								l'argent qu'il reste après la collecte des impôts et l'argent qui a été collecté.
-							</p>
-								<div class="code-box">
-									<pre>
-def impots(argent):
-	taxe_pourcent = 33
-
-	collecte = argent * (taxe_pourcent / 100)
-	
-	il_reste_ca = argent - ???
-	
-	return ???, collecte
-
-
-il_reste_ca, ??? = impots(1000)	
-print("il me reste {} €! {}€ ont été pris.".format(???, ???))
-									</pre>
-								</div>
-							</div>
-		
-		
-        <div class="exercice">
-        <p>
-          Modifies la fonction <code>offrir</code> pour qu'elle retourne le nom de l'objet offert et
-          affiche qui en est le destinataire!
-        </p>
-      		<div class="code-box">
-						<pre>
-class Nonos:
-    def __init__(self):
-        print("je suis mangé!")
-
-def offrir( truc ):
-    ...
-
-cadeau = (Nonos(), "Nicolas", "Médor")
-truc_pour_untel = offrir(cadeau)
-print(truc_pour_untel)
-						</pre>
-					</div>
-				</div>
+        
 				</div>
 			</div>
+
 
 			<div class="row white-box">
 					<div class="col-12">
@@ -636,22 +510,7 @@ print(b)
             Ce module permet de faire faire à l'ordinateur des actions nécessitant du hasard.
           </p>
           <p>
-            La fonction <code>rnd.random()</code> retourne un nombre flottant aléatoirement choisi entre 0.0 inclus et 1.0 exclu. <br>
-            Tout le module a été construit autour de ce que cette fonction permet!
-          </p>
-          <div class="example">
-  					<div class="code-box">
-							<pre>
-import random as rnd
-
-nombre = rnd.random()
-
-print("Le nombre est {}".format(nombre))
-							</pre>
-						</div>
-					</div>
-          <p>
-            On utilise souvent d'autres fonctions plus pratiques dans nos programmes tout de même, ça permet de gagner du temps:
+            On utilise souvent des fonctions pratiques dans nos programmes, ça permet de gagner du temps:
           </p>
           <p>
             La fonction <code>rnd.randint(min, max)</code> retourne un entier aléatoirement entre <code>min</code> inclus et <code>max</code> inclus
@@ -681,7 +540,6 @@ else :
             Que se passe-t-il si tu l'exécutes plusieurs fois ?
           </p>
 					</div>
-				</div>
           <p>
             La fonction <code>rnd.choice(liste)</code> retourne un élément aléatoire de la liste!
           </p>
@@ -716,6 +574,9 @@ print("J'ai été téléporté(e) ici : {}; TROOOOP COOL!!".format(endroit))
   		<div class="row white-box">
 				<div class="col-12">
 					<h1>La boucle <code>while</code></h1>
+					<p>
+						La boucle <code>while</code> permet de répéter du code <strong>tant que</strong> une certaine condition est vraie.
+					</p>
           <div class="exercice">
   					<div class="code-box">
 							<pre>
@@ -858,7 +719,27 @@ for diviseur in diviseurs :
 						</div>
 					</div>
 			</div>
-
+<div class="row white-box">
+					<div class="col-12">
+					<h1>Une liste de courses</h1>
+					<div class="exercice">
+          	<p>
+								Télécharge ce <a href="<?= code_url("seance3/panier");?>" download="panier_squelette.py">fichier Python <i class="fa fa-download" aria-hidden="true"></i></a>.
+						</p>
+						<p>
+							Complète la fonction <code>magasiner(magasin, courses)</code>
+							afin qu'elle <i>retourne</i> la liste des produits figurant 
+							sur la liste <code>courses</code> 
+							qui sont présents parmi les <code>produits</code> 
+							du <code>magasin</code>. 
+            	Utilises la boucle <code>for</code>!
+						</p>
+            <p>
+              Peux-tu utiliser la boucle <code>for</code> autrement?
+            </p>
+					</div>
+					</div>
+					</div>
 			<div class="row white-box">
 					<div class="col-12">
 						<h1>Le héro et les monstres</h1>

@@ -17,12 +17,11 @@ class GarsChelou:
         self.produits = ["vase"]
         
 def magasiner(magasin, courses):
-#    print("j'achète des trucs chez: ", magasin)
-    panier = []
-    for produit in magasin.produits:
-        if produit in courses:
-            panier.append(produit)
-    return panier
+	panier = []
+	for produit in magasin.produits:
+		if produit in courses:
+			panier.append(produit)
+	return panier
         
 panier_boulangerie = magasiner(Boulangerie(), liste_de_course)
 panier_epicerie    = magasiner(Epicerie()   , liste_de_course)
