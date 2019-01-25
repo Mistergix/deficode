@@ -223,8 +223,9 @@ import turtle as trt
 
 a = 100
 b = 25
+c = a + b
 
-trt.write(a + b)
+trt.write(c)
 trt.forward(30)
 
 trt.done()
@@ -248,6 +249,47 @@ trt.done()
 					Tu sais <strong>additionner</strong>, <strong>soustraire</strong>, 
 					<strong>multiplier</strong> et <strong>diviser</strong> en Python !
 				</p>
+				<p>
+					On a stocké la valeur de <code>a + b</code> dasn <code>c</code>.
+				</p>
+				<p>
+					Quand on veut rajouter 1 à la variable <code>a</code>, on peut écrire <code>a = a + 1</code>.
+				</p>
+				<p>
+					Il existe une notation pour cela qui est <code>a += 1</code>.
+				</p>
+				<div class="exercice">
+					<p>
+						Crée un fichier <span class="file">operations_2.py</span>.
+					</p>
+					<p>
+						Tape et exécute le code suivant :
+					</p>
+					<div class="code-box">
+						<pre>
+import turtle as trt
+
+a = 10
+
+trt.write(a)
+trt.forward(30)
+
+a += 2
+
+trt.write(a)
+trt.forward(30)
+
+trt.done()
+
+						</pre>
+					</div>
+					<p>
+						Que fait la ligne <code>a += 2</code> ?
+					</p>
+					<p>
+						Remplace le <code>+=</code> par <code>-=</code>, <code>*=</code>, et <code>/=</code>.
+					</p>
+				</div>
 			</div>
 		</div><!-- END ROW -->
 		<div class="row white-box">
