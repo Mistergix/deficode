@@ -395,7 +395,55 @@ for diviseur in diviseurs :
 							</div>
 						</div>
 					</div>
-			
+
+					<div class="row white-box">
+							<div class="col-12">
+								<h1>Course de tortues</h1>
+								<div class="exercice">
+									<p>
+										Télécharge ce <a href="<?= code_url("seance3/turtle_race");?>" download="course_tortues_squelette.py">fichier Python <i class="fa fa-download" aria-hidden="true"></i></a>.
+									</p>
+									<p>
+										La classe <code>Tortue</code> possède une position stockée en tuple (x,y), un entier qui représente sa vitesse et une trt.Turtle() représentant le coureur.
+									</p>
+									<p>
+										Quand on crée une Tortue, on choisit sa couleur avec l'argument passé dans le constructeur <code>__init__</code>. On positionne la tortue à son départ avec la méthode <code>SePositionner</code>.
+									</p>
+									<p>
+										La méthode <code>Avancer</code> met à jour la position du coureur et utilise la méthode forward de la tortue, elle avance de sa vitesse.
+									</p>
+									<p>
+										La classe <code>Course</code> possède un nombre de coureurs. Elle vérifie avec des assert que le nombre est compris entre 1 et 6.
+									</p>
+									<p>
+										La méthode <code>ToutesLesPositions</code> renvoit la liste des positions de départs selon le nombre de coureurs.
+									</p>
+									<p>
+										La méthode <code>InitialiserTortues</code> crée autant de coureurs que nécessaires. Avec une vitesse aléatoire comprise entre 2 et 30. 
+										Et une couleur aléatoirement choisie parmi <code>self.couleurs</code>.
+									</p>
+									<p>
+										La méthode <code>PasDeGagnants</code> renvoit False si une des tortues a dépassé la ligne d'arrivée.
+									</p>
+									<p>
+										La méthode <code>ContinuerCourse</code> appelle la méthode <code>Avancer</code> de toutes les tortues.
+									</p>
+									<p>
+										La méthode <code>TrouverPerdantEtGagnant</code> renvoit le perdant et la gagnant de la course.
+									</p>
+									<p>
+										La méthode <code>AfficherResultats</code> affiche qui a perdu et qui a gagné.
+									</p>
+									<p>
+										La méthode <code>Lancer</code> lance la course, elle continue tant qu'il n'y a pas de gagnant.
+									</p>
+									<p>
+										Remplace les <code>???</code> dans le fichier.
+									</p>
+								</div>
+							</div>
+					</div>
+
 			<div class="row white-box">
 					<div class="col-12">
 						<h1>Le gobelin de la mine</h1>
@@ -416,10 +464,10 @@ for diviseur in diviseurs :
 								Pour cela, tant qu'il n'a pas atteint son objectif, il travaille.
 							</p>
 							<p>
-									La méthode TotalTresorerie renvoit la somme des pièces d'or de la mine, de la forge et de la taverne du gobelin.
+									La méthode <code>TotalTresorerie</code> renvoit la somme des pièces d'or de la mine, de la forge et de la taverne du gobelin.
 							</p>
 							<p>
-								La méthode ObjectifAtteint renvoit True si la trésorerie du gobelin dépasse son objectif.
+								La méthode <code>ObjectifAtteint</code> renvoit True si la trésorerie du gobelin dépasse son objectif.
 							</p>
 							
 							<p>
@@ -443,38 +491,38 @@ for diviseur in diviseurs :
 								Le monstre et le joueurs possèdent des points de vie (PV) et d'attaque (ATK).
 							</p>
 							<p>
-								La méthode EstVivant renvoit True si les PV sont plus grands que 0.
+								La méthode <code>EstVivant</code> renvoit True si les PV sont plus grands que 0.
 							</p>
 							<p>
-								La méthode AttaquerJoueur(joueur) prend le joueur en argument, et appelle sa méthode PrendreDegats en utilisant l'ATK du monstre.
+								La méthode <code>AttaquerJoueur(joueur)</code> prend le joueur en argument, et appelle sa méthode <code>PrendreDegats</code> en utilisant l'ATK du monstre.
 							</p>
 							<p>
-								La méthode PrendreDegats du <strong>monstre</strong> lui retire autant de PV que l'argument ATK. Elle affiche aussi les PV restants du monstre.
+								La méthode <code>PrendreDegats</code> du <strong>monstre</strong> lui retire autant de PV que l'argument ATK. Elle affiche aussi les PV restants du monstre.
 							</p>
 							<p>
-									La méthode AttaquerMonstre(monstre) prend un joueur en argument, et appelle sa méthode PrendreDegats en utilisant l'ATK du joueur.
+									La méthode <code>AttaquerMonstre(monstre)</code> prend un joueur en argument, et appelle sa méthode <code>PrendreDegats</code> en utilisant l'ATK du joueur.
 							</p>
 							<p>
-								La méthode ParadeReussie calcule un entier aléatoire entre 1 et 6 et renvoit True si le nombre est plus petit que 2.
+								La méthode <code>ParadeReussie</code> calcule un entier aléatoire entre 1 et 6 et renvoit True si le nombre est plus petit que 2.
 							</p>
 							<p>
-									La méthode PrendreDegats du <strong>joueur</strong> vérifie si la parade est réussie, si oui elle affiche "Le joueur a paré"
+									La méthode <code>PrendreDegats</code> du <strong>joueur</strong> vérifie si la parade est réussie, si oui elle affiche "Le joueur a paré"
 									sinon elle lui retire autant de PV que l'argument ATK. Elle affiche aussi ses PV restants.
 							</p>
 							<p>
-								La classe Jeu crée un joueur dont les PV sont pris aléatoirement entre 50 et 200 et l'ATK entre 5, 20.
+								La classe <code>Jeu</code> crée un joueur dont les PV sont pris aléatoirement entre 50 et 200 et l'ATK entre 5, 20.
 							</p>
 							<p>
 								Elle crée aussi entre 5 et 20 monstres dont les PV sont entre 10 et 30 et l'ATK entre 5 et 20.
 							</p>
 							<p>
-								La méthode IlResteDesMonstres renvoit True si la taille de la liste self.monstres et plus grande que 0.
+								La méthode <code>IlResteDesMonstres</code> renvoit True si la taille de la liste self.monstres et plus grande que 0.
 							</p>
 							<p>
-								La méthode MonstreSuivant affiche combien de monstres il reste. Puis retire un monstre de la liste. Puis elle le renvoit.
+								La méthode <code>MonstreSuivant</code> affiche combien de monstres il reste. Puis retire un monstre de la liste. Puis elle le renvoit.
 							</p>
 							<p>
-								La méthode Jouer est commentée directement dans le fichier.
+								La méthode <code>Jouer</code> est commentée directement dans le fichier.
 							</p>
 							<p>
 								Remplace les <code>???</code> dans le fichier.
