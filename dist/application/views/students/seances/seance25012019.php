@@ -9,11 +9,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="col-12">
 				<h1>Le retour des fonctions: mot clef <code>return</code></h1>
         <p>
-          Le mot clef <code>return</code> est la dernière instruction qui doit être exécutée par une fonction.<br>
-          Une fois le <code>return</code> franchi, Python quitte la fonction.'
-        </p>
+          Le mot clef <code>return</code> peut servir à arrêter une fonction.
+				</p>
         <p>
-          Il n'est pas obligatoire en fin de fonction.
+          Il n'est pas obligatoirement en fin de fonction.
         </p>
         <div class="exercice">
         <p>
@@ -35,10 +34,9 @@ aEncoreFaim(1000)
             Pourquoi <code>"il y a peu de frites..."</code> n'est écrit qu'une seule fois?
           </p>
 				</div>
-        <p>
-          Il sert aussi à faire remonter des informations à celui qui a exécuter la fonction,<wbr>
-          cela se produit lorsque l'on ajoutes variables ou des objets Python après <code>return</code>.
-        </p>
+				<p>
+					On peut faire remonter des informations en plaçant une expression après <code>return</code>.
+				</p>
         <div class="example">
         <p>
           On peut retourner un élément:
@@ -53,47 +51,29 @@ code = asterisque()
 print(code)
 						</pre>
 					</div>
-        <br>
-        <p>
-          Mais on peut aussi retourner plusieurs trucs à la fois:
-        </p>
-  				<div class="code-box">
-						<pre>
-def f():
-  a = 1
-  b = True
-  c = "pratique"
-  
-  return a, b, c
-  
-nb, test, chaine = f()
-print(nb, test, chaine)
-						</pre>
-					</div>
-          <p>
-            On t'invite à tester ces deux examples pour t'en convaincre !
-          </p>
 				</div>
-        <p>
-          De façon plus réelle, on peut s'en servir comme ça:
-        </p>
 				<div class="exercice">
-        <p>
-          Ecris ce code avec <?= $editor; ?> et completes-le (sur les ...) pour que la fonction <code>impots(argent)</code> retourne <wbr>
-          l'argent qu'il reste après la collecte des impots et l'argent qui a été collecté
-        </p>
-  				<div class="code-box">
+					<p>
+						Voici une fonction qu'un site de recettes pourrait utiliser :
+					</p>
+					<p>
+						Quand j'écris <code>CreerRecette(3, 200, 50)</code>, la fonction renvoit la phrase : 
+						"Cassez 3 oeufs, mélangez-les avec 200 grammes de farine et 50 grammes de beurre".
+					</p>
+					<p>
+					Complète le code ci-dessus pour qu'il fonctionne.
+					</p>
+					<div class="code-box">
 						<pre>
-def impots(argent):
-  taxe_pourcent = 33
-  
-  il_reste_ca = argent - argent * (taxe_pourcent / 100)
-  
-  return ...
-  
-... = impots(1000)
-  
-print("il me reste {} €! {}€ ont été pris.".format(...))
+def CreerRecette(nombreOeufs, ..., poidsBeurre):
+		recette = "Cassez {} oeufs, mélangez-les avec {} grammes de farine et {} grammes de beurre".format(..., poidsFarine, ...)
+		... recette
+
+recette_traditionnelle = CreerRecette(3, 200, 50)
+print(recette_traditionnelle)
+
+recette_grasse = CreerRecette(3, 200, 200)
+print(...)
 						</pre>
 					</div>
 				</div>
@@ -101,18 +81,18 @@ print("il me reste {} €! {}€ ont été pris.".format(...))
       </div>
 		</div>
     
-		<div class="row  white-box">
-				<div class="col-12">
-					<h1>Les listes <code>list</code></h1>
+		<div class="row white-box">
+			<div class="col-12">
+					<h1>Les listes</h1>
 					<p>
 						On a vu que l'on peut stocker des informations dans des variables.
 					</p>
           <p>
             Mais que faire si l'on veut écrire les courses de la semaine en Python? <br>
-            Une variable par chose à acheter? ça deviendrait ingérable rapidement.
+            Une variable par chose à acheter? Ça deviendrait ingérable rapidement.
           </p>
           <p>
-            Python nous propose la même solution que dans la vraire vie: LA LISTE
+            Python nous propose la même solution que dans la vraire vie: LA <strong>LISTE</strong> ! 
           </p>
 					<div class="example">
           <p>
@@ -149,7 +129,7 @@ print(ma_liste)
             <li>Des chaines de caractères</li>
             <li>Des nombres</li>
             <li>Des instances de classes</li>
-            <li>Et tout ce qui est une objet python en général</li>
+            <li>Et tout ce qui est une objet Python en général</li>
             </ul>
           </p>
   				<div class="example">
@@ -554,7 +534,49 @@ print("il me reste {} €! {}€ ont été pris.".format(???, ???))
             de la <b>décomposition</b>. Il doit y avoir <b>autant de variables à gauche que d'élément dans le tuple</b> ou
             la liste pour que cela fonctionne.
           </p>
-				</div>
+		</div>
+		<p>
+			Tuples et fonctions
+		</p>
+					<div class="example">
+							<div class="code-box">
+									<pre>
+def f():
+	a = 1
+	b = True
+	c = "pratique"
+	
+	return a, b, c
+	
+nb, test, chaine = f()
+print(nb, test, chaine)
+									</pre>
+								</div>
+					</div>
+					<div class="exercice">
+							<p>
+								Ecris ce code avec Pyzo et complete-le (remplace les ???) pour que la fonction <code>impots(argent)</code> retourne 
+								l'argent qu'il reste après la collecte des impôts et l'argent qui a été collecté.
+							</p>
+								<div class="code-box">
+									<pre>
+def impots(argent):
+	taxe_pourcent = 33
+
+	collecte = argent * (taxe_pourcent / 100)
+	
+	il_reste_ca = argent - ???
+	
+	return ???, collecte
+
+
+il_reste_ca, ??? = impots(1000)	
+print("il me reste {} €! {}€ ont été pris.".format(???, ???))
+									</pre>
+								</div>
+							</div>
+		
+		
         <div class="exercice">
         <p>
           Modifies la fonction <code>offrir</code> pour qu'elle retourne le nom de l'objet offert et
@@ -577,7 +599,33 @@ print(truc_pour_untel)
 				</div>
 				</div>
 			</div>
-			
+
+			<div class="row white-box">
+					<div class="col-12">
+						<h1>Les nombres flottants</h1>
+						<p>
+							Un nombre flottant est un nombre à virgule.
+						</p>
+						<p class="warning">
+							En Python, on remplace la virgule par un point !
+						</p>
+						<div class="exercice">
+							<p>
+								Teste ce petit programme :
+							</p>
+							<div class="code-box">
+								<pre>
+a = 1.5
+b = 7 / 2
+
+print(a)
+print(b)
+								</pre>
+							</div>
+						</div>
+					</div>
+			</div>
+
 			<div class="row white-box">
 				<div class="col-12">
 					<h1>L'aléatoire avec <code>random</code></h1>
@@ -588,8 +636,8 @@ print(truc_pour_untel)
             Ce module permet de faire faire à l'ordinateur des actions nécessitant du hasard.
           </p>
           <p>
-            La fonction <code>rnd.random()</code> retourne un nombre à virgule aléatoirement choisi entre 0.0 inclus et 1.0 exclu. <br>
-            Le module entier a été construit autour de ce que cette fonction permet!
+            La fonction <code>rnd.random()</code> retourne un nombre flottant aléatoirement choisi entre 0.0 inclus et 1.0 exclu. <br>
+            Tout le module a été construit autour de ce que cette fonction permet!
           </p>
           <div class="example">
   					<div class="code-box">
@@ -603,10 +651,10 @@ print("Le nombre est {}".format(nombre))
 						</div>
 					</div>
           <p>
-            On utilise souvent d'autres fonctons plus concrètes dans nos programmes tout de même; ça permet de gagner du temps:
+            On utilise souvent d'autres fonctions plus pratiques dans nos programmes tout de même, ça permet de gagner du temps:
           </p>
           <p>
-            La fonction <code>rnd.randint(min, max)</code> retourne un entier aléatoirement entre <code>min</code> inclus et <code>max</code> exclu
+            La fonction <code>rnd.randint(min, max)</code> retourne un entier aléatoirement entre <code>min</code> inclus et <code>max</code> inclus
           </p>
 					<div class="exercice">
           <p>Testes le code suivant:</p>
@@ -630,12 +678,12 @@ else :
 							</pre>
 						</div>
           <p>
-            Que permet-il de faire?
+            Que se passe-t-il si tu l'exécutes plusieurs fois ?
           </p>
 					</div>
 				</div>
           <p>
-            La fonction <code>rnd.choice(liste)</code> retourne un élément aléatoir de la liste!
+            La fonction <code>rnd.choice(liste)</code> retourne un élément aléatoire de la liste!
           </p>
           <p class="warning">
   						<code>liste</code> ne doit pas être vide! C'est à dire que: <code>liste != []</code>
@@ -646,11 +694,11 @@ else :
 							<pre>
 import random as rnd
 
-endroits_cools = ["Vénus", "ma maison", "Mars", "le kébab au bout", "Saturne", "Uranus" ,"Châtelet-les Halles"]
+endroits_cools = ["Vénus", "ma maison", "Mars", "le kébab au bout", "Saturne", "Uranus" ,"Châtelet-les Halles"] <!--pas de tiret à "les Halles"!-->
 
 endroit = rnd.choice(endroits_cools)
 
-print("J'ai été téléporté sur {}; TROOOOP COOL!!".format(endroit))
+print("J'ai été téléporté(e) ici : {}; TROOOOP COOL!!".format(endroit))
 							</pre>
 						</div>
           <p>
@@ -659,8 +707,8 @@ print("J'ai été téléporté sur {}; TROOOOP COOL!!".format(endroit))
 					</div>
 
           <p>
-            Les fonctions de ce module te serviront et <wbr>t'accompagneront tout le temps lorsque tu fais un jeu<br>
-            Elles te permettent de donner un peu d'innatendu au joueur <wbr>et de le surprendre même lorsqu'il rejouera!
+            Les fonctions de ce module te serviront et t'accompagneront tout le temps lorsque tu fais un jeu.
+						Elles te permettent de donner un peu d'inattendu au joueur et de le surprendre même lorsqu'il rejouera!
           </p>
 				</div>
 			</div>
@@ -705,8 +753,7 @@ Tout ce qui est entre est ignoré par Python
 							</div>
 						</div>
 					</div>
-				</div>
-
+        </div>
 				<div class="row white-box">
 						<div class="col-12">
 							<h1>Les assertions</h1>
