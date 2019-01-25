@@ -371,6 +371,30 @@ Tout ce qui est entre est ignoré par Python
 						</div>
 					</div>
 				</div>
+
+				<div class="row white-box">
+						<div class="col-12">
+							<h1>Les assertions</h1>
+							<p>
+								Les assertions permettent de renvoyer une erreur personnalisée si une condition est vérifiée.
+							</p>
+							<div class="exercice">
+								<p>
+									Teste le code suivant :
+								</p>
+								<div class="code-box">
+									<pre>
+diviseurs = [3, 4, 5, 0, 2]
+
+for diviseur in diviseurs :
+		assert diviseur != 0, "Le diviseur ne peut pas être zéro"
+		print(120 / diviseur)				
+
+									</pre>
+								</div>
+							</div>
+						</div>
+					</div>
 			
 			<div class="row white-box">
 					<div class="col-12">
