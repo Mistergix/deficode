@@ -415,31 +415,7 @@ maitre.NourrirChat()
 					</p>
 					<div class="exercice">
 						<p>
-							Copie le code suivant : 
-						</p>
-						<div class="code-box">
-							<pre>
-class Ennemi :
-	...
-class Arme:
-	...
-class Hero :
-	...
-
-degats = 10
-PV = 50
-
-epee = Arme(degats)
-hero = Hero(epee)
-ennemi = Ennemi(PV)
-
-for i in range(5):
-	hero.Attaquer(ennemi)
-
-							</pre>
-						</div>
-						<p>
-							Compléte-le de sorte qu'il affiche :
+							Télécharge ce <a href="<?= code_url("seance2/ennemy");?>" download="hero_et_ennemi.py">fichier</a> et complète de sorte qu'il affiche :
 						</p>
 						<div class="code-box">
 							<pre>

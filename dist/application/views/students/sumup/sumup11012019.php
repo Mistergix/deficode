@@ -88,6 +88,12 @@ age = 15
 					<li><code>*</code></li>
 					<li><code>/</code></li>
 				</ul>
+				<p>
+						On peut utiliser <code>+=</code>, <code>-=</code>, <code>*=</code>, et <code>/=</code> pour rajouter, soustraire, multiplier et diviser une variable par une certaine valeur.
+				</p>
+				<p class="example">
+					<code>a *= 2</code> multiplie <code>a</code> par 2 et met à jour la variable.
+				</p>
 			</div>
 		</div><!-- END ROW -->
 		<div class="row white-box">

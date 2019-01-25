@@ -10,8 +10,8 @@ class Colors:
     DARKER_BLUE = (76, 124, 165)
 
 class Direction:
-	HAUT = "haut"
-	BAS = "bas"
+	HAUT   = "haut"
+	BAS    = "bas"
 	GAUCHE = "gauche"
 	DROITE = "droite"
 	AUCUNE = "aucune"
