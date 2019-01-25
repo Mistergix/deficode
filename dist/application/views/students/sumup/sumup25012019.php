@@ -172,6 +172,7 @@ print(ma_liste[3])
               <code>x</code> à la position <code>i</code> dans la liste.
               L'élément qui était alors en <code>i</code> se retrouve en <code>i+1</code>
 						</li>
+						<li><code>liste<b>.pop(i)</b></code> retirer l'élément en position <code>i</code> et elle le renvoit.
 						<li>
 						<code><b>len(liste)</b></code> permet d'obtenir le nombre d'éléments de la liste.
 						</li>

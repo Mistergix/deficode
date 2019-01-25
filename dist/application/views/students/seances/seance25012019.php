@@ -284,6 +284,7 @@ for endroit in cool_zones:
               <code>x</code> à la position <code>i</code> dans la liste.
               L'élément qui était alors en <code>i</code> se retrouve en <code>i+1</code>
 						</li>
+						<li><code>liste<b>.pop(i)</b></code> retirer l'élément en position <code>i</code> et elle le renvoit.
 						<li>
 						<code><b>len(liste)</b></code> permet d'obtenir le nombre d'éléments de la liste.
 						</li>
@@ -389,6 +390,17 @@ print("Le système solaire sans la première et la dernière planète")
 premier_indice = ???
 dernier_indice = ???
 print(systeme_solaire[??? : ???])
+							</pre>
+						</div>
+						<p>
+              Supprimer le 2-ème élément de la liste et affiche le :
+            </p>
+    				<div class="code-box">
+							<pre>
+print("Suppression et affichage du 2-ème élément de la liste")
+element = systeme_solaire.pop(???)
+print(element)
+print(systeme_solaire)
 							</pre>
 						</div>
 					</div>
