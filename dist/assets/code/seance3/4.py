@@ -1,10 +1,5 @@
-# https://www.rapidtables.com/web/color/RGB_Color.html
+diviseurs = [3, 4, 5, 0, 2]
 
-COULEUR = (..., ..., ...)
-
-rouge, vert, bleu = COULEUR
-
-print("Dans ma couleur :")
-print("Le rouge est présent à {} %".format(rouge /255 * 100))
-print("Le vert est présent à {} %".format(vert /255 * 100))
-print("Le bleu est présent à {} %".format(bleu /255 * 100))
+for diviseur in diviseurs :
+		assert diviseur != 0, "Le diviseur ne peut pas être zéro"
+		print(120 / diviseur)	

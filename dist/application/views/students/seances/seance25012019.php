@@ -9,11 +9,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="col-12">
 				<h1>Le retour des fonctions: mot clef <code>return</code></h1>
         <p>
-          Le mot clef <code>return</code> est la dernière instruction qui doit être exécutée par une fonction.<br>
-          Une fois le <code>return</code> franchi, Python quitte la fonction.'
-        </p>
+          Le mot clef <code>return</code> peut servir à arrêter une fonction.
+				</p>
         <p>
-          Il n'est pas obligatoire en fin de fonction.
+          Il n'est pas obligatoirement en fin de fonction.
         </p>
         <div class="exercice">
         <p>
@@ -35,10 +34,9 @@ aEncoreFaim(1000)
             Pourquoi <code>"il y a peu de frites..."</code> n'est écrit qu'une seule fois?
           </p>
 				</div>
-        <p>
-          Il sert aussi à faire remonter des informations à celui qui a exécuter la fonction,<wbr>
-          cela se produit lorsque l'on ajoutes variables ou des objets Python après <code>return</code>.
-        </p>
+				<p>
+					On peut faire remonter des informations en plaçant une expression après <code>return</code>.
+				</p>
         <div class="example">
         <p>
           On peut retourner un élément:
@@ -53,47 +51,29 @@ code = asterisque()
 print(code)
 						</pre>
 					</div>
-        <br>
-        <p>
-          Mais on peut aussi retourner plusieurs trucs à la fois:
-        </p>
-  				<div class="code-box">
-						<pre>
-def f():
-  a = 1
-  b = True
-  c = "pratique"
-  
-  return a, b, c
-  
-nb, test, chaine = f()
-print(nb, test, chaine)
-						</pre>
-					</div>
-          <p>
-            On t'invite à tester ces deux examples pour t'en convaincre !
-          </p>
 				</div>
-        <p>
-          De façon plus réelle, on peut s'en servir comme ça:
-        </p>
 				<div class="exercice">
-        <p>
-          Ecris ce code avec <?= $editor; ?> et completes-le (sur les ...) pour que la fonction <code>impots(argent)</code> retourne <wbr>
-          l'argent qu'il reste après la collecte des impots et l'argent qui a été collecté
-        </p>
-  				<div class="code-box">
+					<p>
+						Voici une fonction qu'un site de recettes pourrait utiliser :
+					</p>
+					<p>
+						Quand j'écris <code>CreerRecette(3, 200, 50)</code>, la fonction renvoit la phrase : 
+						"Cassez 3 oeufs, mélangez-les avec 200 grammes de farine et 50 grammes de beurre".
+					</p>
+					<p>
+					Complète le code ci-dessus pour qu'il fonctionne.
+					</p>
+					<div class="code-box">
 						<pre>
-def impots(argent):
-  taxe_pourcent = 33
-  
-  il_reste_ca = argent - argent * (taxe_pourcent / 100)
-  
-  return ...
-  
-... = impots(1000)
-  
-print("il me reste {} €! {}€ ont été pris.".format(...))
+def CreerRecette(nombreOeufs, ..., poidsBeurre):
+		recette = "Cassez {} oeufs, mélangez-les avec {} grammes de farine et {} grammes de beurre".format(..., poidsFarine, ...)
+		... recette
+
+recette_traditionnelle = CreerRecette(3, 200, 50)
+print(recette_traditionnelle)
+
+recette_grasse = CreerRecette(3, 200, 200)
+print(...)
 						</pre>
 					</div>
 				</div>
@@ -101,18 +81,18 @@ print("il me reste {} €! {}€ ont été pris.".format(...))
       </div>
 		</div>
     
-		<div class="row  white-box">
-				<div class="col-12">
-					<h1>Les listes <code>list</code></h1>
+		<div class="row white-box">
+			<div class="col-12">
+					<h1>Les listes</h1>
 					<p>
 						On a vu que l'on peut stocker des informations dans des variables.
 					</p>
           <p>
             Mais que faire si l'on veut écrire les courses de la semaine en Python? <br>
-            Une variable par chose à acheter? ça deviendrait ingérable rapidement.
+            Une variable par chose à acheter? Ça deviendrait ingérable rapidement.
           </p>
           <p>
-            Python nous propose la même solution que dans la vraire vie: LA LISTE
+            Python nous propose la même solution que dans la vraire vie: LA <strong>LISTE</strong> ! 
           </p>
 					<div class="example">
           <p>
@@ -149,7 +129,7 @@ print(ma_liste)
             <li>Des chaines de caractères</li>
             <li>Des nombres</li>
             <li>Des instances de classes</li>
-            <li>Et tout ce qui est une objet python en général</li>
+            <li>Et tout ce qui est une objet Python en général</li>
             </ul>
           </p>
   				<div class="example">
@@ -532,7 +512,49 @@ print("Le bleu est présent à {} %".format(bleu /255 * 100))
             de la <b>décomposition</b>. Il doit y avoir <b>autant de variables à gauche que d'élément dans le tuple</b> ou
             la liste pour que cela fonctionne.
           </p>
-				</div>
+		</div>
+		<p>
+			Tuples et fonctions
+		</p>
+					<div class="example">
+							<div class="code-box">
+									<pre>
+def f():
+	a = 1
+	b = True
+	c = "pratique"
+	
+	return a, b, c
+	
+nb, test, chaine = f()
+print(nb, test, chaine)
+									</pre>
+								</div>
+					</div>
+					<div class="exercice">
+							<p>
+								Ecris ce code avec Pyzo et complete-le (remplace les ???) pour que la fonction <code>impots(argent)</code> retourne 
+								l'argent qu'il reste après la collecte des impôts et l'argent qui a été collecté.
+							</p>
+								<div class="code-box">
+									<pre>
+def impots(argent):
+	taxe_pourcent = 33
+
+	collecte = argent * (taxe_pourcent / 100)
+	
+	il_reste_ca = argent - ???
+	
+	return ???, collecte
+
+
+il_reste_ca, ??? = impots(1000)	
+print("il me reste {} €! {}€ ont été pris.".format(???, ???))
+									</pre>
+								</div>
+							</div>
+		
+		
         <div class="exercice">
         <p>
           Modifies la fonction <code>offrir</code> pour qu'elle retourne le nom de l'objet offert et
@@ -555,7 +577,33 @@ print(truc_pour_untel)
 				</div>
 				</div>
 			</div>
-			
+
+			<div class="row white-box">
+					<div class="col-12">
+						<h1>Les nombres flottants</h1>
+						<p>
+							Un nombre flottant est un nombre à virgule.
+						</p>
+						<p class="warning">
+							En Python, on remplace la virgule par un point !
+						</p>
+						<div class="exercice">
+							<p>
+								Teste ce petit programme :
+							</p>
+							<div class="code-box">
+								<pre>
+a = 1.5
+b = 7 / 2
+
+print(a)
+print(b)
+								</pre>
+							</div>
+						</div>
+					</div>
+			</div>
+
 			<div class="row white-box">
 				<div class="col-12">
 					<h1>L'aléatoire avec <code>random</code></h1>
@@ -566,8 +614,8 @@ print(truc_pour_untel)
             Ce module permet de faire faire à l'ordinateur des actions nécessitant du hasard.
           </p>
           <p>
-            La fonction <code>rnd.random()</code> retourne un nombre à virgule aléatoirement choisi entre 0.0 inclus et 1.0 exclu. <br>
-            Le module entier a été construit autour de ce que cette fonction permet!
+            La fonction <code>rnd.random()</code> retourne un nombre flottant aléatoirement choisi entre 0.0 inclus et 1.0 exclu. <br>
+            Tout le module a été construit autour de ce que cette fonction permet!
           </p>
           <div class="example">
   					<div class="code-box">
@@ -581,10 +629,10 @@ print("Le nombre est {}".format(nombre))
 						</div>
 					</div>
           <p>
-            On utilise souvent d'autres fonctons plus concrètes dans nos programmes tout de même; ça permet de gagner du temps:
+            On utilise souvent d'autres fonctions plus pratiques dans nos programmes tout de même, ça permet de gagner du temps:
           </p>
           <p>
-            La fonction <code>rnd.randint(min, max)</code> retourne un entier aléatoirement entre <code>min</code> inclus et <code>max</code> exclu
+            La fonction <code>rnd.randint(min, max)</code> retourne un entier aléatoirement entre <code>min</code> inclus et <code>max</code> inclus
           </p>
 					<div class="exercice">
           <p>Testes le code suivant:</p>
@@ -608,12 +656,12 @@ else :
 							</pre>
 						</div>
           <p>
-            Que permet-il de faire?
+            Que se passe-t-il si tu l'exécutes plusieurs fois ?
           </p>
 					</div>
 				</div>
           <p>
-            La fonction <code>rnd.choice(liste)</code> retourne un élément aléatoir de la liste!
+            La fonction <code>rnd.choice(liste)</code> retourne un élément aléatoire de la liste!
           </p>
           <p class="warning">
   						<code>liste</code> ne doit pas être vide! C'est à dire que: <code>liste != []</code>
@@ -624,11 +672,11 @@ else :
 							<pre>
 import random as rnd
 
-endroits_cools = ["Vénus", "ma maison", "Mars", "le kébab au bout", "Saturne", "Uranus" ,"Châtelet-les Halles"]
+endroits_cools = ["Vénus", "ma maison", "Mars", "le kébab au bout", "Saturne", "Uranus" ,"Châtelet-les Halles"] <!--pas de tiret à "les Halles"!-->
 
 endroit = rnd.choice(endroits_cools)
 
-print("J'ai été téléporté sur {}; TROOOOP COOL!!".format(endroit))
+print("J'ai été téléporté(e) ici : {}; TROOOOP COOL!!".format(endroit))
 							</pre>
 						</div>
           <p>
@@ -637,8 +685,8 @@ print("J'ai été téléporté sur {}; TROOOOP COOL!!".format(endroit))
 					</div>
 
           <p>
-            Les fonctions de ce module te serviront et <wbr>t'accompagneront tout le temps lorsque tu fais un jeu<br>
-            Elles te permettent de donner un peu d'innatendu au joueur <wbr>et de le surprendre même lorsqu'il rejouera!
+            Les fonctions de ce module te serviront et t'accompagneront tout le temps lorsque tu fais un jeu.
+						Elles te permettent de donner un peu d'inattendu au joueur et de le surprendre même lorsqu'il rejouera!
           </p>
 				</div>
 			</div>
@@ -646,7 +694,7 @@ print("J'ai été téléporté sur {}; TROOOOP COOL!!".format(endroit))
   		<div class="row white-box">
 				<div class="col-12">
 					<h1>La boucle <code>while</code></h1>
-          <div class="example">
+          <div class="exercice">
   					<div class="code-box">
 							<pre>
 import random as rnd
@@ -661,196 +709,188 @@ while continuer :
 							</pre>
 						</div>
 					</div>
-					<div class="exercice">
-          
-    				<div class="code-box">
-							<pre>
-class Mine :
-  def __init__(self):
-		self.tresorerie = 0
-
-	def Travailler(self):
-		self.tresorerie += 10
-
-class Forge :
-	def __init__(self):
-		self.tresorerie = 0
-
-	def Travailler(self):
-		self.tresorerie += 50
-
-class Taverne :
-	def __init__(self):
-		self.tresorerie = 0
-
-	def Travailler(self):
-		self.tresorerie += 20
-
-class Gobelin:
-	def __init__(self):
-		self.mine = Mine()
-		self.forge = Forge()
-		self.taverne = Taverne()
-
-		self.objectif = 1000
-
-		print("Le gobelin veut {} pièces d'or".format(self.objectif))
-
-	def Travailler(self):
-		self.mine.Travailler()
-		self.forge.Travailler()
-		self.taverne.Travailler()
-		print("La trésorerie du gobelin est de {} pièces d'or".format(self.TotalTresorerie()))
-
-	def ObjectifAtteint(self):
-		return self.TotalTresorerie() >= self.objectif
-
-	def TotalTresorerie(self):
-		return self.mine.tresorerie + self.forge.tresorerie + self.taverne.tresorerie
-
-gobelin = Gobelin()
-
-while not gobelin.ObjectifAtteint() :
-	gobelin.Travailler()
-
-print("Le gobelin a atteint son objectif !")
-							</pre>
-						</div>
-					</div>
 				</div>
 			</div>
-			
+
 			<div class="row white-box">
-				<div class="col-12">
-          <h1>Du héros et des monstres...</h1>
-					<p class="example">
-						mon_programme.py
-					</p>
-					<div class="exercice">
+					<div class="col-12">
+						<h1>Les commentaires</h1>
 						<p>
-							Ouvre <?= $editor; ?>.
+							On peut rajouter des commentaires, c'est à dire du texte que Python ignore de 2 façons :
 						</p>
-						<p>
-							Crée un fichier <span class="file">turtle_introdution.py</span>.
-						</p>
-						<p>
-							Tape le code suivant et exécute-le :
-						</p>
-						<div class="code-box">
-							<pre>
-import random as rnd
+						<div class="example">
+							<div class="code-box">
+								<pre>
+# Avec un hashtag (Alt Gr + 3)
 
-class Monstre:
-  def __init__(self, PV, ATK):
-		self.PV = PV
-		self.ATK = ATK
-		self.AfficherEtat()
-
-	def EstVivant(self):
-		return self.PV > 0
-
-	def AttaquerJoueur(self, joueur):
-		joueur.PrendreDegats(self.ATK)
-
-	def PrendreDegats(self, ATK):
-		self.PV -= ATK
-		print("Il reste {} PV au monstre".format(self.PV))
-
-	def AfficherEtat(self):
-		print("Le monstre a {} PV et {} ATK".format(self.PV, self.ATK))
-
-class Joueur:
-	def __init__(self, PV, ATK):
-		self.PV = PV
-		self.ATK = ATK
-		self.AfficherEtat()
-
-	def EstVivant(self):
-		return self.PV > 0
-
-	def AttaquerMonstre(self, monstre):
-		monstre.PrendreDegats(self.ATK)
-
-	def ParadeReussie(self):
-		entier = rnd.randint(1,6)
-		if entier <= 2 :
-			return True
-		else :
-			return False  # expliquer qu'on peut directement écrire return entier <= 2
-
-	def PrendreDegats(self, ATK):
-		if self.ParadeReussie() :
-			print("Le joueur a paré")
-		else :
-			self.PV -= ATK
-			print("Il reste {} PV au joueur".format(self.PV))
-
-	def AfficherEtat(self):
-		print("Le joueur a {} PV et {} ATK".format(self.PV, self.ATK))
-
-class Jeu:
-	def __init__(self):
-		pv_joueur = self.NombreAleatoireDansIntervalle((50, 200))
-		atk_joueur = self.NombreAleatoireDansIntervalle((5, 20))
-		self.joueur = Joueur(pv_joueur, atk_joueur)
-
-		nombre_monstres = self.NombreAleatoireDansIntervalle((5, 20))
-		self.monstres = []
-
-		for compteur in range(nombre_monstres):
-			pv = self.NombreAleatoireDansIntervalle((10, 30))
-			atk = self.NombreAleatoireDansIntervalle((5, 20))
-			monstre = Monstre(pv, atk)
-
-			self.monstres.append(monstre)
-
-		print()
-
-	def NombreAleatoireDansIntervalle(self, intervalle):
-		minimum, maximum = intervalle
-		nombre = rnd.randint(minimum, maximum)
-		return nombre
-
-	def IlResteDesMonstres(self):
-		return len(self.monstres) > 0
-
-	def MonstreSuivant(self):
-		print("Il reste {} monstres".format(len(self.monstres)))
-		monstre = self.monstres.pop()
-
-		monstre.AfficherEtat()
-
-		return monstre
-
-	def Jouer(self):
-		monstre = self.MonstreSuivant()
-		while self.joueur.EstVivant() and self.IlResteDesMonstres() and monstre.EstVivant():
-			self.joueur.AttaquerMonstre(monstre)
-
-			if monstre.EstVivant() :
-				monstre.AttaquerJoueur(self.joueur)
-			else :
-				print("Le monstre est mort")
-				print()
-				monstre = self.MonstreSuivant()
-
-		if self.joueur.EstVivant():
-			print("Le joueur a gagné !")
-			self.joueur.AfficherEtat()
-		else :
-			print("Les monstres ont gagné ...")
-
-		
-jeu = Jeu()
-
-jeu.Jouer()
-							</pre>
+"""
+Ou avec 3 guillemets les uns à la suite des autres
+Tout ce qui est entre est ignoré par Python
+"""
+								</pre>
+							</div>
 						</div>
-						<p>
-							 
-						</p>
 					</div>
 				</div>
+
+
+				<div class="row white-box">
+						<div class="col-12">
+							<h1>Les assertions</h1>
+							<p>
+								Les assertions permettent de renvoyer une erreur personnalisée si une condition est vérifiée.
+							</p>
+							<div class="exercice">
+								<p>
+									Teste le code suivant :
+								</p>
+								<div class="code-box">
+									<pre>
+diviseurs = [3, 4, 5, 0, 2]
+
+for diviseur in diviseurs :
+		assert diviseur != 0, "Le diviseur ne peut pas être zéro"
+		print(120 / diviseur)				
+
+									</pre>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row white-box">
+							<div class="col-12">
+								<h1>Course de tortues</h1>
+								<div class="exercice">
+									<p>
+										Télécharge ce <a href="<?= code_url("seance3/turtle_race");?>" download="course_tortues_squelette.py">fichier Python <i class="fa fa-download" aria-hidden="true"></i></a>.
+									</p>
+									<p>
+										La classe <code>Tortue</code> possède une position stockée en tuple (x,y), un entier qui représente sa vitesse et une trt.Turtle() représentant le coureur.
+									</p>
+									<p>
+										Quand on crée une Tortue, on choisit sa couleur avec l'argument passé dans le constructeur <code>__init__</code>. On positionne la tortue à son départ avec la méthode <code>SePositionner</code>.
+									</p>
+									<p>
+										La méthode <code>Avancer</code> met à jour la position du coureur et utilise la méthode forward de la tortue, elle avance de sa vitesse.
+									</p>
+									<p>
+										La classe <code>Course</code> possède un nombre de coureurs. Elle vérifie avec des assert que le nombre est compris entre 1 et 6.
+									</p>
+									<p>
+										La méthode <code>ToutesLesPositions</code> renvoit la liste des positions de départs selon le nombre de coureurs.
+									</p>
+									<p>
+										La méthode <code>InitialiserTortues</code> crée autant de coureurs que nécessaires. Avec une vitesse aléatoire comprise entre 2 et 30. 
+										Et une couleur aléatoirement choisie parmi <code>self.couleurs</code>.
+									</p>
+									<p>
+										La méthode <code>PasDeGagnants</code> renvoit False si une des tortues a dépassé la ligne d'arrivée.
+									</p>
+									<p>
+										La méthode <code>ContinuerCourse</code> appelle la méthode <code>Avancer</code> de toutes les tortues.
+									</p>
+									<p>
+										La méthode <code>TrouverPerdantEtGagnant</code> renvoit le perdant et la gagnant de la course.
+									</p>
+									<p>
+										La méthode <code>AfficherResultats</code> affiche qui a perdu et qui a gagné.
+									</p>
+									<p>
+										La méthode <code>Lancer</code> lance la course, elle continue tant qu'il n'y a pas de gagnant.
+									</p>
+									<p>
+										Remplace les <code>???</code> dans le fichier.
+									</p>
+								</div>
+							</div>
+					</div>
+
+			<div class="row white-box">
+					<div class="col-12">
+						<h1>Le gobelin de la mine</h1>
+						<div class="exercice">
+							<p>
+								Télécharge ce <a href="<?= code_url("seance3/gobelin");?>" download="gobelin_squelette.py">fichier Python <i class="fa fa-download" aria-hidden="true"></i></a>.
+							</p>
+							<p>
+								Le gobelin possède une mine, une forge et une taverne. Tous les jours il travaille dans les 3 établissements.
+							</p>
+							<p>
+								La mine lui rapporte 10 sous, la forge 50 et la taverne 20.
+							</p>
+							<p>
+								Il veut gagner 1000 pièce d'or.
+							</p>
+							<p>
+								Pour cela, tant qu'il n'a pas atteint son objectif, il travaille.
+							</p>
+							<p>
+									La méthode <code>TotalTresorerie</code> renvoit la somme des pièces d'or de la mine, de la forge et de la taverne du gobelin.
+							</p>
+							<p>
+								La méthode <code>ObjectifAtteint</code> renvoit True si la trésorerie du gobelin dépasse son objectif.
+							</p>
+							
+							<p>
+								Remplace les <code>???</code> dans le fichier.
+							</p>
+						</div>
+					</div>
+			</div>
+
+			<div class="row white-box">
+					<div class="col-12">
+						<h1>Le héro et les monstres</h1>
+						<p class="warning">
+							Cet exercice est assez difficile !
+						</p>
+						<div class="exercice">
+							<p>
+								Télécharge ce <a href="<?= code_url("seance3/minirpg");?>" download="heros_et_monstres_squelette.py">fichier Python <i class="fa fa-download" aria-hidden="true"></i></a>.
+							</p>
+							<p>
+								Le monstre et le joueurs possèdent des points de vie (PV) et d'attaque (ATK).
+							</p>
+							<p>
+								La méthode <code>EstVivant</code> renvoit True si les PV sont plus grands que 0.
+							</p>
+							<p>
+								La méthode <code>AttaquerJoueur(joueur)</code> prend le joueur en argument, et appelle sa méthode <code>PrendreDegats</code> en utilisant l'ATK du monstre.
+							</p>
+							<p>
+								La méthode <code>PrendreDegats</code> du <strong>monstre</strong> lui retire autant de PV que l'argument ATK. Elle affiche aussi les PV restants du monstre.
+							</p>
+							<p>
+									La méthode <code>AttaquerMonstre(monstre)</code> prend un joueur en argument, et appelle sa méthode <code>PrendreDegats</code> en utilisant l'ATK du joueur.
+							</p>
+							<p>
+								La méthode <code>ParadeReussie</code> calcule un entier aléatoire entre 1 et 6 et renvoit True si le nombre est plus petit que 2.
+							</p>
+							<p>
+									La méthode <code>PrendreDegats</code> du <strong>joueur</strong> vérifie si la parade est réussie, si oui elle affiche "Le joueur a paré"
+									sinon elle lui retire autant de PV que l'argument ATK. Elle affiche aussi ses PV restants.
+							</p>
+							<p>
+								La classe <code>Jeu</code> crée un joueur dont les PV sont pris aléatoirement entre 50 et 200 et l'ATK entre 5, 20.
+							</p>
+							<p>
+								Elle crée aussi entre 5 et 20 monstres dont les PV sont entre 10 et 30 et l'ATK entre 5 et 20.
+							</p>
+							<p>
+								La méthode <code>IlResteDesMonstres</code> renvoit True si la taille de la liste self.monstres et plus grande que 0.
+							</p>
+							<p>
+								La méthode <code>MonstreSuivant</code> affiche combien de monstres il reste. Puis retire un monstre de la liste. Puis elle le renvoit.
+							</p>
+							<p>
+								La méthode <code>Jouer</code> est commentée directement dans le fichier.
+							</p>
+							<p>
+								Remplace les <code>???</code> dans le fichier.
+							</p>
+						</div>
+					</div>
 			</div>
 		</div>
 	</div>
