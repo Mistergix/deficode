@@ -79,5 +79,58 @@ print("il me reste {} €! {}€ ont été pris.".format(???, ???))
 				</div>
 			</div>
 		</div>
+		<div class="row white-box">
+			<div class="col-12">
+				<h1>Attributs et méthodes statiques</h1>
+				<p>
+					Les attributs statiques n'appartiennent pas à une instance mais à la classe elle même.
+					Autrement dit, ils sont <b>communs</b> à toutes les instances.
+				</p>
+				<p>
+					De même les méthodes statiques sont communes à toutes les instances. Elles
+					n'ont <b>PAS</b> de self.
+				</p>
+				<p>
+					Pour accéder à un attribut ou une méthode statique, on utilise le nom de la classe : <code>[nom_de_la_classe].[attribut ou méthode]</code>
+				</p>
+				<div class="exercice">
+					<p>
+						Recopie ce code et teste ce code :
+					</p>
+					<div class="code-box">
+						<pre>
+class Chaton:
+	nombre_de_chatons = 0
+	def __init__(self):
+		Chaton.nombre_de_chatons += 1
+
+	def AfficherNombreChatons():
+		print("Il y a {} chatons".format(Chaton.nombre_de_chatons))
+
+premier_chaton = Chaton()
+deuxieme_chaton = Chaton()
+troisieme_chaton = Chaton()
+
+Chaton.AfficherNombreChatons()
+						</pre>
+					</div>
+				</div>
+				<p>
+					Dans l'exercice précédent, <code>nombre_de_chatons</code> est un attribut défini en dehors du <code>__init__</code>,
+					il est <b>statique</b>. <code>AfficherNombreChatons</code> n'a <b>PAS</b> de self, elle est statique aussi.
+				</p>
+			</div>
+		</div>
+		<div class="row white-box">
+			<div class="col-12">
+				<h1>Commençons avec Pygame !</h1>
+				<p class="warning">
+					Si tu ne l'as pas déjà fait, tape cette commande dans la console pyzo : <code>pip install pygame</code>
+				</p>
+				<p>
+					Télécharge <a href="<?= code_url("seance4/pygame_template");?>" download="pygame_template.py">ce fichier</a>, c'est le fichier de <b>base</b> d'un programme Pygame.
+				</p>
+			</div>
+		</div>
 	</div>
 </main>

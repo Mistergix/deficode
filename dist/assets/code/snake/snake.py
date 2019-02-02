@@ -169,23 +169,27 @@ class Jeu:
 		self.FPS = 15
 		self.COULEUR_ARRIERE_PLAN = Colors.YELLOW
 		self.LE_JEU_TOURNE = True
+		self.NOM_DU_JEU = "Snake"
 
 	def Demarrer(self):
 		pg.init()
 		self.ECRAN = pg.display.set_mode((self.TAILLE_ECRAN, self.TAILLE_ECRAN))
+		pg.display.set_caption(self.NOM_DU_JEU)
 		self.HORLOGE = pg.time.Clock()
 
 		while self.LE_JEU_TOURNE:
-			self.Jouer()
+			self.InitialiserPartie()
+			self.LancerBouclePrincipale()
 
 		pg.quit()
-	
-	def Jouer(self):
+
+	def InitialiserPartie(self):
 		centre = self.NOMBRE_CASES // 2
 
 		self.serpent = Serpent(Position(centre, centre))
 		self.pomme = self.NouvellePomme()
-
+	
+	def LancerBouclePrincipale(self):
 		self.GAME_OVER = False
 
 		while not self.GAME_OVER:
