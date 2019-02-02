@@ -6,10 +6,10 @@ class Colors:
 	Rends-toi sur Internet et complète ces couleurs selon tes goûts
 	"""
     BLACK = (0, 0, 0)
-    RED = ...
-    BLUE = ...
-    WHITE = ...
-    YELLOW = ...
+    RED = ???
+    BLUE = ???
+    WHITE = ???
+    YELLOW = ???
 
 class Direction:
 	# Le serpent peut aller dans 4 directions ou ne pas bouger
@@ -30,8 +30,8 @@ class Direction:
 			return Direction.???
 		if direction == Direction.???:
 			return Direction.???
-		if ... :
-			return ...
+		if ??? :
+			return ???
 
 		# La direction passée en argument n'a pas d'opposé
 		return Direction.AUCUNE
@@ -45,11 +45,11 @@ class Direction:
 		if direction == Direction.DROITE:
 			return (1, 0)
 		if direction == Direction.GAUCHE:
-			return ...
-		if ... :
-			return ...
-		if ... :
-			return ...
+			return ???
+		if ??? :
+			return ???
+		if ??? :
+			return ???
 
 		return (0, 0)
 
@@ -64,7 +64,7 @@ class Position:
 		Cette méthode permet de convertir l'objet Position en tuple
 		Que faut-il renvoyer ?
 		"""
-		return (..., ...)
+		return (???, ???)
 	
 	def PositionAleatoire(x_min, x_max, y_min, y_max):
 		"""
@@ -73,8 +73,8 @@ class Position:
 		y est compris entre y_min et y_max
 		Complète cette méthode
 		"""
-		x = rnd.randint(... , ...)
-		y = ...
+		x = rnd.randint(??? , ???)
+		y = ???
 		return Position(x, y)
 
 class Dessinateur:
@@ -88,12 +88,12 @@ class Dessinateur:
 		"""
 		x, y = position.EnTuple()
 		coin_gauche_x = x * taille_rectangle
-		coin_gauche_y = ...
+		coin_gauche_y = ???
 		largeur = taille_rectangle
-		hauteur = ...
-		rectangle = pg.Rect(..., coin_gauche_y, largeur, ...)
+		hauteur = ???
+		rectangle = pg.Rect(???, coin_gauche_y, largeur, ???)
 
-		return ...
+		return ???
 
 class Pomme :
 	def __init__(self, position):
@@ -104,8 +104,8 @@ class Pomme :
 		Cette méthode dessine une pomme en forme de cercle rouge (Rappel un cercle est une ellipse)
 		Complète cette méthode, n'oublie pas de remplacer le ???
 		"""
-		rectangle = Dessinateur.ObtenirRectangle( ..., ...)
-		pg.draw.???(... , Colors.RED, ...)
+		rectangle = Dessinateur.ObtenirRectangle( ???, ???)
+		pg.draw.???(??? , Colors.RED, ???)
 
 class Membre:
 	# Représente un membre du corps du serpent
@@ -118,7 +118,7 @@ class Membre:
 		Elle renvoit un Membre, mais son constructeur est vide, que faut-il mettre ?
 		"""
 		x, y = self.position.EnTuple()
-		return Membre(...)
+		return Membre(???)
 
 class Corps:
 	# Le corps du serpent
@@ -133,11 +133,11 @@ class Corps:
 		On parcourt tous les membres du corps et on dessine un rectangle bleu pour chaque membre, à la bonne position sur l'écran
 		Complète cette méthode
 		"""
-		for ... in ...:
+		for ??? in ???:
 			position = membre.???
-			rectangle = Dessinateur.ObtenirRectangle(... , ...)
-			color = ...
-			pg.draw.???(... , ... , ...)
+			rectangle = Dessinateur.ObtenirRectangle(??? , ???)
+			color = ???
+			pg.draw.???(??? , ??? , ???)
 
 	def Grossir(self):
 		"""
@@ -153,19 +153,19 @@ class Corps:
 		"""
 		Renvoit le premier élément de la liste (attention au piège)
 		"""
-		return self.corps[...]
+		return self.corps[???]
 
 	def LongueurCorps(self):
 		"""
 		Renvoit la longueur de la liste
 		"""
-		return ...
+		return ???
 
 	def Queue(self):
 		"""
 		Renvoit le dernier élément de la liste
 		"""
-		return ...
+		return ???
 
 	def CorpsSansTete(self):
 		"""
@@ -173,9 +173,9 @@ class Corps:
 		Il faut s'assurer que le corps a au moins 2 membres
 		Si ce n'est pas le cas, on renvoit la liste vide
 		"""
-		if( ... >= ... ):
-			return self.corps[...] # On renvoit toute la liste, sauf le premier élément
-		return ...
+		if( ??? >= ??? ):
+			return self.corps[???] # On renvoit toute la liste, sauf le premier élément
+		return ???
 
 	def Avancer(self, deplacement):
 		"""
@@ -187,14 +187,14 @@ class Corps:
 		On insert la tête en première position
 		"""
 		x, y = self.tete.position.EnTuple()
-		deplacement_x, deplacement_y = ...
+		deplacement_x, deplacement_y = ???
 		x += deplacement_x
-		y += ...
+		y += ???
 
 		self.tete = Membre(Position(x, y))
 
-		self.corps.pop(...)
-		self.corps.insert(..., ...)
+		self.corps.pop(???)
+		self.corps.insert(???, ???)
 
 class Serpent :
 	def __init__(self, position_initiale):
@@ -202,7 +202,7 @@ class Serpent :
 		La direction initiale du serpent est Direction.AUCUNE
 		"""
 		self.corps = Corps(position_initiale)
-		self.direction = ...
+		self.direction = ???
 
 	def PeutAllerDansCetteDirection(self, direction):
 		"""
@@ -210,15 +210,15 @@ class Serpent :
 		Il peut aller dans une direction, s'il ne va pas déjà dans la direction opposée
 		Exemple : S'il va à dejà vers la gauche, il ne peut pas aller à droite
 		"""
-		direction_opposee = Direction.DirectionOpposee(...)
-		return ... != ...
+		direction_opposee = Direction.DirectionOpposee(???)
+		return ??? != ???
 
 	def ChangerDirection(self, direction):
 		"""
 		S'il peut aller dans cette direction, on change sa direction
 		"""
 		if ???(direction):
-			self.direction = ...
+			self.direction = ???
 
 	def Dessiner(self, ecran, taille):
 		# Ici tu n'as rien à faire, on fait ce qu'on appelle une délégation, 
@@ -231,8 +231,8 @@ class Serpent :
 		Ici on délègue l'avancement du serpent à son corps
 		Il faut avant calculer le déplacement
 		"""
-		deplacement = Direction.DeplacementSelonDirection(...)
-		self.corps.Avancer(...)
+		deplacement = Direction.DeplacementSelonDirection(???)
+		self.corps.Avancer(???)
 
 	def MangerPomme(self):
 		"""
@@ -248,12 +248,12 @@ class Serpent :
 		x, y = self.Tete().position.EnTuple()
 		for membre in self.corps.???(): # On parcourt le corps du serpent, SANS la tête
 			membre_x, membre_y = membre.position.???()
-			if x == ... and ... == membre_y:
+			if x == ??? and ??? == membre_y:
 				# Le serpent se touche
-				return ...
+				return ???
 
 		# on a parcourut tout le corps, le serpent ne se touche pas
-		return ...
+		return ???
 
 class Jeu:
 	def __init__(self):
@@ -263,11 +263,12 @@ class Jeu:
 		"""
 		self.NOMBRE_CASES = 30
 		self.TAILLE_CASE = 20 # En pixels
-		self.TAILLE_ECRAN = ...
+		self.TAILLE_ECRAN = ???
 
 		self.FPS = 15
 		self.COULEUR_ARRIERE_PLAN = Colors.YELLOW
 		self.LE_JEU_TOURNE = True
+		self.NOM_DU_JEU = "Snake"
 
 	def Demarrer(self):
 		"""
@@ -277,64 +278,65 @@ class Jeu:
 		Il faut quitter pygame à la fin
 		"""
 		pg.???
-		self.ECRAN = pg.display.set_mode((..., ...))
+		self.ECRAN = pg.display.set_mode((???, ???))
+		pg.display.set_caption(self.NOM_DU_JEU)
 		self.HORLOGE = pg.time.Clock() # Permettra de limiter le nombre d'images par seconde
 
-		while ...:
-			self.Jouer()
+		while ???:
+			self.InitialiserPartie()
+			self.LancerBouclePrincipale()
 
 		pg.???
+
+	def InitialiserPartie(self):
+		"""
+		Le centre est la case centrale, par exemple s'il y a 16 cases, le centre est la 8ème
+		On crée un serpent dont la position_initiale est au centre
+		On crée une nouvelle pomme
+		"""
+		centre = ???
+
+		self.serpent = Serpent(Position(???, ???))
+		self.pomme = self.???()
+	
+	def LancerBouclePrincipale(self):
+		self.GAME_OVER = False
+
+		while not self.GAME_OVER:
+			self.Evenements()
+			self.LogiqueDuJeu()
+			self.Dessin()
 
 	def NouvellePomme(self):
 		"""
 		On crée une pomme à une position aléatoire
 		Il faut limiter l'endroit où apparaît la pomme avec x_min, x_max etc.
 		"""
-		x_min = ...
-		y_min = ...
-		x_max = ... - 1
-		y_max = ... - 1
-		position = Position.PositionAleatoire(..., ..., ..., y_max)
-		pomme = Pomme(...)
-		return ...
+		x_min = ???
+		y_min = ???
+		x_max = ??? - 1
+		y_max = ??? - 1
+		position = Position.PositionAleatoire(???, ???, ???, y_max)
+		pomme = Pomme(???)
+		return ???
 
 	def SerpentToucheUnBord(self):
 		x, y = self.serpent.Tete().position.EnTuple()
 
-		if x == -1 or x == ... or y == ... or y == self.NOMBRE_CASES:
+		if x == -1 or x == ??? or y == ??? or y == self.NOMBRE_CASES:
 			# Le serpent touche le bord
-			return ...
+			return ???
 
-		return ...
+		return ???
 
 	def SerpentTouchePomme(self):
 		pomme_x, pomme_y = self.???.position.EnTuple()
 		x, y = self.serpent.Tete().position.EnTuple()
-		if x ... pomme_x ... y ... pomme_y:
+		if x ??? pomme_x ??? y ??? pomme_y:
 			# le serpent touche la pomme
-			return ...
+			return ???
 
-		return ...
-		
-	
-	def Jouer(self):
-		"""
-		Le centre est la case centrale, par exemple s'il y a 16 cases, le centre est la 8ème
-		On crée un serpent dont la position_initiale est au centre
-		On crée une nouvelle pomme
-		Tant que ce n'est pas GAME_OVER, on regarde les évenements, on applique la logique du jeu et on dessine les éléments
-		"""
-		centre = ...
-
-		self.serpent = Serpent(Position(..., ...))
-		self.pomme = self.???()
-
-		self.GAME_OVER = False
-
-		while ... self.GAME_OVER:
-			self.Evenements()
-			self.LogiqueDuJeu()
-			self.Dessin()
+		return ???
 
 	def Evenements(self):
 		"""
@@ -343,18 +345,18 @@ class Jeu:
 		"""
 		for evenement in pg.event.get():
 			if evenement.type == pg.???:
-				self.GAME_OVER = ...
+				self.GAME_OVER = ???
 				self.??? = False
 			elif evenement.type == pg.???:
 				touche = evenement.key
 				if touche == pg.K_LEFT:
 					self.serpent.ChangerDirection(Direction.???)
 				elif touche == pg.K_RIGHT:
-					...
+					???
 				elif touche == pg.K_UP:
-					...
+					???
 				elif touche == pg.K_DOWN:
-					...
+					???
 	
 	def LogiqueDuJeu(self):
 		"""
@@ -366,7 +368,7 @@ class Jeu:
 		"""
 
 		if self.SerpentToucheUnBord() or self.serpent.SeTouche():
-			self.GAME_OVER = ...
+			self.GAME_OVER = ???
 			return
 			
 		if self.SerpentTouchePomme():
@@ -374,18 +376,20 @@ class Jeu:
 			self.??? = self.NouvellePomme()
 
 		self.serpent.???()
-		
+
+	def NettoyerEcran(self):
+		self.ECRAN.fill(self.COULEUR_ARRIERE_PLAN)
 
 	def Dessin(self):
 		"""
-		On remplit l'écran de la couleur d'arrière plan
+		On nettoie l'écran
 		puis on dessine la pomme et le serpent
 		On met à jour l'affichage
 		Enfin, on limite le nombre de fps
 		"""
-		self.ECRAN.???(self.COULEUR_ARRIERE_PLAN)
+		self.???
 		self.pomme.???(self.ECRAN, self.TAILLE_CASE)
-		self.serpent.Dessiner(..., ...)
+		self.serpent.Dessiner(???, ???)
 
 		pg.display.???()
 		self.HORLOGE.???(self.FPS)

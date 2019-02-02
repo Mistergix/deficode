@@ -1,7 +1,7 @@
 import pygame as pg
 import random as rnd
 
-class Colors:
+class Couleurs:
 	BLACK = (0,0,0)
 	RED = (255,0,0)
 	BLUE = (0, 0, 200)
@@ -14,7 +14,7 @@ class Jeu:
 
 		self.TAILLE_ECRAN = 500 # pixels
 		self.FPS = 15
-		self.COULEUR_ARRIERE_PLAN = Colors.BLUE
+		self.COULEUR_ARRIERE_PLAN = Couleurs.BLUE
 		self.LE_JEU_TOURNE = True
 		self.NOM_DU_JEU = "Mon premier jeu ennuyant"
 
@@ -66,8 +66,11 @@ class Jeu:
 		"""
 		return
 
-	def Dessin(self):
+	def NettoyerEcran(self):
 		self.ECRAN.fill(self.COULEUR_ARRIERE_PLAN)
+
+	def Dessin(self):
+		self.NettoyerEcran()
 
 		"""
 		On écrit ici les commandes pour dessiner des choses à l'écran

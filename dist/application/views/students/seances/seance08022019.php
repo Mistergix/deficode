@@ -123,10 +123,236 @@ Chaton.AfficherNombreChatons()
 		</div>
 		<div class="row white-box">
 			<div class="col-12">
+				<h1>Les couleurs RGB</h1>
+				<div class="exercice">
+					<p>
+						Rends toi sur <a href="https://www.google.com/search?source=hp&ei=xbFVXObmD8XwaMDvjRA&q=color+picker&btnK=Recherche+Google&oq=color+picker&gs_l=psy-ab.3..0l10.951.2527..2624...0.0..0.113.997.12j1......0....1..gws-wiz.....0..0i131.ov1Ih9SwCoQ" target="_blank" rel="noopener noreferrer">ce lien google</a>.
+					</p>
+					<p>
+						Sélectionne une couleur que tu aimes.
+					</p>
+				</div>
+				<p>
+					Les couleurs sont représentées par 3 nombres, <b>R, G, B</b>. Ils peuvent aller de <b>0</b> à <b>255</b>.
+				</p>
+				<p>
+					En Python, on peut utiliser des tuples et des attributs statiques pour représenter des couleurs.
+				</p>
+				<div class="exercice">
+					<p>
+						Tape et exécute le code suivant :
+					</p>
+					<div class="code-box">
+						<pre>
+class Couleurs:
+		BLEU = (0, 0, 255)
+		BLANC = (255, 255, 255)
+		JAUNE = (247, 230, 152)
+
+print("On représente du bleu comme ça : {}".format(Couleurs.BLUE))
+						</pre>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row white-box">
+			<div class="col-12">
 				<h1>Commençons avec Pygame !</h1>
 				<p class="warning">
 					Si tu ne l'as pas déjà fait, tape cette commande dans la console pyzo : <code>pip install pygame</code>
 				</p>
+				<p>
+					Chaque programme Pygame commence par <code>import pygame as pg</code>.
+				</p>
+				<p>
+					Avant d'utiliser Pygame, il faut écrire <code>pg.init()</code>.
+				</p>
+				<p>
+					Pour ouvrir une fenêtre, il faut écrire le code suivant (on passe un tuple comme argument) :
+				</p>
+				<div class="code-box">
+					<pre>
+LARGEUR = 400
+HAUTEUR = 300
+ECRAN = pg.display.set_mode((LARGEUR, HAUTEUR)) # taille 400 x 300 pixels
+					</pre>
+				</div>
+				<p class="warning">
+					Si tu as cette erreur : <code>TypeError: argument 1 must be 2-item sequence, not int</code>, 
+					c'est que tu n'as pas utilisé un tuple.
+				</p>
+				<p>
+					Pour nommer la fenêtre on tape ce code :
+				</p>
+				<div class="code-box">
+					<pre>
+NOM = "Mon jeu"
+pg.display.set_caption(NOM)
+					</pre>
+				</div>
+				<p>
+					Pour pouvoir limiter le nombre <b>d'images par seconde (FPS)</b>, on utilise une horloge Pygame que l'on obtient avec <code>pg.time.Clock()</code>.
+				</p>
+				<div class="exercice">
+					<p>Tape ce code, attention il ne marche pas encore, il faudra le compléter après.</p>
+					<div class="code-box">
+						<pre>
+import pygame as pg
+
+pg.init()
+
+LARGEUR = 400
+HAUTEUR = 300
+ECRAN = pg.display.set_mode((LARGEUR, HAUTEUR))
+
+NOM = "Mon jeu"
+pg.display.set_caption(NOM)
+
+position = (LARGEUR / 2, HAUTEUR / 2)
+gauche = True
+
+FPS = 30
+HORLOGE = pg.time.Clock()
+						</pre>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row white-box">
+			<div class="col-12">
+				<h1>La boucle principale</h1>
+				<p>
+					La <b>boucle principale</b> est une boucle qui tourne tant que le jeu tourne, elle fait trois choses :
+				</p>
+				<ul>
+					<li>Gestion des événements</li>
+					<li>Logique du jeu</li>
+					<li>Dessin du jeu sur l'écran</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row white-box">
+			<div class="col-12">
+				<h1>Les événements</h1>
+				<p>
+					Les <b>événements</b>, c'est tout ce que le joueur peut faire : presser une touche, cliquer etc.
+				</p>
+				<p>
+					Pygame nous donne la liste des événements avec <code>pg.event.get()</code>. 
+					On parcourt cette liste avec une boucle <b>for</b> : <code>for evenement in pg.event.get():</code>.
+				</p>
+				<p>
+					Enfin, on peut accéder au type de l'événement comme ceci : <code>evenement.type</code>.
+				</p>
+				<p>
+					Un type d'événement important :
+				</p>
+				<ul>
+					<li><code>pg.QUIT</code> : quand le joueur clique sur fermer la fenêtre</li>
+				</ul>
+				<div class="exercice">
+					<p>Rajoute ceci à ton programme :</p>
+					<div class="code-box">
+						<pre>
+continuer = True
+while continuer :
+	# Gestion des événements
+	for evenement in pg.event.get():
+			if evenement.type == pg.QUIT:
+				continuer = False # ça arrête la boucle
+						</pre>
+					</div>
+				</div>
+				<p>
+					Ici, on vérifie si le joueur clique sur fermer la fenêtre, si oui, on arrête la boucle.
+				</p>
+			</div>
+		</div>
+		<div class="row white-box">
+			<div class="col-12">
+				<h1>La logique du jeu</h1>
+				<p>
+					Après la gestion des événements, on met à jour les variables du jeu selon une certaine <b>logique</b>.
+				</p>
+				<p>
+					Ici, on a la variable <code>position</code>, que l'on va faire aller de gauche à droite indéfiniment :
+				</p>
+				<div class="exercice">
+					<p>Rajoute ce code au programme (attention, on est toujours dans la boucle principale, il faut espacer correctement).</p>
+					<div class="code-box">
+						<pre>
+	# Logique du jeu 
+	x, y = position
+	if x < 0 and gauche:
+		gauche = False
+	elif x > LARGEUR and not gauche :
+		gauche = True
+
+	if gauche :
+		x -= 5
+	else :
+		x += 5
+
+	position = (x, y)
+						</pre>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row white-box">
+			<div class="col-12">
+				<h1>Le dessin</h1>
+				<p>
+					La dernière étape consiste à dessiner sur la fenêtre.
+				</p>
+				<p>
+					On commence d'abord par nettoyer l'écran, avec la commande <code>ECRAN.fill</code>. 
+					Puis on dessine tous nos objets. 
+					Et enfin, on met à jour l'affichage avec la commande <code>pg.display.update()</code>.
+				</p>
+				<p>
+					Ici, on va dessiner notre objet avec la commande <code>pg.draw.rect</code>, on verra juste après comment elle marche.
+				</p>
+				<div class="exercice">
+					<p>Complète ton code (on est toujours dans la boucle principale !):</p>
+					<div class="code-box">
+						<pre>
+	# Dessin
+	ECRAN.fill((0, 0, 0))
+
+	pg.draw.rect(ECRAN, (255, 0, 0), (x, y, 20, 20))
+
+	pg.display.update()
+	HORLOGE.tick(FPS)
+						</pre>
+					</div>
+				</div>
+				<p>
+					Ici on nettoit l'écran avec du noir, puis on dessine un petit carré rouge à la position voulu, 
+					enfin on met à jour l'affichage et on limite les FPS avec la commande <code>HORLOGE.tick</code>.
+				</p>
+			</div>
+		</div>
+		
+		<div class="row white-box">
+			<div class="col-12">
+				<h1>Finir un programme Pygame</h1>
+				<p>
+					On doit toujours terminer un programme Pygame avec la commande <code>pg.quit()</code>.
+				</p>
+				<div class="exercice">
+					<p>Termine ton code (on n'est plus dans la boucle principale !):</p>
+					<div class="code-box">
+						<pre>
+pg.quit()
+						</pre>
+					</div>
+					<p>
+						Tu peux enfin le lancer !
+					</p>
+				</div>
 				<p>
 					Télécharge <a href="<?= code_url("seance4/pygame_template");?>" download="pygame_template.py">ce fichier</a>, c'est le fichier de <b>base</b> d'un programme Pygame.
 				</p>
