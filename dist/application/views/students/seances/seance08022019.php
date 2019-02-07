@@ -353,10 +353,92 @@ pg.quit()
 						Tu peux enfin le lancer !
 					</p>
 				</div>
+			</div>
+		</div>
+		
+		<div class="row white-box">
+			<div class="col-12">
+				<h1>L'affichage</h1>
 				<p>
-					Télécharge <a href="<?= code_url("seance4/pygame_template");?>" download="pygame_template.py">ce fichier</a>, c'est le fichier de <b>base</b> d'un programme Pygame.
+					Quand on écrit <code>ECRAN = pg.display.set_mode((LARGEUR, HAUTEUR))</code>, la variable <code>ECRAN</code>
+					contient une <code>Surface</code> sur laquelle on peut dessiner des choses. 
+				</p>
+				<p class="example">
+					Quand on écrit <code>ECRAN.fill((0, 0, 0))</code>, on remplit la Surface de noir.
+				</p>
+				<p>
+					Une Surface contient des <b>pixels</b>. Les coordonnées démarrent de (0, 0) en haut à gauche et s'arrêtent à (LARGEUR - 1, HAUTEUR - 1) en bas à droite,
+					comme indiqué par cette image :
+				</p>
+				<div class="row">
+						<div class="col-12 col-md-6 col-lg-4 offset-lg-4 offset-md-3">
+							<img class="img-fluid" src="<?=img_url("seance5/pixels")?>" alt="Position initiale de la tortue">
+						</div>
+				</div> <!-- END IMAGES -->
+				<p class="warning">
+					L'axe des <b>ordonnées (y)</b> est inversé ! Pour descendre il faut donc augmenter y.
+				</p>
+				<p>
+					<b>FPS</b> veut dire <i>Frames Per Second</i>. C'est le nombre de fois que l'ordinateur dessine à l'écran par seconde. Par défaut il le fait au maximum. On peut limiter le nombre de FPS (ici à 30) comme ceci :
+				</p>
+				<p>
+					On définit au début une horloge : <code>HORLOGE = pg.time.Clock()</code>, puis dans la boucle principale, on écrit : <code>HORLOGE.tick(30)</code>.
+				</p>
+				<p>
+					Enfin, dans la boucle principale, il faut préciser à Python de mettre à jour l'écran avec <code>pg.display.update()</code>.
 				</p>
 			</div>
 		</div>
+
+		<div class="row white-box">
+			<div class="col-12">
+				<h1>La classe Rect</h1>
+				<p>
+					Dans Pygame, tous les objets sont entourés de <b>rectangles</b> pour les délimiter.
+				</p>
+				<p>
+					Pour créer un rectangle il faut 4 nombres :
+				</p>
+				<ul>
+					<li>L'abscisse du coin en haut à gauche, <code>x</code></li>
+					<li>L'ordonnée du coin en haut à gauche, <code>y</code></li>
+					<li>La largeur du rectangle, <code>largeur</code></li>
+					<li>La hauteur du rectangle, <code>hauteur</code></li>
+				</ul>
+				<p>
+					On définit notre rectangle comme cela : <code>mon_rectangle = pg.Rect(x, y, largeur, hauteur)</code>.
+				</p>
+				<p>
+					Une fois qu'on a le rectangle, on peut accéder à plein de données, comme son centre : <code>mon_rectangle.center</code>.
+				</p>
+				<p>
+					Voici la liste de données :
+				</p>
+				<p>
+					<code>
+						x, y,
+						top, left, bottom, right,
+						topleft, bottomleft, topright, bottomright,
+						midtop, midleft, midbottom, midright,
+						center, centerx, centery,
+						size, width, height,
+						w, h.
+					</code>
+				</p>
+				<div class="exercice">
+					TODO : exercice sur les rectangles qui reprend ce qui a été vu dans les paragraphes précédents, pas de nouveaux concepts de pygame.
+				</div>
+			</div>
+		</div>
+
+		<div class="row white-box">
+			<div class="col-12">
+				<h1>Pour aller plus loin</h1>
+				<p>
+					Si tu veux en savoir plus sur Pygame vas sur <a href="https://www.pygame.org/docs/" target="_blank" rel="noopener noreferrer">le site de la documentation Pygame</a>.
+				</p>
+			</div>
+		</div>
+
 	</div>
 </main>
