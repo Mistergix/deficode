@@ -232,6 +232,7 @@ HORLOGE = pg.time.Clock()
 				</ul>
 			</div>
 		</div>
+		
 		<div class="row white-box">
 			<div class="col-12">
 				<h1>Les événements</h1>
@@ -426,7 +427,8 @@ pg.quit()
 					</code>
 				</p>
 				<div class="exercice">
-					TODO : exercice sur les rectangles qui reprend ce qui a été vu dans les paragraphes précédents, pas de nouveaux concepts de pygame.
+					<p>Reprends ton code précédemment créé, et ajoutes à l'écran un autre rectangle qui bouge de haut en bas de la fenetre!</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -435,14 +437,38 @@ pg.quit()
 			<div class="col-12">
 				<h1>Les primitives de dessin</h1>
 				<p>
-					TODO : détailler un peu ça (ne pas rajouter les autres fonctions de dessins, superflu)
+					On utilisera principalement les trois primitives de dessin suivante: <br><br>
+					<code>pygame.draw.line(surface, color, start_point, end_point, width)</code>, <br>
+					<code>pygame.draw.rect(surface, color, rect_object, width)</code>, <br>
+					<code>pygame.draw.ellipse(surface, color, rect_object, width)</code>.
 				</p>
 				<p>
-					<code>pygame.draw.line(surface, color, start_point, end_point, width)</code>, <code>pygame.draw.rect(surface, color, rect_object, width)</code>, 
-					<code>pygame.draw.ellipse</code> (mêmes arguments que draw.rect, l'ellipse est inscrite dans le rectangle correspondant).
+					<code>pygame.draw.line(surface, color, start_point, end_point, width=1)</code> <br>
+					permet de tracer une ligne sur <code>surface</code>, de couleur <code>color</code> (un triplet RGB), qui commence en <code>start_point</code> (paire de coordonnées x,y), qui se termine en <code>end_point</code> (paire x,y) et de largeur <code>width</code>.
+				</p>			
+				<p>
+					<code>pygame.draw.rect(surface, color, rect_object, width=1)</code> <br>
+					permet de tracer un rectangle <code>rect_object</code> sur <code>surface</code>, de couleur <code>color</code> (un triplet RGB) et avec un bord large de <code>width</code>.
 				</p>
+				<p>
+					<code>pygame.draw.ellipse(surface, color, rect_object, width=1)</code> <br>
+					permet de tracer une ellipse. Les arguments sont les mêmes que <code>pygame.draw.rect</code>, et l'ellipse est inscrite dans le rectangle correspondant.
+				</p>
+				<div class="example">
+    				<div class="code-box">
+						<pre>
+ROUGE = (255, 0, 0)
+mon_rect = pg.Rect(20, 20, 30, 50)
+
+pg.draw.line(ECRAN, ROUGE, (10,0), (100, 110), 1)
+pg.draw.rect(ECRAN, ROUGE, mon_rect)
+pg.draw.ellipse(ECRAN, ROUGE, mon_rect, 0)
+						</pre>
+					</div>
+				</div>	
 				<div class="exercice">
-					TODO : exo pour travailler tout ça
+					<p>Reprends ton code précédemment créé, et transformes un des rectangles en une ellipse!</p>
+					<p>On t'invite aussi à y tracer une ligne qui part de tout en haut à gauche de l'écran et qui se finit tout en bas à droite.</p>
 				</div>
 			</div>
 		</div>
