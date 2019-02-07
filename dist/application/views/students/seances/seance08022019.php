@@ -433,6 +433,58 @@ pg.quit()
 
 		<div class="row white-box">
 			<div class="col-12">
+				<h1>Les primitives de dessin</h1>
+				<p>
+					TODO : détailler un peu ça (ne pas rajouter les autres fonctions de dessins, superflu)
+				</p>
+				<p>
+					<code>pygame.draw.line(surface, color, start_point, end_point, width)</code>, <code>pygame.draw.rect(surface, color, rect_object, width)</code>, 
+					<code>pygame.draw.ellipse</code> (mêmes arguments que draw.rect, l'ellipse est inscrite dans le rectangle correspondant).
+				</p>
+				<div class="exercice">
+					TODO : exo pour travailler tout ça
+				</div>
+			</div>
+		</div>
+
+		<div class="row white-box">
+			<div class="col-12">
+				<h1>Les touches du clavier</h1>
+				<p>
+					TODO : plus détailler
+				</p>
+				<p>
+				ça se passe dans la boucle des événements
+				</p>
+				<p>
+					si <code>evenement.type == pg.KEYDOWN</code>, alors une touche est pressée. 
+				</p>
+				<p>
+					on écrit <code>touche = evenement.key</code> pour récup la touche.
+				</p>
+				<p>
+					Puis on compare à pg.K_LEFT pour savoir si le joueur a appuyé sur la flèche gauche (cf le code du snake pour plus de détails)
+				</p>
+				<p>
+					Listes des touche pygame : https://www.pygame.org/docs/ref/key.html
+				</p>
+				<div class="exercice">
+					TODO / exo qui dessine un truc en fonction des touches appuyées
+				</div>
+			</div>
+		</div>
+
+		<div class="row white-box">
+			<div class="col-12">
+				<h1>D'autres exos</h1>
+				<p>
+					TODO : d'autres exos qui récapent tout ça
+				</p>
+			</div>
+		</div>
+
+		<div class="row white-box">
+			<div class="col-12">
 				<h1>Pour aller plus loin</h1>
 				<p>
 					Si tu veux en savoir plus sur Pygame vas sur <a href="https://www.pygame.org/docs/" target="_blank" rel="noopener noreferrer">le site de la documentation Pygame</a>.
