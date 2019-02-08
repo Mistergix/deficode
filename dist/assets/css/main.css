@@ -91,7 +91,7 @@ main {
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none; }
-  main h1 {
+  main h1, main h2 {
     color: #F26101;
     font-weight: bold;
     font-size: 1.75rem; }
