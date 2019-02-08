@@ -431,7 +431,6 @@ pg.quit()
 					</div>
 				</div>
 			</div>
-		</div>
 
 		<div class="row white-box">
 			<div class="col-12">
