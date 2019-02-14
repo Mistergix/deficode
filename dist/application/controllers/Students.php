@@ -52,7 +52,7 @@ class Students extends Basecontroller
 			$file_name = $file_names[$i];
 			$seances_links[$label] = ["url" => "seances/seance/$file_name"];
 		}
-		$this->load_page("students/seances", ["seances_links" => $seances_links, "menu_links" => $this->getMenuLinks(), "title" => "Déficode : Récap' des séances", "styles" => ["main"], "scripts" => ["main"], "description" => "Récapitulatif de toutes les séances précedentes, incluant la séance courante"]);
+		$this->load_page("students/seances", ["seances_links" => $seances_links, "menu_links" => $this->getMenuLinks(), "title" => "Déficode : Liste des séances", "styles" => ["main"], "scripts" => ["main"], "description" => "Récapitulatif de toutes les séances précedentes, incluant la séance courante"]);
 	}
 
 	public function other()
@@ -64,8 +64,8 @@ class Students extends Basecontroller
 
 	private function getMenuLinks()
 	{
-		$menu_labels = ["Accueil", "Le récap'", "Quizz", "Les séances", "Autres"];
-		$menu_keys = ["", "students/sumup", "students/quizz", "students/seances", "students/other"];
+		$menu_labels = ["Accueil", "Le récap'", "Les séances", "Autres"];
+		$menu_keys = ["", "students/sumup", "students/seances", "students/other"];
 		$menu_links = [];
 
 		for ($i=0; $i < count($menu_labels); $i++) { 
