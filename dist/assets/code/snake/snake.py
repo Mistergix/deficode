@@ -8,6 +8,7 @@ class Colors:
     WHITE = (200,200,200)
     YELLOW = (247, 230, 152)
     DARKER_BLUE = (76, 124, 165)
+    GREY = (128, 128, 128)
 
 class Direction:
 	HAUT   = "haut"
@@ -241,10 +242,17 @@ class Jeu:
 			self.pomme = self.NouvellePomme()
 
 		self.serpent.Avancer()
-		
+
+	def DessinerGrille(self):
+		for x in range(self.NOMBRE_CASES):
+			pg.draw.line(self.ECRAN, Colors.GREY, (x * self.TAILLE_CASE, 0), (x * self.TAILLE_CASE, self.TAILLE_ECRAN))
+		for y in range(self.NOMBRE_CASES):
+			pg.draw.line(self.ECRAN, Colors.GREY, (0, y * self.TAILLE_CASE), (self.TAILLE_ECRAN, y * self.TAILLE_CASE))
 
 	def Dessin(self):
 		self.ECRAN.fill(self.COULEUR_ARRIERE_PLAN)
+		self.DessinerGrille()
+
 		self.pomme.Dessiner(self.ECRAN, self.TAILLE_CASE)
 		self.serpent.Dessiner(self.ECRAN, self.TAILLE_CASE)
 

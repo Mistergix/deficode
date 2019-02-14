@@ -22,16 +22,7 @@ while continuer :
 	# Logique du jeu 
 
 	# Dessin
-	ECRAN.fill((255, 255, 255))
-
-	ROUGE = (255, 0, 0)
-	BLEU = (0, 0, 255)
-	VERT = (0, 255, 0)
-	mon_rect = pg.Rect(10, 10, LARGEUR - 20, HAUTEUR - 20)
-
-	pg.draw.rect(ECRAN, ROUGE, mon_rect)
-	pg.draw.ellipse(ECRAN, BLEU, mon_rect, 5)
-	pg.draw.line(ECRAN, VERT, (0, 0), (LARGEUR, HAUTEUR), 5)
+	ECRAN.fill((0, 0, 0))
 
 	pg.display.update()
 	HORLOGE.tick(FPS)

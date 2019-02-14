@@ -413,7 +413,7 @@ pg.quit()
 					Une fois qu'on a le rectangle, on peut accéder à plein de données, comme son centre : <code>mon_rectangle.center</code>.
 				</p>
 				<p>
-					Voici la liste de données :
+					Voici la liste de données accessibles :
 				</p>
 				<p>
 					<code>
@@ -423,12 +423,38 @@ pg.quit()
 						midtop, midleft, midbottom, midright,
 						center, centerx, centery,
 						size, width, height,
-						w, h.
+						w, h
 					</code>
 				</p>
+				<p>
+					On peut aussi modifier ces données, ce qui met à jour tout le reste.
+				</p>
 				<div class="exercice">
-					<p>Reprends ton code précédemment créé, et ajoutes à l'écran un autre rectangle qui bouge de haut en bas de la fenetre!</p>
+					<p>
+						Teste le code suivant :
+					</p>
+					<div class="code-box">
+						<pre>
+import pygame as pg
+
+pg.init()
+
+mon_rectangle = pg.Rect(20, 50, 200, 300)
+print(mon_rectangle.center)
+
+print(mon_rectangle.left)
+mon_rectangle.left = 40
+print(mon_rectangle.left)
+
+print(mon_rectangle.center)
+
+pg.quit()
+						</pre>
 					</div>
+					<p>
+						Que se passe-t-il quand je modifie une des données du rectangle ?
+					</p>
+				</div>
 				</div>
 			</div>
 
@@ -453,21 +479,32 @@ pg.quit()
 					<code>pygame.draw.ellipse(surface, color, rect_object, width=1)</code> <br>
 					permet de tracer une ellipse. Les arguments sont les mêmes que <code>pygame.draw.rect</code>, et l'ellipse est inscrite dans le rectangle correspondant.
 				</p>
-				<div class="example">
+				<div class="exercice">
+					<p>
+						Télécharge ce <a href="<?= code_url("seance5/template_pg_1");?>" download="template_pygame_1.py">fichier pygame de base <i class="fa fa-download" aria-hidden="true"></i></a>.
+					</p>
+					<p>
+						Complète la zone de dessin avec le code suivant :
+					</p>
     				<div class="code-box">
 						<pre>
 ROUGE = (255, 0, 0)
+BLEU = (0, 0, 255)
 mon_rect = pg.Rect(20, 20, 30, 50)
 
 pg.draw.line(ECRAN, ROUGE, (10,0), (100, 110), 1)
 pg.draw.rect(ECRAN, ROUGE, mon_rect)
-pg.draw.ellipse(ECRAN, ROUGE, mon_rect, 0)
+pg.draw.ellipse(ECRAN, BLEU, mon_rect)
 						</pre>
 					</div>
-				</div>	
-				<div class="exercice">
-					<p>Reprends ton code précédemment créé, et transformes un des rectangles en une ellipse!</p>
-					<p>On t'invite aussi à y tracer une ligne qui part de tout en haut à gauche de l'écran et qui se finit tout en bas à droite.</p>
+					<p>
+						<b>Modifie</b> le code précédent pour obtenir une image comme celle là :
+					</p>
+					<div class="row">
+						<div class="col-12 col-md-6 col-lg-4 offset-lg-4 offset-md-3">
+							<img class="img-fluid" src="<?=img_url("seance5/draw_pg")?>" alt="Position initiale de la tortue">
+						</div>
+					</div> <!-- END IMAGES -->
 				</div>
 			</div>
 		</div>
@@ -476,34 +513,42 @@ pg.draw.ellipse(ECRAN, ROUGE, mon_rect, 0)
 			<div class="col-12">
 				<h1>Les touches du clavier</h1>
 				<p>
-					TODO : plus détailler
+					Pour savoir si le joueur a appuyé sur "Fermer la fenêtre", on utilise l'événement <code>pg.QUIT</code>.
 				</p>
 				<p>
-				ça se passe dans la boucle des événements
+					Grâce à l'événement <code>pg.KEYDOWN</code>, on peut savoir si le joueur a appuyé sur une touche du clavier.
 				</p>
 				<p>
-					si <code>evenement.type == pg.KEYDOWN</code>, alors une touche est pressée. 
+					Si <code>evenement.type == pg.KEYDOWN</code>, alors une touche est pressée. 
 				</p>
 				<p>
-					on écrit <code>touche = evenement.key</code> pour récup la touche.
+					On écrit <code>touche = evenement.key</code> pour récupérer la touche.
 				</p>
 				<p>
-					Puis on compare à pg.K_LEFT pour savoir si le joueur a appuyé sur la flèche gauche (cf le code du snake pour plus de détails)
+					Puis on compare (par exemple) à <code>pg.K_LEFT</code> pour savoir si le joueur a appuyé sur la flèche gauche.
 				</p>
 				<p>
-					Listes des touche pygame : https://www.pygame.org/docs/ref/key.html
+					Voici la <a href="https://www.pygame.org/docs/ref/key.html" target="_blank" rel="noopener noreferrer">la liste des touches Pygame</a>.
 				</p>
 				<div class="exercice">
-					TODO / exo qui dessine un truc en fonction des touches appuyées
+					<p>
+						Télécharge <a href="<?= code_url("seance5/exo_events");?>" download="exercice_evenements.py">ce fichier<i class="fa fa-download" aria-hidden="true"></i></a>.
+					</p>
+					<p>
+						Exécute-le et appuie sur les flèches du clavier.
+					</p>
+					<p>
+						Pour le moment seuls haut et bas fonctionnent, modifie le code pour que la boule puisse se déplacer aussi à gauche ou à droite
+					</p>
 				</div>
 			</div>
 		</div>
 
 		<div class="row white-box">
 			<div class="col-12">
-				<h1>D'autres exos</h1>
+				<h1>Création d'un jeu de Snake</h1>
 				<p>
-					TODO : d'autres exos qui récapent tout ça
+					Rends toi à <a href="<?=site_url("seances/seance/seance15022019");?>">la séance prochaine </a> pour appliquer tout ce qu'on a vu.
 				</p>
 			</div>
 		</div>
@@ -513,6 +558,15 @@ pg.draw.ellipse(ECRAN, ROUGE, mon_rect, 0)
 				<h1>Pour aller plus loin</h1>
 				<p>
 					Si tu veux en savoir plus sur Pygame vas sur <a href="https://www.pygame.org/docs/" target="_blank" rel="noopener noreferrer">le site de la documentation Pygame</a>.
+				</p>
+				<p>
+					La POO nous permet de bien organiser notre code Pygame.
+				</p>
+				<p>
+					Quand tu veux créer un jeu Pygame, tu peux utiliser <a href="<?= code_url("seance5/pygame_template");?>" download="template_pygame_.py">ce fichier pygame de base <i class="fa fa-download" aria-hidden="true"></i></a>.
+				</p>
+				<p>
+					Tout ce que nous avons vu (la boucle principale, l'initialisation etc.) a été organisé pour toi.
 				</p>
 			</div>
 		</div>
