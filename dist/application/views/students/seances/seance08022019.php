@@ -498,7 +498,7 @@ pg.draw.ellipse(ECRAN, BLEU, mon_rect)
 						</pre>
 					</div>
 					<p>
-						<b>Modifie</b> le code précéent pour obtenir une image comme celle là :
+						<b>Modifie</b> le code précédent pour obtenir une image comme celle là :
 					</p>
 					<div class="row">
 						<div class="col-12 col-md-6 col-lg-4 offset-lg-4 offset-md-3">
