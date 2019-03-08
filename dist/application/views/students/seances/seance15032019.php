@@ -214,5 +214,22 @@ https://www.google.fr
 			</div>
 		</div>
 
+		<div class="row white-box">
+			<div class="col-12">
+				<h1>La véritable structure d'une page HTML</h1>
+				<p>
+					Jusque là, nous avons codé notre page n'importe comment !
+				</p>
+				<p>
+					Une vraie page Internet a cette forme ci :
+				</p>
+				<div class="code-box">
+					<pre>
+						
+					</pre>
+				</div>
+			</div>
+		</div>
+
 	</div>
 </main>
