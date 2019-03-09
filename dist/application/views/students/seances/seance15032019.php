@@ -225,9 +225,62 @@ https://www.google.fr
 				</p>
 				<div class="code-box">
 					<pre>
-						
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+	&lt;head&gt;
+		&lt;meta charset="utf-8"&gt;				
+		&lt;title&gt;[Titre de la page]&lt;/title&gt;
+	&lt;/head&gt;
+	
+	&lt;body&gt;
+
+	&lt;/body&gt;
+&lt;/html&gt;
 					</pre>
 				</div>
+				<p>
+					La première balise est <code>&lt;!DOCTYPE html&gt;</code>, elle permet de dire au navigateur d'utiliser la version
+					la plus récente d'HTML.
+				</p>
+				<p class="warning">
+					Il n'y a pas de balise fermante pour le DOCTYPE.
+				</p>
+				<p>
+					La seconde balise est <code>&lt;html&gt;&lt;/html&gt;</code>. Elle contient <b>toute</b> la page. 
+					Il ne doit rien y avoir en dehors à part le DOCTYPE.
+				</p>
+				<p>
+					Le <code>&lt;head&gt;&lt;/head&gt;</code> va contenir des informations utiles sur la page. Ici par exemple elle contient
+					son <b>titre</b> qui va s'afficher dans l'onglet. 
+					La balise <code>&lt;meta charset="utf-8"&gt;</code> va nous permettre d'utiliser des accents.
+				</p>
+				<p>
+					Enfin, la balise <code>&lt;body&gt;&lt;/body&gt;</code> va contenir la partie que l'on veut montrer aux visiteurs :
+					les images, textes, liens etc.
+				</p>
+
+				<div class="exercice">
+					<p>
+						Place le contenu de <span class="file">index.html</span> dans une balise <code>body</code>.
+					</p>
+					<p>
+						Au dessus du <code>body</code>, place le <code>head</code> et donne un titre à ta page.
+					</p>
+					<p>
+						Place le <code>body</code> et le <code>head</code> dans un <code>html</code>.
+					</p>
+					<p>
+						Rajoute le <b>DOCTYPE</b>.
+					</p>
+					<p>
+						Regarde le résultat dans le navigateur et regarde le nom de ton onglet, à quoi corresdond-til ?
+					</p>
+				</div>
+				<p>
+					A chaque fois que tu veux créer une page web, tu peux télécharger <a href="<?= code_url("seance8/template", "html");?>" download="template.html">ce template</a> qui contient
+					une page HTML de base.
+				</p>
 			</div>
 		</div>
 
