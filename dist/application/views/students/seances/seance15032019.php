@@ -462,5 +462,73 @@ https://www.google.fr
 			</div>
 		</div>
 
+		<div class="row white-box">
+			<div class="col-12">
+				<h1>Les ancres</h1>
+				<p>
+					On a vu comment faire des liens vers d'autres sites, ou d'autre pages de notre site à nous.
+				</p>
+				<p>
+					Il reste une dernière chose à aborder : les <b>ancres</b>.
+				</p>
+				<p>
+					Les ancres permettent de faire des liens sur la <b>même</b> page. 
+				</p>
+				<p class="example">
+					Si une page est très longue, on peut créer un bouton qui emmène en haut ou en bas de la page.
+				</p>
+				<p>
+					Pour créer une ancre, on ajoute un attribut <code>id</code> à une balise, n'importe laquelle, qui va alors servir de repère.
+				</p>
+				<p>
+					On peut donner n'importe quelle valeur à cet attribut (sans espace, ni accent).
+				</p>
+				<p class="example">
+					<code>&lt;p id="dernier_paragraphe"&gt;Ceci est le dernier paragraphe&lt;/p&gt;</code>
+				</p>
+				<p>
+					Puis on crée un lien vers cette ancre avec ce format :
+				</p>
+				<p>
+					<code>&lt;a href="#[nom_id]"&gt;Cliquez ici&lt;/a&gt;</code>
+				</p>
+				<p class="example">
+					<code>&lt;a href="#dernier_paragraphe"&gt;Cliquez ici pour se rendre au dernier paragraphe&lt;/a&gt;</code>
+				</p>
+				<p class="warning">
+					Il ne faut pas oublier le <b>#</b> !
+				</p>
+				<div class="exercice">
+					<p>
+						Dans <span class="file">index.html</span>, rajoute ce lien :
+					</p>
+					<p>
+						<code>&lt;a href="#dernier_paragraphe"&gt;Cliquez ici pour se rendre au dernier paragraphe&lt;/a&gt;</code>
+					</p>
+					<p>
+						Puis rajoute un paragraphe <code>p</code> suffisament long pour que l'on soit obligé de défiler la page. Tu peux copier <a href="<?= code_url("seance8/lorem", "txt");?>" target="_blank" rel="noopener noreferrer">ce texte</a>.
+					</p>
+					<p>
+						Rajoute à la fin : <code>&lt;p id="dernier_paragraphe"&gt;Dernier paragraphe&lt;/p&gt;</code>
+					</p>
+					<p>
+						Teste ce lien dans ton navigateur.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row white-box">
+			<div class="col-12">
+				<h1>blocs et inline</h1>
+			</div>
+		</div>
+
+		<div class="row white-box">
+			<div class="col-12">
+				<h1>Quelques exos</h1>
+			</div>
+		</div>
+
 	</div>
 </main>
