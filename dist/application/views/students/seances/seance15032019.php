@@ -554,10 +554,10 @@ https://www.google.fr
 &lt;p&gt;Paragraphe 4&lt;/p&gt;
 						</pre>
 					</div>
-				</div>
-				<p>
+					<p>
 					Tu remarques que les liens sont côtes à côtes, tandis que les paragraphes sont les uns en dessous des autres.
-				</p>
+					</p>
+				</div>
 			</div>
 		</div>
 
