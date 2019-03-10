@@ -520,7 +520,44 @@ https://www.google.fr
 
 		<div class="row white-box">
 			<div class="col-12">
-				<h1>blocs et inline</h1>
+				<h1>Les éléments blocks et inline</h1>
+				<p>
+					Il y a deux types de balises : les blocks et les inlines.
+				</p>
+				<p>
+					La différence entre les deux est la "place" qu'elles prennent.
+				</p>
+				<p>
+					Les balises blocks prvoquent un retour à la ligne, tandis que les balises inline n'en provoquent pas.
+				</p>
+				<p class="example">
+					Les balises <code>a</code> et <code>img</code> sont inlines, tandis que les balises <code>h1</code> et
+					<code>p</code> sont blocks.
+				</p>
+				<div class="exercice">
+					<p>
+						Efface le contenu du <code>body</code> de <span class="file">index.html</span>.
+					</p>
+					<p>
+						Remplace-le par :
+					</p>
+					<div class="code-box">
+						<pre>
+&lt;a href="page.html"&gt;Lien&lt;/a&gt;
+&lt;a href="page.html"&gt;Lien&lt;/a&gt;
+&lt;a href="page.html"&gt;Lien&lt;/a&gt;
+&lt;a href="page.html"&gt;Lien&lt;/a&gt;
+
+&lt;p&gt;Paragraphe 1&lt;/p&gt;
+&lt;p&gt;Paragraphe 2&lt;/p&gt;
+&lt;p&gt;Paragraphe 3&lt;/p&gt;
+&lt;p&gt;Paragraphe 4&lt;/p&gt;
+						</pre>
+					</div>
+				</div>
+				<p>
+					Tu remarques que les liens sont côtes à côtes, tandis que les paragraphes sont les uns en dessous des autres.
+				</p>
 			</div>
 		</div>
 
