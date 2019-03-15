@@ -370,6 +370,11 @@ https://www.google.fr
 					<code>../../../dossier1/dossier2/index.html</code>
 				</p>
 
+				<p class="example">
+						Pour ouvrir un lien dans un nouvel onglet, on ajoute l'attribut <code>target="_blank"</code> : 
+						<code>&lt;a href="../index.html" target="_blank"&gt;Retour à l'accueil&lt;/a&gt;</code>
+				</p>
+
 				<div class="exercice">
 					<p>
 						Voici un exercice pour comprendre les chemins relatifs :
@@ -401,6 +406,9 @@ https://www.google.fr
 &lt;a href="../index.html"&gt;Retour à l'accueil&lt;/a&gt;
 						</pre>
 					</div>
+					<p>
+							Fais en sorte que les liens ouvrent dans un nouvel onglet.
+					</p>
 					<p>
 						Clique sur les liens dans ton navigateur.
 					</p>
@@ -597,7 +605,7 @@ https://www.google.fr
         &lt;img src="images/earth.gif" alt="[texte_alternatif]"&gt;
     
         &lt;div&gt; 
-            &lt;p&gt; mettre ici beaucoup de faux texte &quot;lorem ipsum&quot;... voir ici https://www.faux-texte.com/ &lt;/p&gt;
+            &lt;p&gt; mettre ici beaucoup de faux texte &quot;lorem ipsum&quot;... voir ici &lt;a href=&quot;https://www.faux-texte.com/&quot; target=&quot;_blank&quot;&gt;sur ce site&lt;/a&gt;&lt;/p&gt;
         &lt;/div&gt;
         
         &lt;a href="#up"&gt;Remonter&lt;/a&gt;

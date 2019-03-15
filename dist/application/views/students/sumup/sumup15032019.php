@@ -277,6 +277,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					Il est possible d'avoir des chemins comme ça : <br>
 					<code>../../../dossier1/dossier2/index.html</code>
 				</p>
+				<p class="example">
+						Pour ouvrir un lien dans un nouvel onglet, on ajoute l'attribut <code>target="_blank"</code> : 
+						<code>&lt;a href="../index.html" target="_blank"&gt;Retour à l'accueil&lt;/a&gt;</code>
+				</p>
 			</div>
 		</div>
 
