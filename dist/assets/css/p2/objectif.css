@@ -1,0 +1,190 @@
+body, html
+{
+	margin : 0;
+	padding: 0;
+}
+
+body 
+{
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#home
+{
+	background: url("../../img/p2/laptop.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 120vh;
+}
+
+.italic
+{
+	font-style: italic;
+}
+
+#apropos_section
+{
+	background-color: rgba(226, 226, 226, 0.5);
+	padding: 2rem;
+}
+
+#apropos
+{
+	align-items: center;
+}
+
+#apropos .text
+{
+	flex: 2;
+}
+
+#apropos .image
+{
+	flex: 1;
+}
+
+#apropos .image img
+{
+	flex: 1;
+	max-width: 100%;
+}
+
+#apropos .text, #apropos .image
+{
+	padding: 1rem;
+}
+
+#services_section
+{
+	background-color: #666;
+	color: white;
+	padding : 2rem;
+}
+
+.social_item
+{
+	padding: 0 1rem;
+}
+
+.social_item a 
+{
+	color: black;
+}
+
+#facebook a:hover
+{
+	color : #4267b2;
+}
+
+#instagram a:hover
+{
+	color : #cc3872;
+}
+
+#twitter a:hover
+{
+	color : #1da1f2;
+}
+
+#services, #social, #apropos
+{
+	display: flex;
+	justify-content: center;
+}
+
+.services_item
+{
+	flex: 1;
+}
+
+.services_item p
+{
+	text-align: justify;
+	padding: 1rem;
+}
+
+.bouton
+{
+	color : black;
+	background-color: white;
+	border: 0.1rem solid #60a6e0;
+	border-radius: 0.75rem;
+	padding: 0.5rem 1rem;
+	margin-top: 0.4rem;
+	transition: ease 0.4s;
+	text-decoration: none;
+}
+
+.bouton:hover 
+{
+	color : white;
+	background-color: #60a6e0;
+}
+
+#mainMenu
+{
+	background-color: rgba(0, 0, 0, 0.6);
+	text-align: center;
+	padding: 1rem;
+}
+
+#social_section, #services_section, #apropos_section
+{
+	text-align: center;
+}
+
+#mainMenu a
+{
+	padding: 1rem;
+	color: white;
+	text-decoration: none;
+}
+
+#mainMenu a:hover, a:hover, .text-secondary, .lettrine
+{
+	color: #60a6e0 ;
+}
+
+#bandeau 
+{
+	background-color: rgba(0, 0, 0, 0.6);
+	margin-top: 10%;
+	margin-bottom: 10%;
+}
+
+#contenu
+{
+	text-align: center;
+	padding: 5%;
+	color: white;
+}
+
+#contenu img 
+{
+	max-width: 10rem;
+	border-radius: 50%;
+	border: 0.25rem solid #60a6e0;
+	transition: 0.2s;
+}
+
+#contenu img:hover
+{
+	transform: rotate(360deg) scale(1.2);
+}
+
+@media screen and (max-width : 900px)
+{
+	#apropos, #services
+	{
+		flex-direction: column;
+	}
+	#home 
+	{
+		max-height: 100vh;
+	}
+	#mainMenu a
+	{
+		display: block;
+		padding: 0.5rem;
+	}
+}
