@@ -563,7 +563,56 @@ https://www.google.fr
 
 		<div class="row white-box">
 			<div class="col-12">
-				<h1>Quelques exos</h1>
+				<h1>Le temps des exos</h1>
+                
+                <p>On va essayer de te faire faire une vraie page:</p>
+                
+                
+                <div class="exercice">
+					<p>
+						Ecris dans un nouveau fichier html:
+					</p>
+					<div class="code-box">
+						<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+	&lt;head&gt;
+		&lt;meta charset="utf-8"&gt;				
+		&lt;title&gt;Dodo&lt;/title&gt;
+	&lt;/head&gt;
+	
+	&lt;body&gt;
+        &lt;div id=&quot;up&quot;&gt; 
+            &lt;h1&gt;Nouvelle p&eacute;riode&lt;/h1&gt; 
+            &lt;p&gt; Salut toi, t'as pass&eacute; de bonnes vacances ? Nous oui ! 
+            &lt;/p&gt; 
+            &lt;p&gt; T'es pr&ecirc;t(e) &agrave; reprendre ? Nous oui ! &lt;/p&gt; &lt;p&gt; On a un peu (beaucoup) chang&eacute; le programme, en effet on va commencer &agrave; concevoir des sites web d&egrave;s aujourd'hui ! 
+            &lt;/p&gt; 
+            &lt;p&gt; L'objectif de cette p&eacute;riode est de cr&eacute;er ton site personnel et de le mettre en ligne. 
+            &lt;/p&gt; 
+            &lt;p&gt; Evidemment, il sera fortement encourag&eacute; de le personnaliser ! &lt;/p&gt;
+        &lt;/div&gt;
+    
+        &lt;img src="images/earth.gif" alt="[texte_alternatif]"&gt;
+    
+        &lt;div&gt; 
+            &lt;p&gt; mettre ici beaucoup de faux texte &quot;lorem ipsum&quot;... voir ici https://www.faux-texte.com/ &lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;a href="#up"&gt;Remonter&lt;/a&gt;
+        
+        
+	&lt;/body&gt;
+&lt;/html&gt;
+						</pre>
+					</div>
+					<p>
+					C'est en fait un bout de ce cours...
+					</p>
+                    <p>
+                    Mais tu as du remarquer qu'il n'est pas aussi "<i>stylé</i>" que ce cours! Normal, on a pas mis d'information de style et on verra ça la prochaine fois!</p>
+				</div>
 			</div>
 		</div>
 
