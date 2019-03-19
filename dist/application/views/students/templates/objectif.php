@@ -20,7 +20,7 @@
 					<h1>Nicolas <span class="text-secondary">RUCHE</span></h1>
 					<h2><span class="lettrine">E</span>tudiant <span class="lettrine">E</span>ntrepreneur</h2>
 					<h3 class="italic">Ce site est factice</h3>
-					<a class="bouton" href="https://www.memecenter.com/top/daily" target="_blank">Les memes du jour</a>
+					<a class="bouton" href="https://www.youtube.com/watch?v=Jkyy4JOu9jE&list=PLYH8WvNV1YEn_iiBMZiZ2aWugQfN1qVfM" target="_blank">Les memes du jour</a>
 				</div>
 			</div>
 		</section>
