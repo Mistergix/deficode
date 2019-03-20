@@ -1,0 +1,24 @@
+h1, h2 {
+	color : red;
+}
+
+h3 {
+    color: blue;
+}
+
+p a {
+	color : green;
+}
+
+.rose {
+    color: pink;
+}
+
+#unique-element-orange
+{
+    color: orange;
+}
+
+a:hover {
+	color : yellow;
+}
