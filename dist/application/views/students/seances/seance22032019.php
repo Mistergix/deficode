@@ -262,7 +262,7 @@ p a {
 
 			<h2>Mettre à du style à des éléments spécifiques</h2>
 			<p>
-				Si je veux que un de mes <code>a</code>, un de mes <code>p</code> et un des mes <code>h4</code> soient
+				Si je veux que un de mes <code>a</code>, un de mes <code>p</code> soient
 				roses mais pas les autres, je dois leur ajouter une classe avec cette syntaxe :
 			</p>
 			<p>
@@ -287,6 +287,8 @@ p a {
 				</p>
 				<p>
 					<code>&lt;a href="#nullepart" class="element-rose"&gt;un lien rose&lt;/a&gt;</code>
+				</p>
+				<p>
 					<code>&lt;p class="element-rose"&gt;un paragraphe rose&lt;/p&gt;</code>
 				</p>
 				<p>
@@ -359,6 +361,99 @@ a:hover {
 				Tu connais les principaux séléecteurs, mais il en existe d'autres. Tu peux les voir 
 				<a href="https://www.w3schools.com/cssref/css_selectors.asp" target="_blank" rel="noopener noreferrer">ici (en anglais)</a>.
 			</p>
+			</div>
+		</div>
+
+		<div class="row white-box">
+			<div class="col-12">
+				<h1>Des propriétés CSS</h1>
+				<p class="exercice">
+					Vide tes fichiers <span class="file">style.css</span> et <span class="file">index.html</span> (seulement le body !).
+				</p>
+
+				<h2>Couleurs et transparence</h2>
+
+				<p>
+					On sait que les couleurs son représentées par 3 nombres : RGB.
+				</p>
+				<p>
+					Sur <a href="https://www.google.fr/search?source=hp&ei=JHKTXPWyAaWVlwSsrouwDA&q=color+picker&btnK=Recherche+Google&oq=color+picker&gs_l=psy-ab.3..0l10.1997.2628..2969...0.0..1.146.526.0j4......0....1..gws-wiz.....0.0HVLB_4ADkY" target="_blank" rel="noopener noreferrer">ce site</a>
+					on peut sélectionner des couleurs et voir leurs nombres RGB.
+				</p>
+				<p>
+					Dans CSS, il y a la fonction <code>rgb(r, g, b)</code> qui permet d'indiquer une couleur.
+				</p>
+				<div class="example">
+					<p>
+						Mes <code>h1</code> seront violets avec ce code.
+					</p>
+					<div class="code-box">
+						<pre>
+h1 {
+	color : rgb(197, 39, 249);
+}
+						</pre>
+					</div>
+				</div>
+				<p class="warning">
+					Les nombres varient de 0 à 255 !
+				</p>
+				<p class="exercice">
+					Teste ce code css, mets la couleur de ton choix (tu vas devoir mettre des <code>h1</code> dans <span class="file">index.html</span>).
+				</p>
+				<p>
+					Grâce à une fonction similaire : <code>rgba(r, g, b, a)</code>, on peut rendre les couleurs transparentes.
+				</p>
+				<p class="warning">
+					Le nom de la fonction est <code>rgba</code>, un <b>a</b> s'est rajouté.
+				</p>
+				<p>
+					Le nombre <code>a</code> indique l'opacité, il varie de <b>0</b> à <b>1</b>.
+				</p>
+				<ul>
+					<li>1 : opaque</li>
+					<li>0.75 : trois quarts opaque</li>
+					<li>0.5 : semi opaque</li>
+					<li>etc.</li>
+				</ul>
+				<div class="example">
+					<p>
+						Mes <code>h2</code> seront oranges et semi-transparents avec ce css.
+					</p>
+					<div class="code-box">
+						<pre>
+h2 {
+	color : rgba(249, 86, 22, 0.5);
+}
+						</pre>
+					</div>
+				</div>
+				<p class="exercice">
+					Teste ce code css, fais varier l'opacité de la couleur (tu vas devoir mettre des <code>h2</code> dans <span class="file">index.html</span>).
+				</p>
+
+				<h2>Arrière-plans</h2>
+				<p>
+					Tu connais la propriété <code>color</code>, on va parler de <code>background-color</code>.
+				</p>
+				<p>
+					La propriété <code>color</code> concerne la couleur du <b>texte</b>, tandis que <code>background-color</code> concerne la couleur de ce qu'il y a
+					<b>derrière</b>.
+				</p>
+				<div class="exercice">
+					<p>
+						Rajoute ceci dans ton <span class="file">index.html</span>.
+					</p>
+					<div class="code-box">
+						<pre>
+&lt;p class="bleu-sur-noir"&gt;
+    Ceci est un paragraphe. Il est bleu sur fond noir. Je mets plein de texte pour qu'il soit gros.
+    Mais tu peux mettre ce que tu veux en fait. Tu peux réduire la taille de ta fenêtre pour qu'il apparaisse plus gros.
+&lt;/p&gt;
+						</pre>
+					</div>
+				</div>
+
 			</div>
 		</div>
 
