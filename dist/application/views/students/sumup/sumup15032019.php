@@ -286,36 +286,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		<div class="row white-box">
 			<div class="col-12">
-				<h1>Les images</h1>
-				<p>
-					Grâce au HTML, on peut intégrer des images dans sa page web. 
-					Il y a 3 types d'images supportées par tous les navigateurs :
-				</p>
-				<ul>
-					<li>Les JPEG : Utilisées pour les photos (extension : .jpg ou .jpeg)</li>
-					<li>Les GIF : connus pour être des images animées (extension : .gif)</li>
-					<li>Les PNG : pour tout ce qui n'est pas une photo, on peut créer des images transparentes avec (extension : .png)</li>
-				</ul>
-				<p>
-					La balise pour intégrer une image est la balise <code>img</code>. C'est une balise <b>orpheline</b>. Voici le format :
-				</p>
-				<p>
-					<code>&lt;img src="[lien]" alt="[texte_alternatif]"&gt;</code>
-				</p>
-				<p>
-					L'attribut <code>alt</code> contient une petite description de l'image. C'est important car si l'image n'existe pas, c'est cette description qui s'affiche.
-				</p>
-				<p>
-					L'attribut <code>src</code> indique l'endroit ou se trouve l'image. Comme pour <code>href</code>, on peut y mettre un chemin absolu ou relatif.
-				</p>
-				<p class="example">
-					<code>&lt;img src="mes_images/animaux/gerbille.jpg" alt="Image d'une gerbille dans le désert"&gt;</code>
-				</p>
-			</div>
-		</div>
-
-		<div class="row white-box">
-			<div class="col-12">
 				<h1>Les ancres</h1>
 				<p>
 					On a vu comment faire des liens vers d'autres sites, ou d'autre pages de notre site à nous.
@@ -349,25 +319,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</p>
 				<p class="warning">
 					Il ne faut pas oublier le <b>#</b> !
-				</p>
-			</div>
-		</div>
-
-		<div class="row white-box">
-			<div class="col-12">
-				<h1>Les éléments blocks et inline</h1>
-				<p>
-					Il y a deux types de balises : les blocks et les inlines.
-				</p>
-				<p>
-					La différence entre les deux est la "place" qu'elles prennent.
-				</p>
-				<p>
-					Les balises blocks prvoquent un retour à la ligne, tandis que les balises inline n'en provoquent pas.
-				</p>
-				<p class="example">
-					Les balises <code>a</code> et <code>img</code> sont inlines, tandis que les balises <code>h1</code> et
-					<code>p</code> sont blocks.
 				</p>
 			</div>
 		</div>
