@@ -1,9 +1,54 @@
-h2 {
-	color : rgba(249, 86, 22, 0.7);
+.warning
+{
+    border-left: 4px dotted #f39539;
+    background-color: #fdefe1;
 }
 
-.bleu-sur-noir
+.example
 {
-    background-color : rgb(0, 0, 0);
-    color : rgb(5, 202, 187);
+    border-right: 4px solid #3fa5db;
+    background-color: #e6f4fa;
+}
+
+.text-right
+{
+    text-align: right;
+}
+
+.link
+{
+    font-size: 60px;
+    background: black;
+    color: white;
+    border: 4px dotted white;
+    border-radius: 20px;
+}
+
+.link:hover
+{
+    background: white;
+    color: black;
+    border: 4px dotted black;
+}
+
+.link2
+{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.link2:hover
+{
+    font-weight: normal;
+    font-style: italic;
+}
+
+.grossis
+{
+    text-decoration: line-through;
+}
+
+.grossis:hover
+{
+    font-size: 25px;
 }

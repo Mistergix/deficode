@@ -302,15 +302,21 @@ p a {
 					</pre>
 				</div>
 			</div>
+			<p class="exercice">
+					Rajoute ce style dans ton css. Regarde ton navigateur.
+			</p>
 			<p>
 				On pourrait avoir un sélecteur comme celui-là : <code>p .element-rose a</code>, pour indiquer un <code>a</code>,
 				dans un un élément rose, dans un <code>p</code>.
 			</p>
-			<p class="exercice">
-					Rajoute ce style dans ton css. Regarde ton navigateur.
+			<p>
+				On peut rajouter plusieurs classes à un élément en les séparant par un espace.
+			</p>
+			<p class="example">
+				<code>&lt;p class="element-rose grand-text"&gt;un paragraphe rose et avec du grand texte&lt;/p&gt;</code>
 			</p>
 
-			<h2>Mettre à du style à un unique élément</h2>
+			<h2>Mettre du style à un unique élément</h2>
 			<p>
 				Il arrive très souvent que l'on veuille rajouter un style à un <b>unique</b> élément. Pour cela, on lui 
 				rajoute un attribut <code>id</code>, comme pour les ancres.
@@ -448,12 +454,130 @@ h2 {
 						<pre>
 &lt;p class="bleu-sur-noir"&gt;
     Ceci est un paragraphe. Il est bleu sur fond noir. Je mets plein de texte pour qu'il soit gros.
-    Mais tu peux mettre ce que tu veux en fait. Tu peux réduire la taille de ta fenêtre pour qu'il apparaisse plus gros.
+    Mais tu peux mettre ce que tu veux en fait. Tu peux aussi réduire la taille de ta fenêtre pour qu'il apparaisse plus gros.
 &lt;/p&gt;
 						</pre>
 					</div>
+					<p>
+						Rajoute ceci dans ton <span class="file">style.css</span>.
+					</p>
+					<div class="code-box">
+						<pre>
+.bleu-sur-noir{
+    background-color : rgb(0, 0, 0);
+    color : rgb(5, 202, 187);
+}
+						</pre>
+					</div>
 				</div>
+				<p>
+					On peut utiliser <code>rgba</code> pour la propriété <code>background-color</code>.
+				</p>
 
+				<h2>Les bordures</h2>
+				<p>
+					On peut rajouter des bordures autour d'éléments grâce à la propriété <code>border</code>.
+				</p>
+				<p>
+					Le format est le suivant : <code>border : [epaisseur] [style] [couleur];</code>.
+				</p>
+				<p>
+					L'épaisseur est en <b>px</b> (pixels).
+				</p>
+				<p>
+					Le style est à piocher parmi : dotted - dashed - solid - double - groove - ridge - inset - outset - none - hidden.
+				</p>
+				<div class="example">
+					<p>
+						Mes <code>p</code> auront une bordure bleue, entière de 3px d'épaisseur.
+					</p>
+					<div class="code-box">
+						<pre>
+p {
+	border : 3px solid rgb(80, 209, 6);
+}
+						</pre>
+					</div>
+				</div>
+				<p class="exercice">
+					Rajoute ce style dans ton css. Remplace solid par dotted, inset etc.
+				</p>
+				<p>
+					On peut remplacer <code>border</code> par <code>border-left</code>, <code>border-right</code>, <code>border-top</code>, <code>border-bottom</code> 
+					pour ajouter des bordures seulement à gauche, à droite etc.
+				</p>
+				<p>
+					Enfin, on peut ajouter <code>border-radius</code> pour arrondir les angles. Sa valeur est en px.
+				</p>
+				<div class="example">
+					<div class="code-box">
+						<pre>
+p {
+	border-left : 3px solid rgb(5, 202, 187);
+	border-right : 3px dashed rgb(80, 209, 6);
+	border-top : 3px solid rgb(209, 6, 70);
+	border-bottom : 3px dashed rgb(59, 73, 155);
+	border-radius : 10px;
+}
+						</pre>
+					</div>
+				</div>
+				<p class="exercice">
+					Teste ce css.
+				</p>
+
+				<h2>Manipulation de texte</h2>
+				<p>
+					On peut manipuler du texte à travers (notament) ces propriétés :
+				</p>
+				<ul>
+					<li><code>text-align</code> : alignement du texte. Valeurs : <code>left</code>, <code>right</code>, <code>center</code>, <code>justify</code></li>
+					<li><code>text-decoration</code> : pour surligner, souligner ou barrer du texte, ou ne rien mettre. Valeurs : <code>overline</code>, <code>underline</code>, <code>line-through</code>, <code>none</code></li>
+					<li><code>font-style</code> : utilisé pour l'italique. Valeurs : <code>italic</code>, <code>normal</code></li>
+					<li><code>font-weight</code> : utilisé pour le gras. Valeurs : <code>bold</code>, <code>normal</code></li>
+					<li><code>font-size</code> : utilisé pour la taille du texte. Valeurs : en px (16px par défaut)</li>
+				</ul>
+				<div class="example">
+					<div class="code-box">
+						<pre>
+p {
+	text-align: right;
+	text-decoration: line-through;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 50px;
+}
+						</pre>
+					</div>
+				</div>
+				<p class="exercice">
+					Teste ce css.
+				</p>
+			</div>
+		</div>
+
+		<div class="row white-box">
+			<div class="col-12">
+				<h1>Un exercice</h1>
+				<div class="exercice">
+					<p>
+						Reproduis cette page :
+					</p>
+					<div class="row">
+						<div class="col-12">
+							<img class="img-fluid" src="<?=img_url("seance9/capture_site")?>" alt="Site à reproduire" style="border : 3px solid black;">
+						</div>
+					</div>
+					<p>
+						Le lien noir inverse ses couleurs au survol : le noir devient blanc et inversement.
+					</p>
+					<p>
+						Le lien bleu est gras, il devient italique au survol, il ne doit <b>pas</b> être italique et gras en même temps.
+					</p>
+					<p>
+						Le paragraphe barré grossit au survol.
+					</p>
+				</div>
 			</div>
 		</div>
 
