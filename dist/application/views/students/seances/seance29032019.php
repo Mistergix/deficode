@@ -6,6 +6,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	Yo Julian :D
 	Voilà ce qu'il faut faire, j'ai rajouté les trucs qu'on na pas eu le temps de faire avant :)
 	Pour créer des exos, tu peux t'inspirer du site objectif (http://deficode.parkours.fr/index.php/templates/template/objectif)
+	Pas la peine de s'embeter avec le recap
+	Tu peux chercher les TODO pour voir où y a du taf ;)
 -->
 
 <main class="container-fluid below-menu" id="main">
