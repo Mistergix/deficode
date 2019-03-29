@@ -427,6 +427,11 @@ p {
 				<div class="col-12 col-md-10 offset-md-1 mt-4">
                     <img class="img-fluid" src="<?=img_url("seance10/objectif_screenshot");?>" alt="Screenshot du site objectif" style="border : 3px solid black;">
                 </div>
+				<div class="exercice">
+					<p>
+						Tu peux commencer à rajouter des <code>p</code> et des <code>h1</code> et ainsi que modifier la police etc.
+					</p>
+				</div>
 			</div>
 		</div>
 
