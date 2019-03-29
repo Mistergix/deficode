@@ -221,7 +221,7 @@ p {
                     <cite>- Nous, Déficode 2019, colorisé</cite>
                 </blockquote>
                 <p>
-                    Les balises <code>&lt;div&gt;</code> permettent de définir des sections dans un site. On les rends plus spécifiques en leur attribuant une <code>class</code> ou un <code>id</code>.
+                    Les balises <code>&lt;div&gt;</code> permettent de définir des sections dans un site. On les rend plus spécifiques en leur attribuant une <code>class</code> ou un <code>id</code>.
                 </p>
                 <p>
                     Cela permet d'arranger des éléments sur la page avec le CSS.
