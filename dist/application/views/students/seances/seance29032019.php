@@ -139,7 +139,7 @@ p {
                     Rends-toi y et on t'explique comment faire!</p>
                 
                 <div class="col-12 col-md-10 offset-md-1">
-                    <img class="img-fluid" src="<?=img_url("seance10/gfont1", "jpg");?>" alt="illustration google fonts 1">
+                    <img class="img-fluid" src="<?=img_url("seance10/gfont11", "jpg");?>" alt="illustration google fonts 1">
                 </div>
                 <ol>
                     <li>
@@ -154,7 +154,7 @@ p {
                     </li>
                 </ol>
                 <div class="col-12 col-md-10 offset-md-1">
-                    <img class="img-fluid" src="<?=img_url("seance10/gfont2", "jpg");?>" alt="illustration google fonts 2">
+                    <img class="img-fluid" src="<?=img_url("seance10/gfont12", "jpg");?>" alt="illustration google fonts 2">
                 </div>
                 <ol start="4">
                     <li>
