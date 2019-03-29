@@ -264,6 +264,9 @@ p {
                 <p class="exercice">
 					Essaie de structurer tes paragraphes avec des <code>&lt;div&gt;</code>!
 				</p>
+                <p>
+                    On préférera pourtant utiliser le plus possible les balises du chapitre suivant. Mais le <code>&lt;div&gt;</code> reste incontournable!
+                </p>
 			</div>
 		</div>
 
@@ -375,12 +378,85 @@ p {
 		<div class="row white-box">
 			<div class="col-12">
 				<h1>La taille des éléments</h1>
+                <p>
+                    On place des éléments sur les pages depuis quelques semaines maintenant. Mais ce serais pas mal si on pouvait changer leur taille non?
+                </p>
+				<p>
+                    Comme d'hab, CSS est là pour toi!
+                </p>
+                <h3 style="font-style: italic">Balises CSS changeant les tailles</h2>
+                <h4>En largeur:</h3>
+				<ul>
+                    <li><code>width</code><br>
+                        Determine la largeur d'un élément</li>
+                    <li><code>min-width</code><br> 
+                        Determine la largeur minimum d'un élément</li>
+                    <li><code>max-width</code><br>
+                        Determine la largeur maximum d'un élément</li>
+				</ul>
+                <h4>Les même en hauteur:</h3>
+                <ul>
+                    <li><code>height</code><br>
+                        Determine la hauteur d'un élément</li>
+                    <li><code>min-height</code><br> 
+                        Determine la hauteur minimum d'un élément</li>
+                    <li><code>max-height</code><br>
+                        Determine la hauteur maximum d'un élément</li>
+				</ul>
+                <h3 style="font-style: italic">Unité de taille</h2>
+                <p>
+                    Comme pour mesurer avec sa règle, on utilise des unité pou définir les tailes en CSS:
+                </p>
+				<ul>
+                    <li><code>em</code><br>
+                        1em = taille de la police dans l'élément parent.
+                    </li>
+                    <li><code>rem</code><br>
+                        1rem = taille de la police dans l'élement <code>&lt;html&gt;</code> (aussi appelé élément <i>"racine"</i>).
+                    </li>
+                    <li><code>%</code><br>
+                        100% = taille de l'élément parent.
+                    </li>
+                    <li>
+                        <p>
+                        <code>px</code><br>
+                        1px = 1 pixel de l'écran.
+                        </p>
+                        <p class="warning">
+                            La taille d'un pixel change d'un écran à l'autre!
+                        </p>
+                    </li>
+                </ul>
+                <div style="font-size: 0.9em">
+                    <p>
+                        Autres unités à utiliser le moins possible:<br>
+                        <code>in</code>, <code>cm</code> et <code>mm</code><br>
+                        Tailles absolues en <i>inch</i>, <i>centimètre</i> et <i>millimètre</i>
+                    </p>
+                </div>
+                <p>
+				<div class="example">
+					<div class="code-box">
+						<pre>
+p {
+	width: 90%;
+	height: 80%;
+	max-height: 50em;
+	max-width: 50rem;
+	min-width: 50px;
+}
+						</pre>
+					</div>
+				</div>
+				<p class="exercice">
+					Teste ce css puis rétrécis et agrandi la fenetre de ton navigateur!
+                </p>
 				<p>
 				<!-- 
 					TODO : 
-					- propriétés css : min-width, width, max-width (idem pour height)
-					- unités : rem (pas em) et %
-					- Tu peux les faire jouer avec l'inspecteur d'éléments (et background color pour bien montrer le truc)
+					v - propriétés css : min-width, width, max-width (idem pour height)
+					v - unités : rem (pas em) et %
+					x - Tu peux les faire jouer avec l'inspecteur d'éléments (et background color pour bien montrer le truc)
 				-->
 				</p>
 			</div>
@@ -389,12 +465,70 @@ p {
 		<div class="row white-box">
 			<div class="col-12">
 				<h1>Padding et margin</h1>
+                <p>
+                    <code>padding</code> et <code>margin</code> définissent des zones vides autour de nos contenus. Ils sont faciles à confondre en plus!</p>
 				<p>
+                <p>
+                    <code>padding</code> crée du vide entre le contenu et la bordure
+                </p>
+                <div style="border: 2px solid red">
+                    <div style="border: 2px dotted limegreen; padding: 70px">
+                       <p>Contenu padding de 70px</p> 
+                    </div>
+                </div>
+                <p>
+                    <code>margin</code> crée du vide entre la bordure et les autres éléments
+                </p>
+                <div style="border: 2px solid red">
+                    <div style="border: 2px dotted limegreen; margin: 70px">
+                       <p>Contenu margin de 70px</p> 
+                    </div>
+                </div>
+                <p>
+                    Pour <code>margin</code>, on peut aussi écrire <code>margin: auto;</code> afin de centrer un élément horizontalement!</p>
+                <p>
+                <div style="border: 2px solid red; height: 100px; width: 20rem;">
+                    <div style="border: 2px dotted limegreen; margin: auto">
+                       <p>Contenu margin: auto</p> 
+                    </div>
+                </div>
+                <p> On les définit avec 1, 2, 3 ou 4 tailles:</p>
+                <ul>
+                    <li>
+                        1 paramètre: épaisseur de partout;
+                    </li>
+                    <li>
+                        2 paramètre: épaisseur verticale puis épaisseur horizontale;
+                    </li>
+                    <li>
+                        3 paramètre: épaisseur au dessus, horizontale puis en dessous;
+                    </li>
+                    <li>
+                        4 paramètre: épaisseur au dessus, à droitre, en dessous puis à gauche;
+                    </li>
+                </ul>
+                <div class="example">
+					<div class="code-box">
+						<pre>
+p {
+	margin: 25px 50px;
+	padding: 10px 20px 30px 40px;
+}
+div {
+	margin: 25px;
+	padding: 2em;
+}
+						</pre>
+					</div>
+				</div>
+				<p class="exercice">
+					Teste ce css puis rétrécis et agrandi la fenetre de ton navigateur!
+                </p>
 				<!-- 
 					TODO : 
-					- Différence entre margin et padding
-					- padding : x; padding : x y; padding : a b c d; (idem pour margin)
-					- Tu peux les faire jouer avec l'inspecteur d'éléments (et background color pour bien montrer le truc)
+					v - Différence entre margin et padding
+					v - padding : x; padding : x y; padding : a b c d; (idem pour margin)
+					x - Tu peux les faire jouer avec l'inspecteur d'éléments (et background color pour bien montrer le truc)
 				-->
 				</p>
 			</div>
@@ -403,6 +537,11 @@ p {
 		<div class="row white-box">
 			<div class="col-12">
 				<h1>On commence le site projet</h1>
+                
+                <p>
+                    On souhaiterait donc finir avec un truc qui ressemble à ça:
+                </p>
+                <iframe src="<?=site_url("/templates/template/objectif")?>" style="height: 40rem; width: 90%;"></iframe>
 				<p>
 				<!-- 
 					TODO : 
