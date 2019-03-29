@@ -403,14 +403,30 @@ p {
 		<div class="row white-box">
 			<div class="col-12">
 				<h1>On commence le site projet</h1>
+				<div class="exercice">
 				<p>
-				<!-- 
-					TODO : 
-					- Leur montrer une photo de la page objectif (http://deficode.parkours.fr/index.php/templates/template/objectif) où 
-					les éléments sont entourés avec les bonnes balises (section, nav, div, etc.) 
-					et leur demander de reproduire la structure en HTML
-				-->
+					Voici une capture d'écran de la page objectif. On a entouré les différentes séparations du site.
 				</p>
+				<ul>
+					<li>Orange : le <code>main</code> qui entoure tout</li>
+					<li>Rose : le <code>header</code> qui entoure le menu et la première partie</li>
+					<li>Bleu <b>clair</b> : le <code>nav</code></li>
+					<li>Vert : les difféfentes <code>section</code></li>
+					<li>Bleu <b>foncé</b> et jaune : des <code>div</code></li>
+				</ul>
+				<p>
+					Crée un dossier <span class="file">projet</span> et rajoute un <span class="file">index.html</span> dedans (tu peux télécharger
+					<a href="<?= code_url("seance8/template", "html");?>" download="index.html">ce template</a> qui contient
+					une page HTML de base).
+				</p>
+				<p>
+					Le but est de structurer ton site de la même manière qu'est structurée la page objectif. Tu dois utiliser des balises <code>div</code>,
+					<code>main</code>, <code>header</code>, <code>nav</code>, <code>section</code>. On ne te demande pas de mettre des images ou du texte, juste de structurer avec ces balises.
+				</p>
+				</div>
+				<div class="col-12 col-md-10 offset-md-1 mt-4">
+                    <img class="img-fluid" src="<?=img_url("seance10/objectif_screenshot");?>" alt="Screenshot du site objectif" style="border : 3px solid black;">
+                </div>
 			</div>
 		</div>
 
