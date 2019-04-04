@@ -9,7 +9,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<p>
 				L'informatique est enseignée bien trop tard en France.
 				En inscrivant votre enfant à ce programme, vous lui permettez de prendre une grande avance dans un domaine essentiel.
-				Voici les détails de ce programme :
+				Voici les détails de ce programme (Il peut changer selon le désir des élèves et des formateurs):
 			</p>
 		</div>	
 	<?php foreach ($periods as $period): ?>
