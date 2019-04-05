@@ -418,15 +418,14 @@ p {
                         100% = taille de l'élément parent.
                     </li>
                     <li>
-                        <p>
                         <code>px</code><br>
                         1px = 1 pixel de l'écran.
-                        </p>
-                        <p class="warning">
-                            La taille d'un pixel change d'un écran à l'autre!
-                        </p>
+                        
                     </li>
                 </ul>
+				<p class="warning">
+                            La taille d'un pixel change d'un écran à l'autre!
+                        </p>
                 <div style="font-size: 0.9em">
                     <p>
                         Autres unités à utiliser le moins possible:<br>
@@ -449,7 +448,7 @@ p {
 					</div>
 				</div>
 				<p class="exercice">
-					Teste ce css puis rétrécis et agrandi la fenetre de ton navigateur!
+					Teste ce css puis rétrécis et agrandis la fenêtre de ton navigateur!
                 </p>
 				<p>
 				<!-- 
