@@ -7,27 +7,60 @@
 	<title>Document</title>
 </head>
 <body>
-	<section class="section1">
-		
-	</section>
+		<div class="flexbox">
+			<p class="red">
+				P1
+			</p>
+			<p class="blue">
+				P2
+			</p>
+			<p class="red">
+				P3
+			</p>
+			<p class="blue">
+				P4
+			</p>
+			<p class="red">
+				P5
+			</p>
+		</div>
 </body>
 </html>
 
 <style>
-	body{
-		padding: 10rem;
-	}
-	.section1
-{
-	height: 10vh;
-	width: 10vw;
-	background-color: blue;
-	transition: 1s;
-	
+p {
+	margin: 0;
+	padding: 2rem;
 }
 
-.section1:hover{
-	transform : rotate(60deg) scale(3) ;
+.red{
+	background-color: red;
 }
-						
+
+.blue {
+	background-color: blue;
+}
+.flexbox {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
+	min-height: 10rem;
+	background-color : black;
+
+	flex-direction: column;
+}
+
+.blue{
+	flex: 1;
+}
+.red {
+	flex : 2;
+}
+
+@media screen and (min-width : 900px){
+	.flexbox {
+		flex-direction : row;
+	}
+}
 </style>
