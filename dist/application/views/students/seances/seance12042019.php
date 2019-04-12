@@ -506,8 +506,14 @@ p {
 			<div class="col-12">
 				<h1>Mettre son site en ligne avec Github Pages</h1>
 				<p>
-					TODO JMR : Créer cette section, permettre aux élèves de créer un compte github et de mettre le site sur un repo et de le publier ;)
+					Julian est en train d'écrire cette partie revient plus tard ;)
 				</p>
+			</div>
+		</div>
+
+		<div class="row white-box">
+			<div class="col-12">
+				<h1>Continue ton site !</h1>
 			</div>
 		</div>
 
