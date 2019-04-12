@@ -506,7 +506,7 @@ p {
 			<div class="col-12">
 				<h1>Mettre son site en ligne avec Github Pages</h1>
 				<p>
-					Julian est en train d'écrire cette partie revient plus tard ;)
+					Julian est en train d'écrire cette partie reviens plus tard ;)
 				</p>
 			</div>
 		</div>
