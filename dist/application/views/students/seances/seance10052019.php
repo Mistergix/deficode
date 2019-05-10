@@ -120,7 +120,46 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="col-12">
 			<h1>Mettre ton site en ligne avec Gitlab</h1>
 			<div class="exercice">
+				<p>
+					Clique sur Créer un projet et sélectionne Create from template. Sélectionne le template Plain HTML.
+				</p>
+				<div class="col-12 col-md-10 offset-md-1">
+                    <img class="img-fluid" src="<?=img_url("p3/seance1/template", "PNG");?>" alt="Page de création projet Gitlab">
+                </div>
+				<p>
+					Tu peux donner un nom et une description à ton projet.
+				</p>
+				<p>
+					Clique sur EDI Web. Clique sur les 3 petits points du dossier public. Grâce à l'option Téléverser <img class="img-fluid" src="<?=img_url("p3/seance1/cloud", "png");?>" alt="Page de création projet Gitlab">,
+					tu peux importer ton site, <b>dans le dossier public</b>. Si tu as des sous dossiers, il faut d'abord créer un dossier dans public puis téléverser les fichiers.
+					(Tu vas devoir sans doute supprimer index.html et style.css qui se trouvent dans le dossier public).  Puis clique sur commit et commites les changements. 
+				</p>
+				<p>
+					Retourne sur ton projet et dans la barre à gauche, clique sur Intégration puis Pipelines. Assure-toi que la dernière exécution s'est bien passée :
+				</p>
+				<div class="col-12 col-md-10 offset-md-1">
+                    <img class="img-fluid" src="<?=img_url("p3/seance1/pipeline", "PNG");?>" alt="Page de création projet Gitlab">
+                </div>
+				<p>
+					Dans la barre gauche, clique sur Paramètres, puis Pages. Tu devrais avoir le lien de ton site, qu est désormais en ligne ! 
+					Il peut mettre un peu de temps avant d'arriver ;)
+				</p>
+				<div class="col-12 col-md-10 offset-md-1">
+                    <img class="img-fluid" src="<?=img_url("p3/seance1/pages", "PNG");?>" alt="Page de création projet Gitlab">
+                </div>
 			</div>
+		</div>
+		</div>
+
+		<div class="row white-box">
+		<div class="col-12">
+			<h1>Et après ?</h1>
+			<p>
+				Il y a beaucoup de choses sur Gitlab qui valent le coup d'être abordées, mais cela peut attendre !
+			</p>
+			<p>
+				Maintenant tu peux continuer ton site depuis Gitlab (EDI Web).
+			</p>
 		</div>
 		</div>
 
