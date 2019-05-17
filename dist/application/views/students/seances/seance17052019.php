@@ -6,161 +6,438 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		<div class="row white-box">
 			<div class="col-12">
-				<h1>Gitlab</h1>
+				<h1>Javascript</h1>
 				<p>
-					Quand on développe des plus gros projets, il devient nécessaire de partager notre code avec d'autres développeurs,
-					de stocker l'historique des modifications du code etc.
+					Il existe plusieurs langages pour le web, tu connais HTML et CSS. Ces deux langages ne sont pas des langages 
+					de programmation mais de <b>description</b>. Leur syntaxe est bien différente de Python par exemple.
 				</p>
 				<p>
-					Les développeurs professionnels utilisent un outil appelé <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">git</a>.
-					Il s'agit d'un outil très puissant, assez compliqué à prendre en main, c'est pour quoi nous ne l'utiliserons <b>pas</b>, tout du moins directement.
+					Mais cela ne veut pas dire qu'on ne peut pas programmer dans un site web, il existe d'autres langages. Aujourd'hui nous allons voir le <b>Javascript (JS)</b>.
 				</p>
-				
+				<p class="warning">
+					Il ne faut pas le confondre avec Java, ils ne fonctionnent pas de la même manière !
+				</p>
 				<p>
-					Voici un exemple de code qui utilise git :
+					Aujourd'hui, beaucoup considèrent JavaScript comme la technologie la plus importante dans le monde du développement logiciel (sauf Julian !).
+				</p>
+		</div>
+		</div>
+
+		<div class="row white-box">
+			<div class="col-12">
+				<h1>On commence</h1>
+				<h2>console.log</h2>
+				<div class="exercice">
+					<p>
+						Rends-toi sur <a href="https://es6console.com/" target="_blank" rel="noopener noreferrer">ce lien</a>. Il s'agit d'un éditeur JS.
+					</p>
+					<p>
+						Tape : <code>console.log("Hello World");</code> et exécute en cliquant sur Run en haut à gauche, le résultat s'affiche dans la console en bas :
+					</p>
+					<div class="col-12 col-md-10 offset-md-1">
+                    	<img class="img-fluid" src="<?=img_url("p3/seance2/console", "png");?>" alt="Page de création projet Gitlab">
+                	</div>
+					<p>
+						Tape <code>console.log(1 + 1);</code>
+					</p>
+					<p>
+						Tape <code>console.log(1, "Bibi", 3);</code>
+					</p>
+				</div>
+				<p>
+					La syntaxe du JS est proche de celle du Python.
+				</p>
+				<p class="warning">
+					Il faut rajouter des ; à la fin des lignes.
+				</p>
+				<p>
+					Le <code>console.log</code> est semblable au <code>print</code> en Python. On peut afficher plusieurs valeurs en les séparant par des virgules.
+				</p>
+				<p>
+					Les commentaires en Python sont similaires au JS mais on remplace le # par <b>//</b> et ''' ''' par <b>/* */</b>
+				</p>
+				<h2>Les variables</h2>
+				<p>
+					En Python pour créer la variable <code>a</code>, valant "Bonjour", on écrivait <code>a = "Bonjour"</code>. En JS, on écrit <code><b>let</b> a = "Bonjour";</code>.
+					La seule différence c'est qu'on doit rajouter le mot-clé <b>let</b> avant. Il faut le faire qu'une seule fois au moment où je donne une valeur pour la 1ère fois,
+					après je peux utiliser ma variable comme en Python.
+				</p>
+				<div class="example">
+				<div class="code-box">
+				<pre>
+let a = "Bonjour";
+console.log(a);
+					</pre>
+				</div>
+				</div>
+
+				<div class="exercice">
+					<p>
+						Crée une variable qui contient ton prénom, puis affiche la phrase :
+					</p>
+					<p>
+						"Bonjour PRENOM" (en remplaçant PRENOM par la valeur de ta variable)
+					</p>
+					<p>
+						Crée deux variables, une qui vaut 6 et l'autre 4, puis affiche leur somme.
+					</p>
+				</div>
+
+				<h2>If else else if</h2>
+				<p>
+					Pour rappel, voici une condition Python :
 				</p>
 				<div class="code-box">
 					<pre>
-	echo "# tmp" >> README.md
-	git init
-	git add README.md
-	git commit -m "first commit"
-	git remote add origin git@github.com:Mistergix/tmp.git
-	git push -u origin master
+if [conditionA] :
+	[CodeA]
+elif [conditionB] :
+	[codeB]
+else :
+	[codeC]
 					</pre>
 				</div>
 				<p>
-					Heureusement, il existe des outils un peu plus simples, basés sur git, comme Github et Gitlab.
+					Voici la même condition en JS :
 				</p>
+				<div class="code-box">
+					<pre>
+if ( [conditionA] ) {
+	[CodeA]
+}
+else if ( [conditionB] ) {
+	[codeB]
+}
+else {
+	[codeC]
+}
+					</pre>
+				</div>
 				<p>
-					Nous utiliserons <a href="https://gitlab.com/" target="_blank">Gitlab</a>, mais nous t'invitons chez toi à aller voir <a href="https://github.com/" target="_blank">Github</a>.
-				</p>
-				<p>
-					Avant de commencer à utiliser Gitlab pour sauvegarder ton code, voici un peu de vocabulaire :
+					Les différences sont :
 				</p>
 				<ul>
-					<li><b>Un dépôt</b> : ou encore un repository, ou un repo, c'est un dossier en ligne dans lequel un projet informatique est sauvegardé</li>
-					<li><b>Un commit</b> :  Fait d'enregistrer dans un outil de gestion de versions une nouvelle version d'un ensemble de fichiers.</li>
+						<li>Les conditions sont mises entre <b>parenthèses</b></li>
+						<li>Les deux points (:) ne sont pas présents</li>
+						<li>elif devient <b>else if</b></li>
+						<li>Il faut rajouter des accolades ({}) pour entourer les codes à exécuter</li>
 				</ul>
-			</div>
+				<p>
+					Pour faire des accolades tu fais <kbd>AltGr + '</kbd> et <kbd>AltGr + =</kbd>.
+				</p>
+				<p>
+					Les symboles de comparaisons sont similaires à ceux de Python :
+				</p>
+				<ul>
+					<li><code>a === 15</code> : a est-il égal à 15 ? <b> Il y a 3 "="</b></li>
+					<li><code>a !== 15</code> : a est-il différent de 15 ? <b> Il y a 2 "="</b></li>
+					<li><code>a &lt; 15</code> : a est-il <strong>strictement</strong> plus petit que 15 ?</li>
+					<li><code>a &lt;= 15</code> : a est-il inférieur ou égal à 15 ?</li>
+					<li><code>a &gt; 15</code> : a est-il <strong>strictement</strong> plus grand que 15 ?</li>
+					<li><code>a &gt;= 15</code> : a est-il supérieur ou égal à 15 ?</li>
+				</ul>
+				<p>
+					Pour combiner des conditions, on utilise les opérateurs :
+				</p>
+				<ul>
+					<li><code>&amp;&amp;</code> pour faire un ET (en Python c'est <code>and</code>)</li>
+					<li><code>||</code> pour faire un OU (en Python c'est <code>or</code>)</li>
+					<li><code>!</code> pour faire un NON (en Python c'est <code>not</code>)</li>
+				</ul>
+				<p>
+					Pour faire des | tu fais <kbd>AltGr + -</kbd>.
+				</p>
+				<div class="exercice">
+					<p>
+						Ecris un programme qui crée une variable <code>note</code>.
+					</p>
+					<p>
+							Le programme affiche :
+					</p>
+					<ul>
+						<li>"Recalé" si la note est plus petite que 10 <b>strictement</b></li>
+						<li>"Passable" si elle est comprise entre 10 et 12</li>
+						<li>"Mention" sinon</li>
+					</ul>
+				</div>
+				<h2>Les boucles</h2>
+				<p>
+					Pour rappel, en Python, pour écrire des boucles <code>for</code> et <code>while</code>, on écrit :
+				</p>
+				<div class="code-box">
+					<pre>
+while [condition] :
+	[code]
+
+for compteur in range(5, 15, 3):
+	[code]
+					</pre>
+				</div>
+				<p>
+					Voici les mêmes boucles en JS :
+				</p>
+				<div class="code-box">
+					<pre>
+while ( [condition] ) {
+	[code]
+}
+
+for(let compteur = 5; compteur < 15; compteur += 3) {
+	[code]
+}
+					</pre>
+				</div>
+				<p>
+					Pour la boucle while, les différences sont les mêmes que pour le <code>if</code>.
+				</p>
+				<p>
+					Pour la boucle for c'est une autre histoire ! On retrouve les accolades et parenthèses.
+				</p>
+				<p>
+					Dans les parenthèses il y a trois choses, séparées par des ; 
+				</p>
+				<ol>
+					<li><code>let compteur = 5</code>, crée la variable compteur et l'initialise à la valeur de départ</li>
+					<li><code>compteur < 15</code>, indique qu'on continue tant qu'on est plus petit que la valeur d'arrivée</li>
+					<li><code>compteur += 3</code>, met à jour la variable compteur en lui rajoutant 3 à chaque étape</li>
+				</ol>
+				<p>
+					<code>range(5, 15, 3)</code> devient (let compteur = 5; compteur < 15; compteur += 3)<code></code>
+				</p>
+				<p>
+					Comme en Python, on peut mettre plusieurs boucles les unes dans les autres, il faut penser à changer le nom de la variable dans la boucle interne !
+				</p>
+
+				<div class="exercice">
+					<p>
+						Crée un programme qui affiche les tables de multiplications de 3 à 12 (incluse), en utilisant un for dans l'autre. Voici ce qu'il doit afficher :
+					</p>
+					<div class="col-12 col-md-10 offset-md-1">
+                    	<img class="img-fluid" src="<?=img_url("p3/seance2/multi", "png");?>" alt="Page de création projet Gitlab">
+                	</div>
+				</div>
+
+				<h2>Les fonctions</h2>
+				<p>
+					Voici comment on fait une fonction en Python :
+				</p>
+				<div class="code-box">
+					<pre>
+def [nom de fonction] ([argument1], [argument2], ...) :
+	[code]
+
+# Appel de la fonction
+[nom de fonction] ([argument1], [argument2], ...)
+					</pre>
+				</div>
+				<p>
+					Voici la même fonction en JS :
+				</p>
+				<div class="code-box">
+					<pre>
+function [nom de fonction] ([argument1], [argument2], ...) {
+	[code]
+}
+
+// Appel de la fonction
+[nom de fonction] ([argument1], [argument2], ...);
+					</pre>
+				</div>
+				<p>
+					On retrouve les accolades du if et du while, et on remplace le mot clé <code>def</code>
+					par <code><b>function</b></code>. L'appel est identique. On peut aussi utiliser le <b>return</b> de la même manière.
+				</p>
+				<div class="exercice">
+					<p>
+						Ecris et appelle (utilise) une fonction qui prends 2 nombres en arguments et renvoie le plus grand des deux.
+					</p>
+				</div>
+
+				<h2>Les objets</h2>
+				<p>
+					Pour rappel, la POO consiste à considérer des objets et leur définition. 
+				</p>
+				<p>
+					Un chat noir et un chat blanc sont deux objets différents, mais ils ont la même définition.
+				</p>
+				<p class="warning">
+					En POO, tout peut être un objet : une table, un chat, Napoléon etc. 
+				</p>
+				<p>
+					En POO la définition d'un objet s'appelle sa classe, et les objets sont appelés des instances. 
+				</p>
+				<p class="example">
+					Un chat noir et un chat blanc sont des instances de la classe Chat. 
+				</p>
+				<p>
+					Jusqu'ici, Python et Javascript sont similaires. Ils différent énormément pour lé création d'objets !
+				</p>
+				<p>
+					Voici comment on fait en Python :
+				</p>
+				<div class="code-box">
+					<pre>
+class Chat :
+	def __init__(self, couleur, nom, age):
+		self.nom = nom
+		self.couleur = couleur
+		self.age = age
+
+monchat = Chat("Salem", "Noir", 8)
+					</pre>
+				</div>
+				<p>
+					Voici la même création en JS :
+				</p>
+				<div class="code-box">
+					<pre>
+let monchat = {
+	nom : "Salem",
+	couleur : "Noir",
+	age : 8
+};
+					</pre>
+				</div>
+				<p>
+					En Python, on définit d'abord la classe puis après on crée une instance. En JS, on peut faire les deux en même temps !
+				</p>
+				<p>
+					Ici, on a créé le chat avec le "=" tout en le définissant avec les accolades.
+				</p>
+				<p>
+					La syntaxe d'un objet JS est très proche de la syntaxe CSS, avec les propriétés à gauche et les valeurs à droite. Mais en 
+					CSS, on sépare chaque propriété par un point virgule, alors que c'est une virgule en JS.
+				</p>
+				<p>
+					Une fois l'objet défini, on peut accéder à ses atributs comme en Python, avec un point :
+				</p>
+				<p class="example">
+					<code>console.log("Mon chat est", monchat.couleur);</code>
+				</p>
+				<p class="example">
+					<code>monchat.cage = 12;</code>
+				</p>
+				<p>
+					Un objet peut avoir comme attribut un autre objet :
+				</p>
+				<div class="example">
+				<div class="code-box">
+					<pre>
+let monchat = {
+	nom : "Salem",
+	couleur : "Noir",
+	age : 8,
+	nourriture : {
+		type : "Croquettes",
+		gout : "Saumon"
+	}
+};
+					</pre>
+				</div>
+				<p>
+					<code>console.log(monchat.nourriture.gout);</code>
+				</p>
+				</div>
+				<p>
+					Il ne faut pas oublier que les objets peuvent avoir des méthodes, voici comment on les définit en JS :
+				</p>
+				<div class="code-box">
+					<pre>
+let monchat = {
+	nom : "Salem",
+	couleur : "Noir",
+	age : 8,
+	nourriture : {
+		type : "Croquettes",
+		gout : "Saumon"
+	},
+
+	vieillir() {
+		console.log("Mon chat vieillit");
+		this.age++;
+		console.log("Il a", this.age, "ans");
+	},
+
+	changerNom(nouveaunom) {
+		console.log("Mon chat change de nom");
+		this.nom = nouveaunom;
+		console.log("Il s'appelle", this.nom);
+	}
+};
+
+monchat.vieillir()
+monchat.changerNom("Garfield");
+					</pre>
+				</div>
+				<div class="exercice">
+					<p>
+						Recopie et exécute ce code.
+					</p>
+				</div>
+				<p>
+					On peut donner des paramètres aux méthodes, utiliser return dedans. Pour accéder aux attributs de l'objet, on utilise 
+					le mot-clé <code><b>this</b></code> (en Python, self).
+				</p>
+				<p>
+					Depuis récement, on peut créer des classes dans JS. Mais on ne le fera pas, trop compliqué pour débuter.
+				</p>
+				<h2>Les listes</h2>
+				<p>
+					Comme en Python, il y a des listes en JS.
+				</p>
+				<div class="code-box">
+					<pre>
+let liste = ["Bonjour", 7, { message: "Coucou maman" }, true];
+
+// Taille de la liste 
+console.log(liste.length);
+
+// Accès au dernier et premier élément
+console.log(liste[liste.length - 1])
+console.log(liste[0])
+
+// Ajout d'un élément
+liste.push("bibi");
+
+//  Suppression du dernier élément
+liste.pop()
+
+// Parcours
+for (let i = 0; i < liste.length; i++) {
+  console.log(liste[i]);
+}
+					</pre>
+				</div>
+
+				<div class="exercice">
+				<p>
+					Ecris une fonction qui prend un nombre en argument et renvoie la liste des nombres allant de 0 à ce nombre. Par exemple creerListe(5) renvoie 
+					[0, 1, 2, 3, 4, 5].
+				</p>
+				<p>
+					Ecris une fonction qui prend une liste de nombres et affiche leur somme.
+				</p>
+				<p>
+					Affiche la somme des nombres de 0 à 5000.
+				</p>
+				</div>
+		</div>
 		</div>
 
 		<div class="row white-box">
-		<div class="col-12">
-			<h1>Utilisons Gitlab</h1>
-			<div class="exercice">
-				<p>
-					Rends-toi sur <a href="https://gitlab.com/" target="_blank">Gitlab</a>, clique sur Register et crée toi un compte, tu as besoin d'une adresse email.
-				</p>
-				<p>
-					Pour mettre le site en français, tu peux cliquer tout en haut à droite sur la flèche qui pointe vers le bas puis clique sur Settings. Dans la barre à gauche, clique sur Preference. Enfin, tout en bas dans le menu Localization,
-					tu peux choisir la langue française. Attention, la traduction française n'est pas complète !
-				</p>
-				<p>
-					Tu peux retourner sur la page d'accueil en cliquant sur Gitlab en haut à gauche. Clique sur "Create a project", tu devrais voir ça :
-				</p>
-				
-				<div class="col-12 col-md-10 offset-md-1">
-                    <img class="img-fluid" src="<?=img_url("p3/seance1/project_gitlab_create", "png");?>" alt="Page de création projet Gitlab">
-                </div>
-				<p>
-					Donne un nom à ton projet de test. Tu peux lui donner une description. Tu  peux choisir de rendre ton repo privé, public ou interne, cela définit qui peut voir ton code. Enfin clique sur Créer projet. 
-				</p>
-				<p>
-					Voici la page de ton projet : 
-				</p>
-				<div class="col-12 col-md-10 offset-md-1">
-                    <img class="img-fluid" src="<?=img_url("p3/seance1/project_gitlab_manage", "png");?>" alt="Page de création projet Gitlab">
-                </div>
-				<p>
-					Clique sur le buton vert "Nouveau fichier". Appelle-le hello.py et rajoute cette ligne dedans : print("hello"). Dans message du commit, rajoute : "J'ai créé ce fichier qui afficher Hello". Clique sur Commit changes.
-				</p>
-				<p>
-					Ton fichier est en ligne ! 
-				</p>
-				<div class="col-12 col-md-10 offset-md-1">
-                    <img class="img-fluid" src="<?=img_url("p3/seance1/commit", "png");?>" alt="Page de création projet Gitlab">
-                </div>
-				<p>
-					Tu peux éditer, remplacer et supprimer ton fichier avec les options en bas à droite de l'image. Clique sur EDI Web. 
-				</p>
-				<p>
-					Ici tu peux modifier tes dossiers et fichiers. Remplace print("hello") par print("hello world"). Clique sur Commit. Tu peux voir que Gitlab te montre les différences entre avant et après. Ceci 
-					est très pratique quand ton projet est plus gros !
-				</p>
-				<div class="col-12 col-md-10 offset-md-1">
-                    <img class="img-fluid" src="<?=img_url("p3/seance1/ide", "PNG");?>" alt="Page de création projet Gitlab">
-                </div>
-				<p>
-					Remplis Message du commit avec : J'ai remplacé hello par hello world.
-				</p>
-				<p>
-					Il y a d'autres options, mais elles sont destinées à des gens plus expérimentés ! Clique sur le bouton vert Etape & commit.
-				</p>
-				<p>
-					Tu peux retourner sur ton projet en cliquant sur son nom en haut à gauche. Voici à quoi ressemble un vrai projet (<a href="https://github.com/SocialGouv/tutoriel-gitlab" target="_blank" rel="noopener noreferrer">source</a>) :
-				</p>
-				<div class="col-12 col-md-10 offset-md-1">
-                    <img class="img-fluid" src="<?=img_url("p3/seance1/project-home", "png");?>" alt="Page de création projet Gitlab">
-                </div>
-				<p>
-					Dans la barre à gauche, il y a plein d'options super cools, clique sur Dépôt puis Graphiqu et tada ! Tu peux voir comment ton projet a évolué au cours du temps !
-				</p>
-				<p>
-					Toujours dans la barre à gauche, clique sur Paramètres puis Général, ici tu peux faire plein de trucs, dont personnaliser un peu ton projet avec des images et une description !
-				</p>
-				<p>
-					Supprime ce projet inutile en cliquant sur Expand tout en bas dans la section Adavanced. Puis tout en bas clique sur Supprimer le projet. Il faut écrire son nom pour le supprimer.
-				</p>
-			</div>
-		</div>
-		</div>
-
-		<div class="row white-box">
-		<div class="col-12">
-			<h1>Mettre ton site en ligne avec Gitlab</h1>
-			<div class="exercice">
-				<p>
-					Clique sur Créer un projet et sélectionne Create from template. Sélectionne le template Plain HTML.
-				</p>
-				<div class="col-12 col-md-10 offset-md-1">
-                    <img class="img-fluid" src="<?=img_url("p3/seance1/template", "PNG");?>" alt="Page de création projet Gitlab">
-                </div>
-				<p>
-					Tu peux donner un nom et une description à ton projet.
-				</p>
-				<p>
-					Clique sur EDI Web. Clique sur les 3 petits points du dossier public. Grâce à l'option Téléverser <img class="img-fluid" src="<?=img_url("p3/seance1/cloud", "png");?>" alt="Page de création projet Gitlab">,
-					tu peux importer ton site, <b>dans le dossier public</b>. Si tu as des sous dossiers, il faut d'abord créer un dossier dans public puis téléverser les fichiers.
-					(Tu vas devoir sans doute supprimer index.html et style.css qui se trouvent dans le dossier public).  Puis clique sur commit et commites les changements. 
-				</p>
-				<p>
-					Retourne sur ton projet et dans la barre à gauche, clique sur Intégration puis Pipelines. Assure-toi que la dernière exécution s'est bien passée :
-				</p>
-				<div class="col-12 col-md-10 offset-md-1">
-                    <img class="img-fluid" src="<?=img_url("p3/seance1/pipeline", "PNG");?>" alt="Page de création projet Gitlab">
-                </div>
-				<p>
-					Dans la barre gauche, clique sur Paramètres, puis Pages. Tu devrais avoir le lien de ton site, qu est désormais en ligne ! 
-					Il peut mettre un peu de temps avant d'arriver ;)
-				</p>
-				<div class="col-12 col-md-10 offset-md-1">
-                    <img class="img-fluid" src="<?=img_url("p3/seance1/pages", "PNG");?>" alt="Page de création projet Gitlab">
-                </div>
-			</div>
-		</div>
-		</div>
-
-		<div class="row white-box">
-		<div class="col-12">
-			<h1>Et après ?</h1>
+			<div class="col-12">
+			<h1>Avance-toi</h1>
 			<p>
-				Il y a beaucoup de choses sur Gitlab qui valent le coup d'être abordées, mais cela peut attendre !
+				Si tu veux maîtriser le JS entièrement, tu peux te rendre sur ces deux liens. Le premier est en anglais, il détaille beaucoup. Le deuxième est en français un peu moins détaillé.
 			</p>
 			<p>
-				Maintenant tu peux continuer ton site depuis Gitlab (EDI Web).
+				<a href="https://eloquentjavascript.net/" target="_blank" rel="noopener noreferrer">Lien EN</a> -- <a href="https://fr.eloquentjavascript.net/contents.html" target="_blank" rel="noopener noreferrer">Lien FR</a>.
 			</p>
-		</div>
+			<p>
+				Voici le site de la W3School, la mine d'or pour apprendre le web : <a href="https://www.w3schools.com/js/" target="_blank" rel="noopener noreferrer">Lien</a>.
+				Tu peux changer la langue en cliquant sur le globe en haut à droite.
+			</p>
+			</div>
 		</div>
 
 	</div>
