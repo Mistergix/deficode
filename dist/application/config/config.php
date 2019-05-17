@@ -24,10 +24,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 if(isset($_SERVER['OVH_NOT_WORKING']) && $_SERVER['OVH_NOT_WORKING']){
-	$config['base_url'] = "deficode.cleverapps.io/";
+	$config['base_url'] = "https://deficode.cleverapps.io/";
 }
 else {
-	$config['base_url'] = (ENVIRONMENT === 'development') ?  'http://deficode/' : 'http://deficode.parkours.fr/';
+	$config['base_url'] = (ENVIRONMENT === 'development') ?  'https://deficode/' : 'https://deficode.parkours.fr/';
 }
 
 /*
