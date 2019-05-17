@@ -1,0 +1,61 @@
+@import "config";
+@import "menu";
+@import "sections";
+@import "buttons";
+@import "faq";
+@import "seances";
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.centered {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+.card
+{
+  margin-bottom: .8rem;
+}
+
+h1
+{
+  margin-bottom: 1rem;
+}
+
+.below-menu {
+  padding-top: $padding_top;
+}
+
+q
+{
+  margin: 0.4rem;
+}
+
+.white-box
+    {
+      background-color: $white;
+      padding: 1rem;
+      margin-top: 1rem;
+      color: $black;
+      border-radius: $border-radius;
+    }
+
+footer
+{
+  background-color: darken($ligh_blue, 10);
+
+  &, a
+  {
+    color: $white;
+  }
+}
+
+@import "mobile";

@@ -1,0 +1,30 @@
+$dark_blue: #304269;
+$ligh_blue: #91BED4;
+$light_grey: #D9E8F5;
+$white: #fff;
+$black: #000;
+$red: #F26101;
+$padding_top : 3.4rem;
+$border-radius : 5px;
+
+// media query mixins
+@mixin mediaSm {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+@mixin mediaMd {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin mediaLg {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+@mixin mediaXl {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
