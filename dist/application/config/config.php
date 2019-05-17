@@ -23,7 +23,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = (ENVIRONMENT === 'development') ?  'http://deficode/' : 'http://deficode.parkours.fr/';
+if(isset($_SERVER['OVH_NOT_WORKING']) && $_SERVER['OVH_NOT_WORKING']){
+	$config['base_url'] = "deficode.cleverapps.io/";
+}
+else {
+	$config['base_url'] = (ENVIRONMENT === 'development') ?  'http://deficode/' : 'http://deficode.parkours.fr/';
+}
 
 /*
 |--------------------------------------------------------------------------
