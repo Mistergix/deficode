@@ -1,0 +1,39 @@
+.section {
+  min-height: 100vh;
+  padding-bottom: 2rem;
+
+  &:nth-child(2n+1)
+  {
+    background-color: $dark_blue;
+    color: $white;
+  }
+
+  &#home {
+    height: 100vh;
+    color: $white;
+    font-family: "Ubuntu", cursive;
+
+    background: url("../img/bg-masthead.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position-x: 43%;
+
+    padding-bottom: 0;
+    padding-top: 0;
+
+    .btn {
+      font-family: "Roboto", cursive;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: $padding_top;
+      right: 0;
+      width: 100%;
+      min-height: 100%;
+      background: rgba($color: $dark_blue, $alpha: 0.7);
+    }
+  }
+
+}
